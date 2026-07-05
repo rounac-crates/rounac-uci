@@ -310,7 +310,7 @@ pub struct ApprovalRequestItemReferenceTypeSerde {
 #[allow(non_snake_case)]
 pub struct ArchiveRequestTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub Time: Option<crate::v2_5::common::DateTimeType>,
+	pub Time: Option<chrono::DateTime<chrono::Utc>>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub NumberOfDays: Option<u32>,
 	#[serde(skip_serializing_if = "Option::is_none")]
@@ -445,11 +445,13 @@ pub struct AtomicValueTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub DoubleValue: Option<f64>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub DateTimeValue: Option<crate::v2_5::common::DateTimeType>,
+	pub DateTimeValue: Option<chrono::DateTime<chrono::Utc>>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub DurationValue: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub DurationValue: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub TimeValue: Option<crate::v2_5::common::TimeType>,
+	#[serde(with = "crate::v2_5::serde_utils::naive_time_opt")]
+	pub TimeValue: Option<chrono::NaiveTime>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub StringValueCaseSensitive: Option<crate::v2_5::common::QueryString4096Type>,
 	#[serde(skip_serializing_if = "Option::is_none")]
@@ -858,7 +860,8 @@ pub struct CommRangeDelayChoiceTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub Active: Option<crate::v2_5::common::EmptyType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub Passive: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub Passive: Option<chrono::TimeDelta>,
 }
 
 #[doc = r#"See annotations in child elements and messages/elements that use this type for details."#]
@@ -980,11 +983,13 @@ pub struct ComparableAtomicValueTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub DoubleValue: Option<f64>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub DateTimeValue: Option<crate::v2_5::common::DateTimeType>,
+	pub DateTimeValue: Option<chrono::DateTime<chrono::Utc>>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub DurationValue: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub DurationValue: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub TimeValue: Option<crate::v2_5::common::TimeType>,
+	#[serde(with = "crate::v2_5::serde_utils::naive_time_opt")]
+	pub TimeValue: Option<chrono::NaiveTime>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub StringValue: Option<crate::v2_5::common::QueryString4096Type>,
 }
@@ -1039,7 +1044,8 @@ pub struct ConfigurationParameterValueRestrictionsTypeSerde {
 #[allow(non_snake_case)]
 pub struct ContingencyPathSpacingTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub Duration: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub Duration: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub Distance: Option<crate::v2_5::common::DistanceType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
@@ -1686,11 +1692,13 @@ pub struct EntityCharacteristicTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub Identity: Option<crate::v2_5::types::IdentityComparisonType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub IdentityStaleness: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub IdentityStaleness: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub PositionUncertainty: Option<f32>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub PositionStaleness: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub PositionStaleness: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub PrioritizationList: Option<crate::v2_5::types::PrioritizationListValueType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
@@ -1968,7 +1976,8 @@ pub struct EthernetSettingsTypeSerde {
 #[allow(non_snake_case)]
 pub struct EventOffsetChoiceTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub OffsetTime: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub OffsetTime: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub OffsetAngle: Option<crate::v2_5::common::AngleType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
@@ -1983,7 +1992,8 @@ pub struct EventWindowChoiceTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub WindowAngle: Option<crate::v2_5::common::AnglePositiveType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub WindowDuration: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub WindowDuration: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub WindowRadius: Option<crate::v2_5::common::DistanceType>,
 }
@@ -2127,7 +2137,8 @@ pub struct FuzeTriggerTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub FuzeDistance: Option<crate::v2_5::common::DistanceType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub FuzeDelayTime: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub FuzeDelayTime: Option<chrono::TimeDelta>,
 }
 
 #[doc = r#"See annotations in child elements and messages/elements that use this type for details."#]
@@ -2374,7 +2385,8 @@ pub struct IntervalChoiceTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub Distance: Option<crate::v2_5::common::DistanceType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub Duration: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub Duration: Option<chrono::TimeDelta>,
 }
 
 #[doc = r#"See annotations in child elements and messages/elements that use this type for details."#]
@@ -2546,7 +2558,7 @@ pub struct LocationFilterTypeSerde {
 #[allow(non_snake_case)]
 pub struct LoiterProgressTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub LoiterEndTime: Option<crate::v2_5::common::DateTimeType>,
+	pub LoiterEndTime: Option<chrono::DateTime<chrono::Utc>>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub CompletedOrbits: Option<u32>,
 }
@@ -3105,7 +3117,8 @@ pub struct OrbitChangeChoiceTypeSerde {
 #[allow(non_snake_case)]
 pub struct OrbitDurationTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub Time: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub Time: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub NumberOfOrbits: Option<u32>,
 }
@@ -3313,7 +3326,8 @@ pub struct OrbitalSurveillanceSensorMinimumCollectionRequirementsTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub TargetRotationalPeriods: Option<i32>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub Time: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub Time: Option<chrono::TimeDelta>,
 }
 
 #[doc = r#"Indicates the expected size of the smallest target for the task (or threshold for search) in either physical area  or apparent size appropriate to the phenomenology (e.g., radar cross section)."#]
@@ -3530,7 +3544,8 @@ pub struct PlanWindowModificationTypeChoiceTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub Window: Option<crate::v2_5::types::DateTimeRangeType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub TimeOffset: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub TimeOffset: Option<chrono::TimeDelta>,
 }
 
 #[doc = r#"See annotations in child elements and messages/elements that use this type for details."#]
@@ -3611,7 +3626,7 @@ pub struct PlanningPointTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub OpPointId: Option<crate::v2_5::types::OpPointIdType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub Time: Option<crate::v2_5::common::DateTimeType>,
+	pub Time: Option<chrono::DateTime<chrono::Utc>>,
 }
 
 #[doc = r#"See annotations in child elements and messages/elements that use this type for details."#]
@@ -3745,7 +3760,8 @@ pub struct PoComponentSettingsBandpassFrequencyTypeSerde {
 #[allow(non_snake_case)]
 pub struct PoComponentSettingsFocalPlaneArrayCollectionTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub CollectionTimeSetting: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub CollectionTimeSetting: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub CollectionTimeControls: Option<crate::v2_5::types::ComponentControlsBType>,
 }
@@ -3868,7 +3884,7 @@ pub struct PoComponentSettingsFocusSweepSettingsStepTimeTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub NumberOfLines: Option<u32>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub CollectionTime: Option<chrono::TimeDelta>,
+	pub CollectionTime: Option<i64>,
 }
 
 #[doc = r#"See annotations in child elements and messages/elements that use this type for details."#]
@@ -4143,9 +4159,10 @@ pub struct ProductNeededByTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub AsSoonAsPossible: Option<crate::v2_5::common::EmptyType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub AbsoluteTime: Option<crate::v2_5::common::DateTimeType>,
+	pub AbsoluteTime: Option<chrono::DateTime<chrono::Utc>>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub RelativeToEventTime: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub RelativeToEventTime: Option<chrono::TimeDelta>,
 }
 
 #[doc = r#"This element defines a filter which can be applied to any product or file regardless of type."#]
@@ -5419,7 +5436,8 @@ pub struct SystemCharacteristicTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub PositionUncertainty: Option<f32>,
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub PositionStaleness: Option<crate::v2_5::common::DurationType>,
+	#[serde(with = "crate::v2_5::serde_utils::time_delta_opt")]
+	pub PositionStaleness: Option<chrono::TimeDelta>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub PrioritizationList: Option<crate::v2_5::types::PrioritizationListValueType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
@@ -5449,7 +5467,7 @@ pub struct SystemEphemerisBasisChoiceTypeSerde {
 #[allow(non_snake_case)]
 pub struct SystemEstimationStartTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub StartTime: Option<crate::v2_5::common::DateTimeType>,
+	pub StartTime: Option<chrono::DateTime<chrono::Utc>>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub RouteEstimationStart: Option<crate::v2_5::types::EstimationStartType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
@@ -5462,7 +5480,7 @@ pub struct SystemEstimationStartTypeSerde {
 #[allow(non_snake_case)]
 pub struct SystemEstimationStopTypeSerde {
 	#[serde(skip_serializing_if = "Option::is_none")]
-	pub Time: Option<crate::v2_5::common::DateTimeType>,
+	pub Time: Option<chrono::DateTime<chrono::Utc>>,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub RouteSegmentId: Option<crate::v2_5::types::SegmentIdType>,
 	#[serde(skip_serializing_if = "Option::is_none")]
