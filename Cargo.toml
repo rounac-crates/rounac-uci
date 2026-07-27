@@ -18,3 +18,13 @@ iso8601 = "0.6.3"
 [features]
 default = ["v2_5"]
 v2_5 = []
+
+[dev-dependencies]
+criterion = "0.8.2"
+quick-xml = { version = "0.41.0", features = ["serialize"] }
+rand = "0.10.2"
+uuid = { version = "1.23", features = ["serde", "v4"] }
+
+[[bench]]
+name = "quick-xml_serde"
+harness = false
