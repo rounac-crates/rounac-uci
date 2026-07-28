@@ -7,8 +7,8 @@ use criterion::{BatchSize, BenchmarkId, Criterion, Throughput, criterion_group, 
 use msg_utils::service_status::{ServiceStatus, service_status};
 use quick_xml::{de, se};
 
-fn service_status_bench(c: &mut Criterion) {
-	let mut group = c.benchmark_group("service_status");
+fn quick_xml_bench(c: &mut Criterion) {
+	let mut group = c.benchmark_group("quick_xml_bench");
 	group.throughput(Throughput::Elements(1));
 
 	// Benchmark serialize
@@ -36,5 +36,5 @@ fn service_status_bench(c: &mut Criterion) {
 	);
 }
 
-criterion_group!(service_status_group, service_status_bench);
-criterion_main!(service_status_group);
+criterion_group!(benches, quick_xml_bench);
+criterion_main!(benches);
