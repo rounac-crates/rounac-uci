@@ -3,7 +3,7 @@
 use serde::{Deserialize, Serialize};
 
 #[doc = r#"An enumeration representing varying "levels of effort"."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AccessEffortEnum {
 	#[doc = r#"Indicates maximum level of effort."#]
 	#[serde(rename = "MAXIMUM_EFFORT")]
@@ -23,7 +23,7 @@ pub enum AccessEffortEnum {
 }
 
 #[doc = r#"Indicates the level of achievability of an assessment.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AchievabilityEnum {
 	#[doc = r#"Indicates the assessed item is achievable."#]
 	#[serde(rename = "ACHIEVABLE")]
@@ -37,7 +37,7 @@ pub enum AchievabilityEnum {
 }
 
 #[doc = r#"The enumeration of all message output types of Action Capabilities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActionMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message. For example, the PO_Activity message for a PO Capability."#]
 	#[serde(rename = "ACTION_ACTIVITY")]
@@ -51,7 +51,7 @@ pub enum ActionMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates the taxonomy of the Action form of C2 Requirement.  The taxonomy is a combination of abstract commands, verbs, tasks, etc. described in various Joint Publications, training documents for operational planning, etc."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActionTypeEnum {
 	#[doc = r#"Counsel and inform of the implications of adopting a certain pattern of behavior, beliefs or attitudes."#]
 	#[serde(rename = "ADVISE")]
@@ -338,7 +338,7 @@ pub enum ActionTypeEnum {
 }
 
 #[doc = r#"Indicates an Active or Inactive state."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActiveInactiveEnum {
 	#[doc = r#"Indicates the associated state is active."#]
 	#[serde(rename = "ACTIVE")]
@@ -349,7 +349,7 @@ pub enum ActiveInactiveEnum {
 }
 
 #[doc = r#"Indicates the basis of a reported Activity.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActivityBasisEnum {
 	#[doc = r#"Indicates the activity is an actual one reported first-person or first-person surrogate."#]
 	#[serde(rename = "ACTUAL")]
@@ -366,7 +366,7 @@ pub enum ActivityBasisEnum {
 }
 
 #[doc = r#"The type of activity event."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActivityEventEnum {
 	#[doc = r#"The closest approach between the allocated vehicle and the target. If value is not present, the receiving system may calculate independently."#]
 	#[serde(rename = "CLOSEST_APPROACH")]
@@ -467,7 +467,7 @@ pub enum ActivityEventEnum {
 }
 
 #[doc = r#"Indicates the execution state of a planned Activity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActivityExecutionStatusEnum {
 	#[doc = r#"Indicates the associated Activity is pending execution."#]
 	#[serde(rename = "PENDING")]
@@ -493,7 +493,7 @@ pub enum ActivityExecutionStatusEnum {
 }
 
 #[doc = r#"Indicates the kinds of Activities that make up an *ActivityPlan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActivityPlanPartsEnum {
 	#[doc = r#"Indicates an Activity based on an Effect."#]
 	#[serde(rename = "EFFECTS")]
@@ -531,7 +531,7 @@ pub enum ActivityPlanPartsEnum {
 }
 
 #[doc = r#"This enumerated type represents the state machine for an Activity.  Additional details including allowed transitions are given in the accompanying UML model for the Activity state machine."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActivityStateEnum {
 	#[doc = r#"Indicates the Activity is disabled.  This is a default or commanded state.  A DISABLED Activity can't become ACTIVE_* unless it is first ENABLED via the associated [Capability]SettingsCommand."#]
 	#[serde(rename = "DISABLED")]
@@ -560,7 +560,7 @@ pub enum ActivityStateEnum {
 }
 
 #[doc = r#"Expresses the type of track being reported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActivitySubCategoryEnum {
 	#[doc = r#"A Subsurface Track is being reported."#]
 	#[serde(rename = "SUBSURFACE_TRACK")]
@@ -577,7 +577,7 @@ pub enum ActivitySubCategoryEnum {
 }
 
 #[doc = r#"Indicates the Activity "transition" planned to occur."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ActivityTransitionEnum {
 	#[doc = r#"Indicates the Activity will begin."#]
 	#[serde(rename = "BEGIN")]
@@ -600,8 +600,7 @@ pub enum ActivityTransitionEnum {
 }
 
 #[doc = r#"Indicates the aircraft mode reported in ADS-B."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "ADS_B_ModeIndicatorEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AdsBModeIndicatorEnum {
 	#[doc = r#"The aircraft is following a procedure prescribed by air traffic control that provides vertical guidance."#]
 	#[serde(rename = "VNAV_MODE")]
@@ -621,8 +620,7 @@ pub enum AdsBModeIndicatorEnum {
 }
 
 #[doc = r#"Indicates the ADS-B Report Mode of No Report Capability, Acquisition Mode, or Track Mode."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "ADS_B_ReportModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AdsBReportModeEnum {
 	#[doc = r#"No report generation capability."#]
 	#[serde(rename = "NO_REPORT_GENERATION_CAPABILITY")]
@@ -636,7 +634,7 @@ pub enum AdsBReportModeEnum {
 }
 
 #[doc = r#"Indicates a scoring constraint for the sibling *Plans. This element determines whether to have the scores of the *Plans selected be aggregated into a singular score, broken up discretly into multiple scores per Plan, or perform both."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AggregateScoreEnum {
 	#[doc = r#"If selected, all *Plans referenced will have their Scoring aggregated into a singular PlanScore."#]
 	#[serde(rename = "AGGREGATE_ONLY")]
@@ -650,7 +648,7 @@ pub enum AggregateScoreEnum {
 }
 
 #[doc = r#"Indicate air or ground."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AirGroundEnum {
 	#[doc = r#"Air."#]
 	#[serde(rename = "AIR")]
@@ -661,7 +659,7 @@ pub enum AirGroundEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the AirRaidState."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AirRaidStateEnum {
 	#[doc = r#"Indicates all clear."#]
 	#[serde(rename = "WHITE")]
@@ -675,7 +673,7 @@ pub enum AirRaidStateEnum {
 }
 
 #[doc = r#"This enumerated type represents the capability used for the air sample."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AirSampleCapabilityEnum {
 	#[doc = r#"Indicates the air sample capability uses a spectrometer."#]
 	#[serde(rename = "SPECTROMETER")]
@@ -686,7 +684,7 @@ pub enum AirSampleCapabilityEnum {
 }
 
 #[doc = r#"This enumerated type represents how the results of the air sample capability will be reported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AirSampleMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated AirSampleActivity message."#]
 	#[serde(rename = "AIR_SAMPLE_ACTIVITY")]
@@ -697,7 +695,7 @@ pub enum AirSampleMessageOutputsEnum {
 }
 
 #[doc = r#"True Airspeed (calibrated for pressure and temperature) or Indicated Airspeed."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AirSpeedTypeEnum {
 	#[doc = r#"True Airspeed (calibrated for pressure and temperature)."#]
 	#[serde(rename = "TRUE_AIRSPEED")]
@@ -708,8 +706,7 @@ pub enum AirSpeedTypeEnum {
 }
 
 #[doc = r#"Aircraft CAS type capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AircraftCAS_TypeCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AircraftCasTypeCapabilityEnum {
 	#[doc = r#"0 = Active CAS TCAS II or no CAS."#]
 	#[serde(rename = "ACTIVE_CAS_TCAS_II_OR_NO_CAS")]
@@ -732,7 +729,7 @@ pub enum AircraftCasTypeCapabilityEnum {
 }
 
 #[doc = r#"Enumeration should be used to interpret the J13.0 C2 Word Airfield Logistics in MIL-STD-6016."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AirfieldStoresEnum {
 	#[doc = r#"Indicates AVTUR (AV TUR) aviation turbine fuel is available (DFI 1870 DUI 005)."#]
 	#[serde(rename = "AVTUR")]
@@ -803,7 +800,7 @@ pub enum AirfieldStoresEnum {
 }
 
 #[doc = r#"Source of reported altitude measurement data."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AltitudeReferenceEnum {
 	#[doc = r#"Altitude as measured at barometric pressure."#]
 	#[serde(rename = "ALTITUDE_BAROMETRIC")]
@@ -820,7 +817,7 @@ pub enum AltitudeReferenceEnum {
 }
 
 #[doc = r#"Source of reported altitude data."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AltitudeSourceEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "ESTIMATED")]
@@ -837,7 +834,7 @@ pub enum AltitudeSourceEnum {
 }
 
 #[doc = r#"Indicates the desired ordering of possible identifications of an entity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AmbiguityOrderingEnum {
 	#[doc = r#"Indicates the possible identifications should be listed in order of threat priority from highest priority to lowest priority."#]
 	#[serde(rename = "BY_THREAT_PRIORITY")]
@@ -848,8 +845,7 @@ pub enum AmbiguityOrderingEnum {
 }
 
 #[doc = r#"Indicates the first tier in the taxonomy of the radar Airborne Moving Target Indicator (AMTI) Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AMTI_CapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AmtiCapabilityEnum {
 	#[doc = r#"Indicates a generally persistent AMTI Capability to search a large geospatial volume for airborne moving targets, generally using many beams."#]
 	#[serde(rename = "VOLUME")]
@@ -863,8 +859,7 @@ pub enum AmtiCapabilityEnum {
 }
 
 #[doc = r#"Indicates a message that is an output of the Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AMTI_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AmtiMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "AMTI_ACTIVITY")]
@@ -881,8 +876,7 @@ pub enum AmtiMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates a SubCapability that is available with the Capability.  For AMTI, SubCapabilities indicate specific AMTI waveforms and/or processing techniques."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AMTI_SubCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AmtiSubCapabilityEnum {
 	#[doc = r#"Indicates a capability to search and detect nose aspect targets."#]
 	#[serde(rename = "NAS")]
@@ -899,7 +893,7 @@ pub enum AmtiSubCapabilityEnum {
 }
 
 #[doc = r#"Identifies the state of analysis."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AnalysisStateEnum {
 	#[doc = r#"Initial state of analysis."#]
 	#[serde(rename = "INITIAL")]
@@ -913,7 +907,7 @@ pub enum AnalysisStateEnum {
 }
 
 #[doc = r#"Indicates the type of antenna, as in what direction it can communicate."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AntennaTypeEnum {
 	#[doc = r#"An OMNI antenna communicates in all directions."#]
 	#[serde(rename = "OMNI")]
@@ -924,8 +918,7 @@ pub enum AntennaTypeEnum {
 }
 
 #[doc = r#"This type establishes the first tier in the taxonomy of the Active Optical (AO) category of Capabilities.  For AO, the first tier is an indication of the operational purpose or supported use case.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AO_CapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AoCapabilityEnum {
 	#[doc = r#"Indicates a Capability to illuminate a target to improve target visibility for optical sensors."#]
 	#[serde(rename = "ILLUMINATION")]
@@ -945,8 +938,7 @@ pub enum AoCapabilityEnum {
 }
 
 #[doc = r#"Indicates a message that is an output of the Capability.  See enumerated type annotations for details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AO_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AoMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "AO_ACTIVITY")]
@@ -957,7 +949,7 @@ pub enum AoMessageOutputsEnum {
 }
 
 #[doc = r#"Enumeration defining the condition of the flight deck."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ApproachConditionStatusEnum {
 	#[doc = r#"Visual meteorological conditions."#]
 	#[serde(rename = "CV_CLASS_I")]
@@ -971,7 +963,7 @@ pub enum ApproachConditionStatusEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the ApproachLighting (DFI 1873 DUI 005)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ApproachLightingEnum {
 	#[doc = r#"Indicates no approach lighting is available."#]
 	#[serde(rename = "NONE")]
@@ -988,7 +980,7 @@ pub enum ApproachLightingEnum {
 }
 
 #[doc = r#"This enumerated type represents the types of approval."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ApprovalRequirementEnum {
 	#[doc = r#"Indicates approval is required by the operator."#]
 	#[serde(rename = "APPROVAL_REQUIRED")]
@@ -1002,7 +994,7 @@ pub enum ApprovalRequirementEnum {
 }
 
 #[doc = r#"This enumerated type represents the approval response."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ApprovalResponseEnum {
 	#[doc = r#"Indicates the state is approved."#]
 	#[serde(rename = "APPROVED")]
@@ -1013,7 +1005,7 @@ pub enum ApprovalResponseEnum {
 }
 
 #[doc = r#"Indicates the approval state of the associated item."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ApprovalStateEnum {
 	#[doc = r#"Indicates the associated item has been created and is being assessed to determine whether or not approval is required."#]
 	#[serde(rename = "PENDING_APPROVAL")]
@@ -1033,7 +1025,7 @@ pub enum ApprovalStateEnum {
 }
 
 #[doc = r#"This enumerated type represents the status of the approval process."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ApprovalStatusEnum {
 	#[doc = r#"Indicates the request was approved."#]
 	#[serde(rename = "APPROVED")]
@@ -1050,7 +1042,7 @@ pub enum ApprovalStatusEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the ArresterWires."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ArresterWiresEnum {
 	#[doc = r#"Indicates arrestwires are unavailable."#]
 	#[serde(rename = "NOT_AVAILABLE")]
@@ -1067,8 +1059,7 @@ pub enum ArresterWiresEnum {
 }
 
 #[doc = r#"Contains the USSF Astrondynamic Standards integrator modes that are supported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AS_IntegratorModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AsIntegratorModeEnum {
 	#[doc = r#"In the space domain ASW stands for Astrodynamics Support Workstation and is the normal mode used on CAVENet. ASW is a suite of software applications that provides the higher-accuracy satellite catalog needed for a conjunction assessment of spaceflight safety."#]
 	#[serde(rename = "ASW")]
@@ -1079,8 +1070,7 @@ pub enum AsIntegratorModeEnum {
 }
 
 #[doc = r#"Represents the type of step used by the USSF Astrodynamic Standards integrator."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AS_IntegratorStepModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AsIntegratorStepModeEnum {
 	#[doc = r#"Integrator uses time for the integration step."#]
 	#[serde(rename = "TIME_INTEGRATION")]
@@ -1094,8 +1084,7 @@ pub enum AsIntegratorStepModeEnum {
 }
 
 #[doc = r#"USSF Astrodynamic Standards Partial Derivatives Type.  Represents the different ways the propagator can calculate partial derivatives."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AS_PartialDerivativesEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AsPartialDerivativesEnum {
 	#[doc = r#"Analytic values were used to calculate the partial derivatives."#]
 	#[serde(rename = "ANALYTIC")]
@@ -1109,7 +1098,7 @@ pub enum AsPartialDerivativesEnum {
 }
 
 #[doc = r#"This enumerated type represents the assessment state for an assessment item."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AssessmentStatusEnum {
 	#[doc = r#"Assessment for this item has not be done."#]
 	#[serde(rename = "NOT_ASSESSED")]
@@ -1126,7 +1115,7 @@ pub enum AssessmentStatusEnum {
 }
 
 #[doc = r#"Specifies whether the assessment generates results including threat suppression."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AssessmentSuppressionEnum {
 	#[doc = r#"Indicates the assessment generates results without threat suppression included."#]
 	#[serde(rename = "WITHOUT_SUPPRESSION")]
@@ -1140,7 +1129,7 @@ pub enum AssessmentSuppressionEnum {
 }
 
 #[doc = r#"List of all message types that can be associated with a Kinetic Threat Warning."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AssociatedAccessAssessmentInfoEnum {
 	#[doc = r#"Indicates that the associated message is an AccessAssessment. This would be an AccessAssessment from a different source that influenced this AccessAssessment."#]
 	#[serde(rename = "ACCESS_ASSESSMENT")]
@@ -1169,7 +1158,7 @@ pub enum AssociatedAccessAssessmentInfoEnum {
 }
 
 #[doc = r#"An enumerated type to uniquely identify the types of atmospheric models that may be used in propagation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AtmosphereModelEnum {
 	#[doc = r#"Jacchia 65 – COESA62 analytic atmospheric model."#]
 	#[serde(rename = "JACCHIA65_COESA62_ANALYTIC")]
@@ -1213,7 +1202,7 @@ pub enum AtmosphereModelEnum {
 }
 
 #[doc = r#"CVEnumISMatomicEnergyMarkings Values"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AtomicEnergyMarkingsEnum {
 	#[doc = r#"RESTRICTED DATA"#]
 	#[serde(rename = "RD")]
@@ -1260,7 +1249,7 @@ pub enum AtomicEnergyMarkingsEnum {
 }
 
 #[doc = r#"Indicates the state of an Authorization."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AuthorizationStateEnum {
 	#[doc = r#"Indicates the Authorization is inactive."#]
 	#[serde(rename = "INACTIVE")]
@@ -1271,7 +1260,7 @@ pub enum AuthorizationStateEnum {
 }
 
 #[doc = r#"The state of the action for an autonomously triggered condition."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AutonomousActionStatusEnum {
 	#[doc = r#"Indicates the triggering condition for an autonomous action has occurred but the action won't be initiated because autonomy settings or other autonomy controls currently don't allow it.  Manual action by operators or changes to autonomy controls are required to resolve the triggering condition."#]
 	#[serde(rename = "DISALLOWED")]
@@ -1291,7 +1280,7 @@ pub enum AutonomousActionStatusEnum {
 }
 
 #[doc = r#"Indicates the types of Navigation capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AutopilotNavigationCapabilityOptionEnum {
 	#[doc = r#"Indicates navigation by airspeed hold."#]
 	#[serde(rename = "AIRSPEED_HOLD")]
@@ -1311,8 +1300,7 @@ pub enum AutopilotNavigationCapabilityOptionEnum {
 }
 
 #[doc = r#"Aircraft/Vehicle Length and Width Code."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "AV_LengthAndWidthCodeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AvLengthAndWidthCodeEnum {
 	#[doc = r#"No data or unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -1365,7 +1353,7 @@ pub enum AvLengthAndWidthCodeEnum {
 }
 
 #[doc = r#"Indicates the availability state.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum AvailabilityEnum {
 	#[doc = r#"Indicates available for use."#]
 	#[serde(rename = "AVAILABLE")]
@@ -1388,7 +1376,7 @@ pub enum AvailabilityEnum {
 }
 
 #[doc = r#"Indicates the method or mode in which power will be applied to the beam.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum BeamPowerModeEnum {
 	#[doc = r#"Indicates the method in which power will be applied to the beam.  Linear is used for a control ERP response such as DRFM or AM techniques."#]
 	#[serde(rename = "LINEAR")]
@@ -1399,7 +1387,7 @@ pub enum BeamPowerModeEnum {
 }
 
 #[doc = r#"Indicates the weighting function used to define the beam shape to the antenna.  See enumerated values for more details on each type of weighting function."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum BeamWeightingEnum {
 	#[doc = r#"Uniform being more conventional. Weights are the same across all beams."#]
 	#[serde(rename = "UNIFORM")]
@@ -1410,7 +1398,7 @@ pub enum BeamWeightingEnum {
 }
 
 #[doc = r#"Behavioral changes of the threat or target pertinent to the Battle Damage Assessment (BDA)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum BehavioralChangeEnum {
 	#[doc = r#"Indicates the threat or target's RF emissions have stopped."#]
 	#[serde(rename = "RF_EMISSIONS_CEASED")]
@@ -1427,7 +1415,7 @@ pub enum BehavioralChangeEnum {
 }
 
 #[doc = r#"Indicates the faces of a body."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum BodyFaceEnum {
 	#[doc = r#"Indicates the North face of a body."#]
 	#[serde(rename = "NORTH")]
@@ -1450,7 +1438,7 @@ pub enum BodyFaceEnum {
 }
 
 #[doc = r#"Identifier of the portion of the target for which characterization is desired."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum BodyReferenceEnum {
 	#[doc = r#"Used for initial characterization and large change detection."#]
 	#[serde(rename = "ANY")]
@@ -1479,7 +1467,7 @@ pub enum BodyReferenceEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the BrakingAction."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum BrakingActionEnum {
 	#[doc = r#"Indicates POOR breaking action in accordance with the ICAO system and STANAG 3634, for active runway (braking deceleration is significantly reduced for the wheel braking effort applied - potential for hydroplaning exists)."#]
 	#[serde(rename = "POOR")]
@@ -1499,7 +1487,7 @@ pub enum BrakingActionEnum {
 }
 
 #[doc = r#"The reason why an action (Task, Command, Activity, etc.) was rejected, interrupted, unallocated or failed."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CannotComplyEnum {
 	#[doc = r#"Indicates the action (Task, [Capability]Command, [SupportingCapability]Command, [Capability]Activity, etc.) was aborted due to constraints and/or priorities of the mission or system.  This is different from an action that was canceled, rejected, or failed."#]
 	#[serde(rename = "ABORTED")]
@@ -1687,7 +1675,7 @@ pub enum CannotComplyEnum {
 }
 
 #[doc = r#"Indicates an accepted state command for the Capability.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CapabilityCommandStateEnum {
 	#[doc = r#"Indicates the commanded capability state should be disabled."#]
 	#[serde(rename = "DISABLE")]
@@ -1701,7 +1689,7 @@ pub enum CapabilityCommandStateEnum {
 }
 
 #[doc = r#"Indicates an accepted control interface for the Capability.  See enumeration annotations for further details.Indicates UCI messages and other interfaces used to control a Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CapabilityControlInterfacesEnum {
 	#[doc = r#"Indicates a Capability that uses non-UCI controls for initiation; a Capability automatically/self-initiates Activity according to its built-in design generally with optional tailoring from a MDF.  The Capability may use or depend on UCI data inputs to support and/or trigger initiation."#]
 	#[serde(rename = "AUTO_MDF")]
@@ -1727,7 +1715,7 @@ pub enum CapabilityControlInterfacesEnum {
 }
 
 #[doc = r#"Indicates whether this Capability Coverage Area is static or dynamic."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CapabilityCoverageAreaBasisEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "STATIC")]
@@ -1738,7 +1726,7 @@ pub enum CapabilityCoverageAreaBasisEnum {
 }
 
 #[doc = r#"Indicates limiting factors used in computing the Capability Coverage Area."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CapabilityCoverageAreaFactorEnum {
 	#[doc = r#"Indicates that terrain occlusion should be considered when computing the Capability Coverage Area."#]
 	#[serde(rename = "TERRAIN_OCCLUSION")]
@@ -1761,7 +1749,7 @@ pub enum CapabilityCoverageAreaFactorEnum {
 }
 
 #[doc = r#"Type of the Capability Coverage Area"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CapabilityCoverageAreaTypeEnum {
 	#[doc = r#"Indicates the capability coverage area is a Field of Regard."#]
 	#[serde(rename = "FOR")]
@@ -1772,7 +1760,7 @@ pub enum CapabilityCoverageAreaTypeEnum {
 }
 
 #[doc = r#"Indicates the extent to which initiation of the Capability is automated, from a C2 perspective, by the Subsystem/Service which hosts it."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CapabilityInitiationEnum {
 	#[doc = r#"Indicates a Capability (mode) that is initiated automatically by a Subsystem, as specified in its software/OFP and/or its Mission Data Files (MDF), without explicit commands from outside the Subsystem.  An auto Capability 1) cannot be initiated by a Capability Command message, 2) is subject to enabling, disabling and control of its settings by a [Capability]SettingsCommand message, 3) may be constrained by RF profiles, safety concerns, blanking and/or many other constraints.  Status and dynamic operation of an auto Capability is reported via a Capability Activity message.  Expected Product type and/or message type outputs of an auto Capability are specified in the Capability message.  Interactive Activity of a Capability can be modified via a Capability Command message."#]
 	#[serde(rename = "AUTO")]
@@ -1783,7 +1771,7 @@ pub enum CapabilityInitiationEnum {
 }
 
 #[doc = r#"Transponder transmit power level."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CapabilityTransmitPowerEnum {
 	#[doc = r#"Unknown or less than 70W."#]
 	#[serde(rename = "UNKNOWN_OR_LESS_THAN_70W")]
@@ -1797,7 +1785,7 @@ pub enum CapabilityTransmitPowerEnum {
 }
 
 #[doc = r#"Indicates a type of Capability.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CapabilityTypeEnum {
 	#[doc = r#"Indicates an action capability."#]
 	#[serde(rename = "ACTION")]
@@ -1898,7 +1886,7 @@ pub enum CapabilityTypeEnum {
 }
 
 #[doc = r#"This type establishes the first tier in the taxonomy of the cargo delivery category of Capabilities.  For cargo delivery, the first tier is an indication how the cargo is physically carried or attached to the System.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CargoDeliveryCapabilityEnum {
 	#[doc = r#"Indicates a capability to carry and deliver cargo using a sling attached externally to a System."#]
 	#[serde(rename = "EXTERNAL_SLING_LOAD")]
@@ -1909,7 +1897,7 @@ pub enum CargoDeliveryCapabilityEnum {
 }
 
 #[doc = r#"This type establishes the second tier in the taxonomy of the cargo delivery category of Capabilities.  For cargo delivery, the second tier is an indication how the cargo is physically loaded onto the System.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CargoDeliverySubCapabilityEnum {
 	#[doc = r#"Indicates support for loading cargo on land with the System in a stationary state."#]
 	#[serde(rename = "STATIONARY_LAND")]
@@ -1920,7 +1908,7 @@ pub enum CargoDeliverySubCapabilityEnum {
 }
 
 #[doc = r#"This type describes different forms of cargo packaging."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CargoPackagingEnum {
 	#[doc = r#"Indicates an IATA standardized unit load device (ULD) pallet, typically used to ship cargo on commercial aircraft."#]
 	#[serde(rename = "ULD_PALLET")]
@@ -1940,7 +1928,7 @@ pub enum CargoPackagingEnum {
 }
 
 #[doc = r#"The source of celestial bodies ephemerides."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CelestialBodyEphemerisSourceEnum {
 	#[doc = r#"JPL Developmental Ephemeris 405."#]
 	#[serde(rename = "JPL_DE_405")]
@@ -1969,7 +1957,7 @@ pub enum CelestialBodyEphemerisSourceEnum {
 }
 
 #[doc = r#"The name of a celestial body within the solar system."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CelestialBodyNameEnum {
 	#[doc = r#"The Sun."#]
 	#[serde(rename = "SUN")]
@@ -2007,7 +1995,7 @@ pub enum CelestialBodyNameEnum {
 }
 
 #[doc = r#"An enumeration of product types that provide information on the characteristics (other than position/velocity data) of a target that a sensor may produce.  These include apparent size/signal strength in units such as dBsm, dBW, visual magnitude; time series on apparent size; and signal strength over select frequency/wavelength bands."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CharacterizationProductTypeEnum {
 	#[doc = r#"Short period single measurement of calibrated representation of signal amplitude received at sensor. Might be per-metric-measurement of visual magnitude or RCS."#]
 	#[serde(rename = "POINT_SOI")]
@@ -2069,7 +2057,7 @@ pub enum CharacterizationProductTypeEnum {
 }
 
 #[doc = r#"Indicates the type of phenomenology used to perform the characterization."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CharacterizationTypeEnum {
 	#[doc = r#"Indicates a measurement of RF Frequency signal strength for a specified band."#]
 	#[serde(rename = "RF_FREQUENCY")]
@@ -2109,7 +2097,7 @@ pub enum CharacterizationTypeEnum {
 						 The permissible values for this simple type are defined in the Controlled Value Enumeration:
 
 						 CVEnumISMClassificationAll.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ClassificationEnum {
 	#[doc = r#"RESTRICTED"#]
 	R,
@@ -2125,7 +2113,7 @@ pub enum ClassificationEnum {
 }
 
 #[doc = r#"Indicates the specific part of the Entity's Identification Friend or Foe (IFF) will be cleared, reset to the initial state, and refilled by current sensor data.  The list of enumerated values to individually clear includes all possible IFF modes and special code 2."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ClearIdentityValuesEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "CLEAR_ALL_MODE1_IFF")]
@@ -2160,7 +2148,7 @@ pub enum ClearIdentityValuesEnum {
 }
 
 #[doc = r#"Indicates that the system will climb or descend at an automatically chosen rate according to the specified optimization algorithm."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ClimbOptimizationEnum {
 	#[doc = r#"Climb at the best rate achievable by the vehicle."#]
 	#[serde(rename = "BEST_RATE")]
@@ -2171,7 +2159,7 @@ pub enum ClimbOptimizationEnum {
 }
 
 #[doc = r#"The possible objectives of a collection activity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CollectionObjectiveEnum {
 	#[doc = r#"Indicates the objective of the collection is to estimate the extent of collateral damage for a future action."#]
 	#[serde(rename = "COLLATERAL_DAMAGE_ESTIMATE")]
@@ -2191,7 +2179,7 @@ pub enum CollectionObjectiveEnum {
 }
 
 #[doc = r#"Indicates the pattern to be used for the collection.  It is generally applicable to non-CUED AMTI, especially when the search volume is large.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CollectionPatternEnum {
 	#[doc = r#"Indicates the scan follows a horizontal Zamboni pattern, where the beam sweeps horizontally across the field of view, reaches the far edge, and sweeps back the other direction below the prior sweep."#]
 	#[serde(rename = "ZAMBONI_HORIZONTAL")]
@@ -2220,7 +2208,7 @@ pub enum CollectionPatternEnum {
 }
 
 #[doc = r#"This type enumerates policies regarding which collection aspects should be favored for a collection Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CollectionPolicyEnum {
 	#[doc = r#"Indicates coverage of the collection volume/area is more important than performance; coverage should be favored/maximized if the collection is constrained such that there is a trade-off between coverage and performance."#]
 	#[serde(rename = "COVERAGE")]
@@ -2237,8 +2225,7 @@ pub enum CollectionPolicyEnum {
 }
 
 #[doc = r#"Indicates the state of this specific dwell.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "COMINT_DwellStateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComintDwellStateEnum {
 	#[doc = r#"Indicates the dwell is enabled.  An enabled dwell may transition between periods of "active" and "inactive" subject to scheduling, resource availability, priority and other constraints.  An enabled dwell won't necessarily detect a signal and/or produce data."#]
 	#[serde(rename = "ENABLED")]
@@ -2267,8 +2254,7 @@ pub enum ComintDwellStateEnum {
 }
 
 #[doc = r#"Indicates the type/purpose of a dwell."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "COMINT_DwellTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComintDwellTypeEnum {
 	#[doc = r#"Original dwell provided in the MDF for acquisition."#]
 	#[serde(rename = "MDF_ACQUISITION")]
@@ -2306,8 +2292,7 @@ pub enum ComintDwellTypeEnum {
 }
 
 #[doc = r#"This type establishes the second tier in the taxonomy of the COMINT category of Capabilities.  The second tier is a list of general collection types and/or processing.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "COMINT_SubCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComintSubCapabilityEnum {
 	#[doc = r#"Indicates a SubCapability that searches for, acquires and then monitor signals from emitters.  Acquisition can be done based on basic characteristics of a signal such as frequency or the known signal characteristics of specific emitter types whose signal characteristics are described in a MDF."#]
 	#[serde(rename = "ACQUISITION")]
@@ -2360,7 +2345,7 @@ pub enum ComintSubCapabilityEnum {
 }
 
 #[doc = r#"Used to indicate whether the acquisition mode is scintillation or normal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommAcquisitionModeTypeEnum {
 	#[doc = r#"Indicates normal acquisition mode."#]
 	#[serde(rename = "NORMAL")]
@@ -2371,7 +2356,7 @@ pub enum CommAcquisitionModeTypeEnum {
 }
 
 #[doc = r#"Indicates the first tier in the taxonomy of the Waveform Capability.  See enumeration annotation for additional details.  The enumerates aren't necessarily orthogonal.  Some enumerates indicate a band while others indicate specific communications systems operating within an enumerated band."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommCapabilityEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "FALCON")]
@@ -2537,8 +2522,7 @@ pub enum CommCapabilityEnum {
 }
 
 #[doc = r#"Used to indicate in the current Link Fallback State."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommCDL_LinkFallbackStateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommCdlLinkFallbackStateEnum {
 	#[doc = r#"Link is in the Normal state."#]
 	#[serde(rename = "NORMAL")]
@@ -2555,8 +2539,7 @@ pub enum CommCdlLinkFallbackStateEnum {
 }
 
 #[doc = r#"Used to indicate whether remote commands received via RF are processed and passed to the host platform."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommCDL_RemoteMessageProcessingEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommCdlRemoteMessageProcessingEnum {
 	#[doc = r#"Use RF commands and pass to host."#]
 	#[serde(rename = "USE_RF_CMDS_PASS_TO_HOST")]
@@ -2570,7 +2553,7 @@ pub enum CommCdlRemoteMessageProcessingEnum {
 }
 
 #[doc = r#"Used to indicate the COMSEC mode."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommComsecModeTypeEnum {
 	#[doc = r#"Used to indicate the COMSEC key mode is unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -2587,7 +2570,7 @@ pub enum CommComsecModeTypeEnum {
 }
 
 #[doc = r#"Used to indicate the COMSEC mode."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommComsecModeTypeRequestEnum {
 	#[doc = r#"Used to set the COMSEC key into nominal mode."#]
 	#[serde(rename = "NOMINAL")]
@@ -2598,7 +2581,7 @@ pub enum CommComsecModeTypeRequestEnum {
 }
 
 #[doc = r#"Indicates whether a comm configuration is new or an update to an existing comm configuration."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommConfigurationStateEnum {
 	#[doc = r#"Indicates a new comm configuration."#]
 	#[serde(rename = "NEW")]
@@ -2609,7 +2592,7 @@ pub enum CommConfigurationStateEnum {
 }
 
 #[doc = r#"Used to instruct a system to modify its state on a communications network."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommConnectionCommandEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "IDLE")]
@@ -2626,7 +2609,7 @@ pub enum CommConnectionCommandEnum {
 }
 
 #[doc = r#"Used to indicate the network connection state of a communications system."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommConnectionStateEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "DISCONNECTED")]
@@ -2646,7 +2629,7 @@ pub enum CommConnectionStateEnum {
 }
 
 #[doc = r#"Comm Countermeasure Set enumeration from MIL-STD-6016 DFI 1934 DUI 014."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommCountermeasureSetEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "ALQ_227")]
@@ -2660,7 +2643,7 @@ pub enum CommCountermeasureSetEnum {
 }
 
 #[doc = r#"Indicates the applicability of a filter in regards to the direction of data flow."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommDataDirectionFiltrationEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "INGRESS")]
@@ -2674,7 +2657,7 @@ pub enum CommDataDirectionFiltrationEnum {
 }
 
 #[doc = r#"Represents an applicable data format for communication via a data-link."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommDataFormatEnum {
 	#[doc = r#"Unspecified Internet Protocol (IP) based format."#]
 	#[serde(rename = "IP")]
@@ -2730,8 +2713,7 @@ pub enum CommDataFormatEnum {
 }
 
 #[doc = r#"Used to indicate the Link 16 Advanced Slot Notification Mode. Used to switch between Mode B and Mode A. It is used with ASN slot selection which indicates the number of time slots for the selected Mode. Mode A – signal with one time slot that identifies all transmit slots (exception- voice transmit slots when push-to-Talk not active. Mode B-same as Mode A but the signal remains high until the end of the transmit slot."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_AdvanceSlotNotificationModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16AdvanceSlotNotificationModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "MODE_A")]
@@ -2742,8 +2724,7 @@ pub enum CommLink16AdvanceSlotNotificationModeEnum {
 }
 
 #[doc = r#"Used to indicate the Link 16 Enhanced Throughput Code Rate. This is a reserved function that was allocated for future growth.  I don't believe it was ever implemented on any platform.  It is associated with FIM60 and FOM49."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_EnhancedThroughputCodeRateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16EnhancedThroughputCodeRateEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -2766,8 +2747,7 @@ pub enum CommLink16EnhancedThroughputCodeRateEnum {
 }
 
 #[doc = r#"Used to indicate the Link 16 Initial Entry Group Messages. This is used to indicate that the transmit function is enabled for Link 16 Initial Entry message only or Link 16 and Interim JTIDS initial entry messages on alternating transmit frames."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_InitialEntryGroupEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16InitialEntryGroupEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "IE_MSG_ONLY")]
@@ -2778,8 +2758,7 @@ pub enum CommLink16InitialEntryGroupEnum {
 }
 
 #[doc = r#"Used to indicate the Link 16 Interference Protection Mode. Used to set the interference protection adaptation feature.  The options for Interference protection are Full EMC Protection 100/50, Exercise EMC Protection, Combat EMC Protection, Full EMC Protection 100/20.  Transiting between the states may invoke a system restart."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_InterferenceProtModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16InterferenceProtModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "FULL_EMC_100_50")]
@@ -2796,8 +2775,7 @@ pub enum CommLink16InterferenceProtModeEnum {
 }
 
 #[doc = r#"Used to indicate the Link 16 PPLI Pool. This defines whether the PPLI and Status pool selection is set to Pool (A+B) or Pool B.  This is used to filter which terminals see other terminals location information."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_PPLI_PoolEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16PpliPoolEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "A_B_POOLS")]
@@ -2808,8 +2786,7 @@ pub enum CommLink16PpliPoolEnum {
 }
 
 #[doc = r#"Used to indicate the Link 16 Range Mode."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_RangeModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16RangeModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NORMAL")]
@@ -2820,8 +2797,7 @@ pub enum CommLink16RangeModeEnum {
 }
 
 #[doc = r#"Used to indicate the Link 16 Transmit Antenna Mode. When a platform is using more than one antenna port the Global Transmit Antenna parameter must be set to Mixed which enables the use of this field.   This field when used to indicate if the system is transmitting for both antenna ports, just Antenna port A, just Antenna port B or is not used."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_TransmitAntennaEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16TransmitAntennaEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "BOTH")]
@@ -2838,8 +2814,7 @@ pub enum CommLink16TransmitAntennaEnum {
 }
 
 #[doc = r#"Used to indicate the Link 16 Transmit Mode. This is an adaptable parameter that will not be used when the terminal is in a long term transmission inhibit or a Terminal State of TACAN only.  Allowable modes include Normal, Polling, TDMA Silent, Conditional Radio Silence, Not Used and Reserved."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_TransmitModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16TransmitModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NORMAL")]
@@ -2856,8 +2831,7 @@ pub enum CommLink16TransmitModeEnum {
 }
 
 #[doc = r#"This is an adaptable parameter that is used for messages transmitted on the designated Participant Group (PG) when unspecified by the Host.  The options for this parameter are No statement (defaults to the Terminal packing limit), Standard Message Only, Packed-2 Double Pulse, Packed-2 Single Pulse, or Packed -4."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_TxPackingLimitEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16TxPackingLimitEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -2877,8 +2851,7 @@ pub enum CommLink16TxPackingLimitEnum {
 }
 
 #[doc = r#"This is an adaptable parameter that is used to set output power for each participant group that has a transmit time slot.  The options for this parameter are normal power, low power, medium power, high power (HPA), and low power (HPA)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommLink16_TxPowerSelectionEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommLink16TxPowerSelectionEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NORMAL")]
@@ -2901,7 +2874,7 @@ pub enum CommLink16TxPowerSelectionEnum {
 }
 
 #[doc = r#"Describes the mode of the communications type emitter. Based on MIL-STD-6016 DFI/DUI 425/003 and 426/003."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "UNKNOWN")]
@@ -2939,7 +2912,7 @@ pub enum CommModeEnum {
 }
 
 #[doc = r#"This identifies the Modulation type for a Waveform instance."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommModulationTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "PSK")]
@@ -2974,7 +2947,7 @@ pub enum CommModulationTypeEnum {
 }
 
 #[doc = r#"Indicates the directionality of comm pointing."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommPointingDirectionalityEnum {
 	#[doc = r#"Indicates comm pointing from provider to user."#]
 	#[serde(rename = "PROVIDER_TO_USER")]
@@ -2985,7 +2958,7 @@ pub enum CommPointingDirectionalityEnum {
 }
 
 #[doc = r#"Indicates the method by which a communications beam/antenna is pointed."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommPointingEnum {
 	#[doc = r#"Indicates comm pointing towards a fixed geospatial location."#]
 	#[serde(rename = "LOCATION")]
@@ -3002,7 +2975,7 @@ pub enum CommPointingEnum {
 }
 
 #[doc = r#"Indicates the current status of a communication pointing request."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommPointingRequestEnum {
 	#[doc = r#"Indicates the communication pointing request is new."#]
 	#[serde(rename = "NEW")]
@@ -3025,7 +2998,7 @@ pub enum CommPointingRequestEnum {
 }
 
 #[doc = r#"Indicates the mode that the terminal uses for determining range to the satellite."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommRangeModeTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "ACTIVE")]
@@ -3039,7 +3012,7 @@ pub enum CommRangeModeTypeEnum {
 }
 
 #[doc = r#"Identifies the state of the internal radio receiver."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommReceiverStateEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "OFF")]
@@ -3050,8 +3023,7 @@ pub enum CommReceiverStateEnum {
 }
 
 #[doc = r#"Indicates the current status of a communication scheduling request."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommSATCOM_ServiceTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommSatcomServiceTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "AC")]
@@ -3062,7 +3034,7 @@ pub enum CommSatcomServiceTypeEnum {
 }
 
 #[doc = r#"Indicates how the usage of a communication system is scheduled, where scheduling options vary in specificity.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommSchedulingEnum {
 	#[doc = r#"Indicates that a communication system, as a whole, must be scheduled for use."#]
 	#[serde(rename = "SYSTEM")]
@@ -3085,8 +3057,7 @@ pub enum CommSchedulingEnum {
 }
 
 #[doc = r#"Specifies the types of frequency management provided by the SINCGARS capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CommSINCGARS_FreqModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommSincgarsFreqModeEnum {
 	#[doc = r#"Frequency mode that hops from frequency to frequency as determined by the TRANSEC algorithm."#]
 	#[serde(rename = "FREQUENCY_HOP")]
@@ -3097,7 +3068,7 @@ pub enum CommSincgarsFreqModeEnum {
 }
 
 #[doc = r#"Indicates the different kinds of Comms support."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommSupportEnum {
 	#[doc = r#"Indicates a comms provider that is the controller of a network of nodes and/or uplinks but doesn't directly provide communications for users."#]
 	#[serde(rename = "NETWORK_CONTROLLER")]
@@ -3123,7 +3094,7 @@ pub enum CommSupportEnum {
 }
 
 #[doc = r#"Indicates a message that is an output of the Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommSupportMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated CommSupportActivity message."#]
 	#[serde(rename = "COMM_SUPPORT_ACTIVITY")]
@@ -3134,7 +3105,7 @@ pub enum CommSupportMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates the overall operating state of communications support."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommSupportStateEnum {
 	#[doc = r#"Indicates the communications support is turned off."#]
 	#[serde(rename = "TURNOFF")]
@@ -3160,7 +3131,7 @@ pub enum CommSupportStateEnum {
 }
 
 #[doc = r#"This identifies the state of the CommTerminalPlan in regards to activation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommTerminalPlanActivationStateEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "APPROVED")]
@@ -3183,7 +3154,7 @@ pub enum CommTerminalPlanActivationStateEnum {
 }
 
 #[doc = r#"This identifies the state of the CommTerminalPlan's approval in regards to activation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommTerminalPlanApprovalStatusEnum {
 	#[doc = r#"The CommTerminalPlan has been proposed and is pending approval."#]
 	#[serde(rename = "PROPOSED_COMM_TERMINAL_PLAN")]
@@ -3197,7 +3168,7 @@ pub enum CommTerminalPlanApprovalStatusEnum {
 }
 
 #[doc = r#"Identifies the state of the internal radio transmitter."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommTransmitterStateEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "OFF")]
@@ -3211,7 +3182,7 @@ pub enum CommTransmitterStateEnum {
 }
 
 #[doc = r#"Indicates the state of the associated command."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommandProcessingStateEnum {
 	#[doc = r#"Indicates a [NEW] Command has been received and the Subsystem or Service is determining if it can perform the Command.  An [UPDATE] Command can be received in this state which will modify the command parameters."#]
 	#[serde(rename = "RECEIVED")]
@@ -3228,7 +3199,7 @@ pub enum CommandProcessingStateEnum {
 }
 
 #[doc = r#"Indicates whether an instance of a message is new, an update to an existing message/object or a request/command to remove the message/object from the network."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommandStateEnum {
 	#[doc = r#"Indicates that the command message is new to the network."#]
 	#[serde(rename = "NEW")]
@@ -3242,7 +3213,7 @@ pub enum CommandStateEnum {
 }
 
 #[doc = r#"Indicates a message that is an output of the Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommandedTimelineMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "COMMANDED_TIMELINE_ACTIVITY")]
@@ -3259,7 +3230,7 @@ pub enum CommandedTimelineMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates which scans the system is supporting (AzEl, ECEF,LLA)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommandedTimelineScanSupportEnum {
 	#[doc = r#"Indicates a system is supporting an Azimuth, Elevation scan."#]
 	#[serde(rename = "AZ_EL")]
@@ -3273,7 +3244,7 @@ pub enum CommandedTimelineScanSupportEnum {
 }
 
 #[doc = r#"Indicates the communications component that is causing the platform to be less than fully operational.  Enumeration values list the various frequency bands and modulation levels that could have an impairment."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CommunicationsImpairmentEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_REPORT")]
@@ -3302,7 +3273,7 @@ pub enum CommunicationsImpairmentEnum {
 }
 
 #[doc = r#"Indicates how the component or associated item is dynamically controlled, such as whether it's self-controlled or manually controlled via varying capability messages.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComponentControlInterfacesEnum {
 	#[doc = r#"Indicates the Component or associated data item uses non-UCI controls for initiation; the Component is automatically/self-controlled according to its built-in design possibly with tailoring from a MDF.  The Component may use or depend on UCI data inputs to support and/or trigger behaviors."#]
 	#[serde(rename = "AUTO")]
@@ -3319,7 +3290,7 @@ pub enum ComponentControlInterfacesEnum {
 }
 
 #[doc = r#"Indicates the state a component element that may not be part of a Subsystem.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComponentElementStateEnum {
 	#[doc = r#"Indicates this component state is unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -3372,7 +3343,7 @@ pub enum ComponentElementStateEnum {
 }
 
 #[doc = r#"Indicates the setting of the associated command."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComponentSettingEnum {
 	#[doc = r#"Indicates the settings for a component will be specified by a Parameter or list of Parameters."#]
 	#[serde(rename = "PARAMETER")]
@@ -3398,7 +3369,7 @@ pub enum ComponentSettingEnum {
 }
 
 #[doc = r#"Indicates an accepted state command for the Component.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComponentStateCommandEnum {
 	#[doc = r#"Indicates the commanded component state should be disabled."#]
 	#[serde(rename = "DISABLE")]
@@ -3412,7 +3383,7 @@ pub enum ComponentStateCommandEnum {
 }
 
 #[doc = r#"Indicates the state of the Component.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComponentStateEnum {
 	#[doc = r#"Indicates this subsystem component state is unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -3441,7 +3412,7 @@ pub enum ComponentStateEnum {
 }
 
 #[doc = r#"Indicates the type of ComponentStatus being requested.   See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComponentStatusRequestEnum {
 	#[doc = r#"Indicates a request for all component status information."#]
 	#[serde(rename = "ALL")]
@@ -3461,7 +3432,7 @@ pub enum ComponentStatusRequestEnum {
 }
 
 #[doc = r#"Indicates the type of the Subsystem Component.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ComponentTypeEnum {
 	#[doc = r#"Indicates this subsystem component is logical.  This may be a non-tangible piece of the Subsystem like software or firmware, or a higher level abstraction that groups together multiple pieces of the Subsystem."#]
 	#[serde(rename = "LOGICAL")]
@@ -3472,7 +3443,7 @@ pub enum ComponentTypeEnum {
 }
 
 #[doc = r#"Provides an indication of confidence level."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ConfidenceLevelEnum {
 	#[doc = r#"Indicates a confidence level of near certainty."#]
 	#[serde(rename = "CONFIRMED")]
@@ -3492,7 +3463,7 @@ pub enum ConfidenceLevelEnum {
 }
 
 #[doc = r#"Indicates whether a conflict is still affecting the conflicted system or has been resolved."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ConflictStateEnum {
 	#[doc = r#"This value indicates that the conflict is currently affecting the conflicted system."#]
 	#[serde(rename = "CONFLICTED")]
@@ -3503,7 +3474,7 @@ pub enum ConflictStateEnum {
 }
 
 #[doc = r#"The Link 16 Status from MIL-STD-6016 DFI 1625 DUI 005."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ConnectionStatusEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -3526,7 +3497,7 @@ pub enum ConnectionStatusEnum {
 }
 
 #[doc = r#"Indicates the state of consent of the item."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ConsentEnum {
 	#[doc = r#"Indicates initial state of the item preceding other states."#]
 	#[serde(rename = "INITIAL")]
@@ -3543,7 +3514,7 @@ pub enum ConsentEnum {
 }
 
 #[doc = r#"Indicates how a Plan incorporates a same-System constraining Plan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ConstrainedPlanIncorporationEnum {
 	#[doc = r#"Indicates a Plan provided as a constraint will be wholly included in the Plan (of the same type) being created, except for added, modified or deleted parts."#]
 	#[serde(rename = "WHOLE_REPLACEMENT")]
@@ -3557,7 +3528,7 @@ pub enum ConstrainedPlanIncorporationEnum {
 }
 
 #[doc = r#"Indicates categories of message sets used for System control."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ControlInterfaceEnum {
 	#[doc = r#"Indicates *Plan messages as an interface.  A System that supports *Plan messages as an interface can take an externally created *Plan as input.  In other words, the System can potentially activate and execute a *Plan that it didn't create itself."#]
 	#[serde(rename = "PLAN")]
@@ -3574,7 +3545,7 @@ pub enum ControlInterfaceEnum {
 }
 
 #[doc = r#"Indicates whether to acquire or release control."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ControlRequestEnum {
 	#[doc = r#"Indicates control is to be acquired with the approval from the current Controller."#]
 	#[serde(rename = "ACQUIRE")]
@@ -3588,7 +3559,7 @@ pub enum ControlRequestEnum {
 }
 
 #[doc = r#"This type establishes the high level forms of control allowed by UCI.   Systems have mission control.  Capabilities have primary, secondary and automated manager service control.  A Capability that supports primary/secondary/manager control accepts and adheres to the ControlSourcesCommand and ControlInterfacesCommand messages (which dictate which Systems/Services are approved sources of Capability C2 messages such as [Capability]Command and [Capability]SettingsCommand)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ControlTypeEnum {
 	#[doc = r#"Indicates mission control of a System.  A System can have only one mission controller at a time.  A System that supports UCI mission control can be tasked to perform a mission via the UCI Task, MissionPlanCommand and/or MissionPlan messages and their associated messages."#]
 	#[serde(rename = "MISSION")]
@@ -3605,7 +3576,7 @@ pub enum ControlTypeEnum {
 }
 
 #[doc = r#"The kind of risk to the execution of the coordinated Requirement set."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CoordinationRiskEnum {
 	#[doc = r#"Risk that a dependent Requirement may be executed too early."#]
 	#[serde(rename = "DEPENDENT_REQUIREMENT_EARLY")]
@@ -3628,7 +3599,7 @@ pub enum CoordinationRiskEnum {
 }
 
 #[doc = r#"Indicates whether the correlation of these objects was performed by a system with C2 responsibility."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CorrelationIndicatorEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NONC2")]
@@ -3638,7 +3609,7 @@ pub enum CorrelationIndicatorEnum {
 }
 
 #[doc = r#"Indicates the first tier in the taxonomy for the CounterSpace Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CounterSpaceCapabilityEnum {
 	#[doc = r#"Indicates a Counter Space Capability."#]
 	#[serde(rename = "COUNTER_SPACE")]
@@ -3646,7 +3617,7 @@ pub enum CounterSpaceCapabilityEnum {
 }
 
 #[doc = r#"Categories for CounterSpace forces."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CounterSpaceKindEnum {
 	#[doc = r#"Electronic Attack."#]
 	#[serde(rename = "EA")]
@@ -3663,7 +3634,7 @@ pub enum CounterSpaceKindEnum {
 }
 
 #[doc = r#"CounterSpace system postures."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CounterSpacePostureEnum {
 	#[doc = r#"Time to transition from posture 3 to posture 2."#]
 	#[serde(rename = "POSTURE_CONVERT_TIME_3_TO_2")]
@@ -3683,7 +3654,7 @@ pub enum CounterSpacePostureEnum {
 }
 
 #[doc = r#"Type of antenna pointing."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CounterSpaceSensorPointingEnum {
 	#[doc = r#"No sensor pointing."#]
 	#[serde(rename = "NO_POINTING")]
@@ -3700,7 +3671,7 @@ pub enum CounterSpaceSensorPointingEnum {
 }
 
 #[doc = r#"Name of the item being tracked.  Only valid if SensorPointing=TargetTrack or TargetFix."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CounterSpaceSensorTargetingEnum {
 	#[doc = r#"Automatic tracking on a target/signal."#]
 	#[serde(rename = "AUTO_TRACKING")]
@@ -3711,7 +3682,7 @@ pub enum CounterSpaceSensorTargetingEnum {
 }
 
 #[doc = r#"Type of sensor."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CounterSpaceSensorTypeEnum {
 	#[doc = r#"Conical antenna sensor."#]
 	#[serde(rename = "CONICAL")]
@@ -3725,7 +3696,7 @@ pub enum CounterSpaceSensorTypeEnum {
 }
 
 #[doc = r#"Specifies what terms in the covariance matrix are being represented. The terms are provided in order of appearance in the lower triangular half of the matrix from element 1,1 (item 1) through the last element used in the correction. The diagonal terms are the variances of the solution parameter, and the off-diagonal terms are the covariances."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CovarianceMatrixCategoryEnum {
 	#[doc = r#"A 6x6 symmetric matrix consisting of 21 values, where terms 1-6 represent the following equinoctial elements of the solution parameter:
 						Af -- Equinoctial (f) Component of Apsidal Vector
@@ -3768,7 +3739,7 @@ pub enum CovarianceMatrixCategoryEnum {
 }
 
 #[doc = r#"Indicates whether the Capability should provide Full Coverage or best effort should be made to cover the frequency range Commanded."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CoverageEffortEnum {
 	#[doc = r#"Capability and allocated resources may cover the commanded frequency to the best of its abilities within the trade space."#]
 	#[serde(rename = "BEST_EFFORT")]
@@ -3779,8 +3750,7 @@ pub enum CoverageEffortEnum {
 }
 
 #[doc = r#"Indicate odd or even Compact Position Report (CPR)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CPR_FormatEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CprFormatEnum {
 	#[doc = r#"Odd CPR."#]
 	#[serde(rename = "ODD")]
@@ -3791,7 +3761,7 @@ pub enum CprFormatEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the CrashService."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CrashServiceEnum {
 	#[doc = r#"Indicates full crash service support is available."#]
 	#[serde(rename = "FULL")]
@@ -3805,7 +3775,7 @@ pub enum CrashServiceEnum {
 }
 
 #[doc = r#"Indicates the type of source that originally created the associated File, regardless of how/by-whom/when it was introduced to a UCI network."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CreationSourceEnum {
 	#[doc = r#"Indicates the item was imported from an external location."#]
 	#[serde(rename = "EXTERNAL")]
@@ -3828,8 +3798,7 @@ pub enum CreationSourceEnum {
 }
 
 #[doc = r#"Options for enabling or disabling DS101 operations."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CryptoDS101_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoDs101Enum {
 	#[doc = r#"Specifies to enable DS101 operations."#]
 	#[serde(rename = "ENABLE")]
@@ -3840,7 +3809,7 @@ pub enum CryptoDs101Enum {
 }
 
 #[doc = r#"Identifies the status of the key for this slot."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoKeyStatusEnum {
 	#[doc = r#"Specifies this slot is zeroized or contains no key."#]
 	#[serde(rename = "ZEROIZED")]
@@ -3851,7 +3820,7 @@ pub enum CryptoKeyStatusEnum {
 }
 
 #[doc = r#"Valid load state values. Not active covers the static case where no keys were recently loaded, being loaded or planned to load."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoLoadStateEnum {
 	#[doc = r#"Specifies that a key load is not active. Also covers the static case where no keys were recently loaded, being loaded, or planned to load."#]
 	#[serde(rename = "NOT_ACTIVE")]
@@ -3868,7 +3837,7 @@ pub enum CryptoLoadStateEnum {
 }
 
 #[doc = r#"Valid of crypto load operations."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoLoadTypeEnum {
 	#[doc = r#"Specifies that keys will be loaded using a file."#]
 	#[serde(rename = "FILE_BASED")]
@@ -3882,8 +3851,7 @@ pub enum CryptoLoadTypeEnum {
 }
 
 #[doc = r#"Options for receiving or transmitting key material over the air."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CryptoOTAM_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoOtamEnum {
 	#[doc = r#"Specifies key material will be received over the air."#]
 	#[serde(rename = "RECEIVE")]
@@ -3894,7 +3862,7 @@ pub enum CryptoOtamEnum {
 }
 
 #[doc = r#"Options for a rollover action; immediate rollover, scheduled rollover, or cancel a pending rollover."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoRolloverActionEnum {
 	#[doc = r#"Command a rollover action immediately."#]
 	#[serde(rename = "IMMEDIATE")]
@@ -3908,7 +3876,7 @@ pub enum CryptoRolloverActionEnum {
 }
 
 #[doc = r#"Identifies the method in which the crypto keys are rolled."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoRolloverMethodEnum {
 	#[doc = r#"Specifies crypto key rollover is controlled by the operator."#]
 	#[serde(rename = "OP_CONTROLLED")]
@@ -3928,7 +3896,7 @@ pub enum CryptoRolloverMethodEnum {
 }
 
 #[doc = r#"Valid rollover state values. Not scheduled covers all cases where no rollover state is known or planned."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoRolloverStateEnum {
 	#[doc = r#"Indicates there is no rollover currently scheduled."#]
 	#[serde(rename = "NOT_SCHEDULED")]
@@ -3945,7 +3913,7 @@ pub enum CryptoRolloverStateEnum {
 }
 
 #[doc = r#"Valid states for a crypto group."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoSlotGroupStateEnum {
 	#[doc = r#"Indicates the crypto group is uninitialized or all slots are zeroized and not ready to process requests."#]
 	#[serde(rename = "UNINITIALIZED")]
@@ -3962,7 +3930,7 @@ pub enum CryptoSlotGroupStateEnum {
 }
 
 #[doc = r#"Indicates the first tier in the taxonomy of the Crypto Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CryptoTypeEnum {
 	#[doc = r#"Specifies crypto is AES type."#]
 	#[serde(rename = "AES")]
@@ -4024,8 +3992,7 @@ pub enum CryptoTypeEnum {
 }
 
 #[doc = r#"This enumeration specifies the status descriptors for CSO events."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CSO_StateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CsoStateEnum {
 	#[doc = r#"Geometry conditions suggest an event is possible."#]
 	#[serde(rename = "DETECTED")]
@@ -4060,8 +4027,7 @@ pub enum CsoStateEnum {
 }
 
 #[doc = r#"States used when establishing a common time reference on a JREAP network."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CTR_StateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CtrStateEnum {
 	#[doc = r#"The JREAP node is gathering information about the time reference capabilities of other JREAP nodes, and is trying to decide what time reference to propose."#]
 	#[serde(rename = "LISTENING")]
@@ -4078,8 +4044,7 @@ pub enum CtrStateEnum {
 }
 
 #[doc = r#"(U) All currently valid CUI Basic markings from the National Archives. This enum is used by CUI_Basic. PERMISSIBLE VALUES The permissible values for this simple type are defined in the Controlled Value Enumeration: CVEnumISMCUIBasic.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CUI_BasicEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CuiBasicEnum {
 	#[doc = r#"Administrative Proceedings. Adjudication of agency-related matters including, but not limited to, dispute resolution, settlements, and issuances of orders."#]
 	#[serde(rename = "ADPO")]
@@ -4392,8 +4357,7 @@ pub enum CuiBasicEnum {
 }
 
 #[doc = r#"(U) All currently valid CUI Specified markings from the National Archives. This enum is used by CUI_Specified. PERMISSIBLE VALUES The permissible values for this simple type are defined in the Controlled Value Enumeration: CVEnumISMCUISpecified.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "CUI_SpecifiedEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CuiSpecifiedEnum {
 	#[doc = r#"Accident Investigation. Related to information obtained during the course of an accident or incident investigation.  Including but not limited to information related to wreckage, records, mail, or cargo."#]
 	#[serde(rename = "AIV")]
@@ -4573,7 +4537,7 @@ pub enum CuiSpecifiedEnum {
 }
 
 #[doc = r#"Indicates a form of offensive (OCO) or defensive (DCO) cyber operation that implements the Capability.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum CyberTypeEnum {
 	#[doc = r#"Indicates a capability for advanced persistent threat (APT); a nation-state or sophisticated cyber threat."#]
 	#[serde(rename = "APT")]
@@ -4628,7 +4592,7 @@ pub enum CyberTypeEnum {
 }
 
 #[doc = r#"Indicates the type of damage being reported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DamageCategoryEnum {
 	#[doc = r#"Indicates the damage is categorized as battle damage."#]
 	#[serde(rename = "BATTLE")]
@@ -4639,7 +4603,7 @@ pub enum DamageCategoryEnum {
 }
 
 #[doc = r#"DamageCause enumeration is derived from ADatP-3."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DamageCauseEnum {
 	#[doc = r#"Indicates damage from a bomb."#]
 	#[serde(rename = "BOMB")]
@@ -4707,7 +4671,7 @@ pub enum DamageCauseEnum {
 }
 
 #[doc = r#"Enumeration is derived from ATP-47."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DamageConfidenceEnum {
 	#[doc = r#"Visually or otherwise assured through another source with near (99%) certainty and with no interference involved."#]
 	#[serde(rename = "CONFIRMED")]
@@ -4721,7 +4685,7 @@ pub enum DamageConfidenceEnum {
 }
 
 #[doc = r#"Lists the possible content categories in a damage estimate."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DamageEstimateContentsEnum {
 	#[doc = r#"Damage estimate is to include damage details summarized by the specific object instance."#]
 	#[serde(rename = "OBJECT_INSTANCE")]
@@ -4735,7 +4699,7 @@ pub enum DamageEstimateContentsEnum {
 }
 
 #[doc = r#"Enumeration is derived from ATP-47."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DamageLevelEnum {
 	#[doc = r#"Target is undamaged or has sustained damage to critical element or elements causing no decrease in normal functional capability. The target is fully operational or capable of action (e.g., mission ready). This damage level does not require recuperation or replacement times."#]
 	#[serde(rename = "NO_FUNCTIONAL_DAMAGE")]
@@ -4755,7 +4719,7 @@ pub enum DamageLevelEnum {
 }
 
 #[doc = r#"Indicates the method used to perform a damage observation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DamageObservationEnum {
 	#[doc = r#"Indicates radar-based observation methods."#]
 	#[serde(rename = "RADAR")]
@@ -4793,7 +4757,7 @@ pub enum DamageObservationEnum {
 }
 
 #[doc = r#"Significance enumeration is derived from ADatP-3."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DamageSignificanceEnum {
 	#[doc = r#"Damage is estimated to be significant on a global level."#]
 	#[serde(rename = "GLOBAL")]
@@ -4810,7 +4774,7 @@ pub enum DamageSignificanceEnum {
 }
 
 #[doc = r#"Indicates a damaged function of the object."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DamagedFunctionEnum {
 	#[doc = r#"Damage that causes the weapon to be ineffective and is not repairable by the crew on the battlefield.  The damage is assumed to occur instantaneously."#]
 	#[serde(rename = "FIRE_POWER_KILL")]
@@ -4845,7 +4809,7 @@ pub enum DamagedFunctionEnum {
 }
 
 #[doc = r#"This identifies the state of the Data Plan in regards to activation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DataPlanActivationStateEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "APPROVED")]
@@ -4868,7 +4832,7 @@ pub enum DataPlanActivationStateEnum {
 }
 
 #[doc = r#"This identifies the state of the Data Plan's approval in regards to activation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DataPlanApprovalStatusEnum {
 	#[doc = r#"The Data Plan has been proposed and is pending approval."#]
 	#[serde(rename = "PROPOSED_DATA_PLAN")]
@@ -4882,7 +4846,7 @@ pub enum DataPlanApprovalStatusEnum {
 }
 
 #[doc = r#"Ability to alter the state of the Data Store by either adding or removing."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DataStoreActionEnum {
 	#[doc = r#"Threat is added to list of targets."#]
 	#[serde(rename = "ADD")]
@@ -4893,7 +4857,7 @@ pub enum DataStoreActionEnum {
 }
 
 #[doc = r#"The type of data being requested in a DataUpdateRequest message."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DataUpdateRequestCategoryEnum {
 	#[doc = r#"Request retransmission of all lines and areas by the receiving unit."#]
 	#[serde(rename = "LINE_AREA")]
@@ -4913,7 +4877,7 @@ pub enum DataUpdateRequestCategoryEnum {
 }
 
 #[doc = r#"Generic Control Status enumeration."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DatalinkControlStatusEnum {
 	#[doc = r#"No indication held regarding Link  control status."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -4927,8 +4891,7 @@ pub enum DatalinkControlStatusEnum {
 }
 
 #[doc = r#"This type establishes the first tier in the taxonomy of the Directed Energy (DE) category of Capabilities. For DE, the first tier is an indication of the operational purpose or supported use case. See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "DE_CapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DeCapabilityEnum {
 	#[doc = r#"Indicates a Capability to act as a Beacon Illuminator Laser (BIL)."#]
 	#[serde(rename = "BEACON_ILLUMINATOR_LASER")]
@@ -4972,8 +4935,7 @@ pub enum DeCapabilityEnum {
 }
 
 #[doc = r#"Allowable mechanisms for DE message outputs."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "DE_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DeMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message. For example, the DE_Activity message for a DE Capability."#]
 	#[serde(rename = "DE_ACTIVITY")]
@@ -4981,8 +4943,7 @@ pub enum DeMessageOutputsEnum {
 }
 
 #[doc = r#"This type establishes the Directed Energy (DE) Capability's ability to operate in automatic, semi-automatic, or manual mode.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "DE_SubCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DeSubCapabilityEnum {
 	#[doc = r#"Indicates a Capability can operate in a fully automatic mode."#]
 	#[serde(rename = "AUTO")]
@@ -5001,7 +4962,7 @@ pub enum DeSubCapabilityEnum {
 						 The permissible values for this simple type are defined in the Controlled Value Enumeration:
 
 						 CVEnumISM25X.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DeclassExceptionEnum {
 	#[doc = r#"When using a source document that contains portions of Restricted Data (RD) or Formerly Restricted Data (FRD) where the RD/FRD source document(s) do not have declassification instructions, the derivatively classified document shall not contain a declassification date or event on the Declassify On line. The following shall be annotated on the Declassify On line: "Not Applicable or (N/A) to RD/FRD portions" and "See source list for NSI portions" separated by a period. The source list must include the declassification instruction for each of the source documents classified under E.O. 13526 and shall not appear in the classification authority block"#]
 	#[serde(rename = "AEA")]
@@ -5062,7 +5023,7 @@ pub enum DeclassExceptionEnum {
 }
 
 #[doc = r#"Defensive Jammer System Status enumeration from MIL-STD-6016 DFI 1665 DUI 050."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DefensiveJammerSystemStatusEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "TRANSMIT")]
@@ -5082,7 +5043,7 @@ pub enum DefensiveJammerSystemStatusEnum {
 }
 
 #[doc = r#"Defensive Jammer System Type enumeration from MIL-STD-6016 DFI 1934 DUI 002."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DefensiveJammerSystemTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "INTERNAL_RF")]
@@ -5093,7 +5054,7 @@ pub enum DefensiveJammerSystemTypeEnum {
 }
 
 #[doc = r#"Indicates associations/constraints between Requirement objects."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DependentRequirementObjectEnum {
 	#[doc = r#"Indicates an association/constraint from the target of the Requirement to the System allocated to execute the Requirement."#]
 	#[serde(rename = "TARGET_OBJECT_TO_ALLOCATED_SYSTEM")]
@@ -5125,7 +5086,7 @@ pub enum DependentRequirementObjectEnum {
 }
 
 #[doc = r#"Expresses depth by description of horizontal planes at or below Mean Sea Level (MSL)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DepthContactEnum {
 	#[doc = r#"No data for this field was sent in the message."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -5154,7 +5115,7 @@ pub enum DepthContactEnum {
 }
 
 #[doc = r#"Denotes whether the designated location of interest is a target or not."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DesignationEnum {
 	#[doc = r#"Indicates the designated location of interest is a target."#]
 	#[serde(rename = "DESIGNATED_TARGET")]
@@ -5165,7 +5126,7 @@ pub enum DesignationEnum {
 }
 
 #[doc = r#"Denotes whether the defined destination is on a network that is internal to the system or external."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DestinationCategoryEnum {
 	#[doc = r#"Indicates the destination is internal to the system."#]
 	#[serde(rename = "INTERNAL")]
@@ -5176,7 +5137,7 @@ pub enum DestinationCategoryEnum {
 }
 
 #[doc = r#"Detect and Avoid."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DetectAndAvoidEnum {
 	#[doc = r#"No RWC capability, or RWC can't receive TCAS Resolution Messages or ADS-B OCMs."#]
 	#[serde(rename = "NO_RWC")]
@@ -5190,7 +5151,7 @@ pub enum DetectAndAvoidEnum {
 }
 
 #[doc = r#"An enumeration of the effects experienced that may indicate a system is being jammed. See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DetectedJammingEffectEnum {
 	#[doc = r#"Replies exceed signal processing memory size."#]
 	#[serde(rename = "MEMORY_SIZE_EXCEEDED")]
@@ -5213,8 +5174,7 @@ pub enum DetectedJammingEffectEnum {
 }
 
 #[doc = r#"The type of direction finding capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "DF_ModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DfModeEnum {
 	#[doc = r#"Indicates no location processing."#]
 	#[serde(rename = "NONE")]
@@ -5236,7 +5196,7 @@ pub enum DfModeEnum {
 						 The permissible values for this simple type are defined in the Controlled Value Enumeration:
 
 						 CVEnumISMDissem.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DisseminationControlsEnum {
 	#[doc = r#"RISK SENSITIVE"#]
 	#[serde(rename = "RS")]
@@ -5307,7 +5267,7 @@ pub enum DisseminationControlsEnum {
 }
 
 #[doc = r#"Indicates the state of a product's dissemination."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DisseminationStatusEnum {
 	#[doc = r#"If none of the products have begun disseminating then the RequestStatus would be QUEUED."#]
 	#[serde(rename = "QUEUED")]
@@ -5327,8 +5287,7 @@ pub enum DisseminationStatusEnum {
 }
 
 #[doc = r#"Indicates the DLZ relation of staple or amoeba."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "DLZ_RelationEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DlzRelationEnum {
 	#[doc = r#"Defines the staple of the DLZ."#]
 	#[serde(rename = "DLZ_STAPLE")]
@@ -5339,8 +5298,7 @@ pub enum DlzRelationEnum {
 }
 
 #[doc = r#"Indicates the state of the DMPI.  This can be a rollup of the DMPI_StoreStateEnum in the sense that the store state will influence the state of the DMPI but it is not exclusively a rollup.   For example, the DMPI states of PROPOSED, UNALLOCATED, ALLOCATED, DROPPED, and CANCELED are used as part of mission management but are not related to weapon state.  A DMPI can be in the ALLOCATED state even if no weapons have been assigned to the DMPI (no weapons available on the platform).  If a single weapon fails to release or the DMPI fails for some other reason (door failed to open) the DMPI state will be FAILED."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "DMPI_StateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DmpiStateEnum {
 	#[doc = r#"Indicates the DMPI has been proposed to an allocation service or to be assigned to a task."#]
 	#[serde(rename = "PROPOSED")]
@@ -5375,8 +5333,7 @@ pub enum DmpiStateEnum {
 }
 
 #[doc = r#"Indicates the state of the DMPI."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "DMPI_StoreStateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DmpiStoreStateEnum {
 	#[doc = r#"Indicates the DMPI is not currently allocated to a weapon."#]
 	#[serde(rename = "UNALLOCATED")]
@@ -5399,7 +5356,7 @@ pub enum DmpiStoreStateEnum {
 }
 
 #[doc = r#"Indicates the commanded state of the weapon door."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DoorCommandEnum {
 	#[doc = r#"Indicates the weapon door is being commanded to open."#]
 	#[serde(rename = "OPEN")]
@@ -5410,7 +5367,7 @@ pub enum DoorCommandEnum {
 }
 
 #[doc = r#"Indicates the state of the weapon door."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DoorStateEnum {
 	#[doc = r#"Indicates the weapon door is closed."#]
 	#[serde(rename = "CLOSED")]
@@ -5430,7 +5387,7 @@ pub enum DoorStateEnum {
 }
 
 #[doc = r#"Indicates whether the new activity should be allowed to interrupt in-work activities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DownloadPriorityEnum {
 	#[doc = r#"In-work activities of a lower rank should be interrupted in order to immediately commence new activity."#]
 	#[serde(rename = "IMMEDIATE")]
@@ -5441,7 +5398,7 @@ pub enum DownloadPriorityEnum {
 }
 
 #[doc = r#"Indicates the type of hose command."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DrogueCommandEnum {
 	#[doc = r#"Extends the hose."#]
 	#[serde(rename = "EXTEND")]
@@ -5458,7 +5415,7 @@ pub enum DrogueCommandEnum {
 }
 
 #[doc = r#"Indicates the type of drop restriction on an entity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DropRestrictionEnum {
 	#[doc = r#"Indicates the track has a bailout condition and may be subject to special processing."#]
 	#[serde(rename = "BAILOUT")]
@@ -5487,8 +5444,7 @@ pub enum DropRestrictionEnum {
 }
 
 #[doc = r#"Indicates the DVR operation to perform."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "DVR_OperationEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DvrOperationEnum {
 	#[doc = r#"Indicates a request to create a new Product that is a shorter clip of an existing video Product."#]
 	#[serde(rename = "CLIP")]
@@ -5505,7 +5461,7 @@ pub enum DvrOperationEnum {
 }
 
 #[doc = r#"The type of Dynamic Image (DI) processing to take place.  FAST represents processing DI segments in Azimuth, SLOW is processing along the Range."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum DynamicImageProcessingEnum {
 	#[doc = r#"Represents processing Dynamic Image segments in Azimuth."#]
 	#[serde(rename = "FAST")]
@@ -5516,8 +5472,7 @@ pub enum DynamicImageProcessingEnum {
 }
 
 #[doc = r#"This type indicates how an EA Capability is activated.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EA_ActivationEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EaActivationEnum {
 	#[doc = r#"Indicates an EA Capability that initiates jamming against a target even if it isn't emitting; jamming can be initiated without first detecting emissions from the targeted emitter."#]
 	#[serde(rename = "PREEMPTIVE")]
@@ -5528,8 +5483,7 @@ pub enum EaActivationEnum {
 }
 
 #[doc = r#"This enumerated type is a placeholder for a standardized enumeration defined by the specific program implementation. If program specific enumerated type is CLASSIFIED, then the documentation defining the enumerated type will be maintained by the classifying Program, in accordance with that Program's Security Classification Guide (SCG)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EA_IndicatorEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EaIndicatorEnum {
 	#[doc = r#"PROGRAM_SPECIFIC_TYPE_A EA response."#]
 	#[serde(rename = "PROGRAM_SPECIFIC_TYPE_A")]
@@ -5549,8 +5503,7 @@ pub enum EaIndicatorEnum {
 }
 
 #[doc = r#"Indicates a message that is an output of the EA Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EA_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EaMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "EA_ACTIVITY")]
@@ -5558,8 +5511,7 @@ pub enum EaMessageOutputsEnum {
 }
 
 #[doc = r#"General operational mode of a jammer signal. Based on MIL-STD-6016 DFI/DUI 425/003 and 426/003."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EA_ModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EaModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "UNKNOWN")]
@@ -5624,8 +5576,7 @@ pub enum EaModeEnum {
 }
 
 #[doc = r#"Indicates the method by which an EA beam/Activity is directed/pointed in space."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EA_PointingEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EaPointingEnum {
 	#[doc = r#"Indicates EA beam/Activity pointing towards a geospatial location."#]
 	#[serde(rename = "LOCATION")]
@@ -5642,8 +5593,7 @@ pub enum EaPointingEnum {
 }
 
 #[doc = r#"Indicate the type of technique applied to the EA jamming signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EA_TechniqueTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EaTechniqueTypeEnum {
 	#[doc = r#"Indicates that an ASWM technique should be applied to the EA jamming signal."#]
 	#[serde(rename = "ASYNCHRONOUS_SWEPT_WAVE_MODULATION")]
@@ -5705,7 +5655,7 @@ pub enum EaTechniqueTypeEnum {
 }
 
 #[doc = r#"The enumeration of all message output types of Effect Capabilities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EffectMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message. For example, the PO_Activity message for a PO Capability."#]
 	#[serde(rename = "EFFECT_ACTIVITY")]
@@ -5719,7 +5669,7 @@ pub enum EffectMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates the taxonomy of the Effect form of C2 Requirement.  The taxonomy is a combination of effects described in various Joint Publications, training documents for operational planning, etc."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EffectTypeEnum {
 	#[doc = r#"To destroy or kill (troops, for example) by use of firepower."#]
 	#[serde(rename = "ATTRIT")]
@@ -5887,7 +5837,7 @@ pub enum EffectTypeEnum {
 }
 
 #[doc = r#"For an A2A search volume; this enum defines how to interpret the elevation volume center."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ElevationScanStabilizationEnum {
 	#[doc = r#"Indicates the scan center angle for the volume will be held constant relative to the body of the aircraft."#]
 	#[serde(rename = "BODY")]
@@ -5898,7 +5848,7 @@ pub enum ElevationScanStabilizationEnum {
 }
 
 #[doc = r#"Indicates the visibility of the requested point with respect to a location.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ElevationVisibilityEnum {
 	#[doc = r#"Indicates a location is Not visible."#]
 	#[serde(rename = "NOT_VISIBLE")]
@@ -5912,7 +5862,7 @@ pub enum ElevationVisibilityEnum {
 }
 
 #[doc = r#"Indicates the level of emissions allowed."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EmconLevelEnum {
 	#[doc = r#"Specific requirements associated with this level are outside the scope of this schema."#]
 	#[serde(rename = "EMCON_LEVEL_1")]
@@ -5932,7 +5882,7 @@ pub enum EmconLevelEnum {
 }
 
 #[doc = r#"This enum provides additional guidance to Subsystems with both active and passive RF Capabilities to adjudicate between different activities competing for front end timeline; it is used to break ties."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EmissionBalanceEnum {
 	#[doc = r#"Indicates active activities will be given priority."#]
 	#[serde(rename = "ACTIVE")]
@@ -5946,7 +5896,7 @@ pub enum EmissionBalanceEnum {
 }
 
 #[doc = r#"Indicates the urgency of the Entity.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EmitterUrgencyEnum {
 	#[doc = r#"Indicates the Entity is operating with an urgency of immediate."#]
 	#[serde(rename = "IMMEDIATE")]
@@ -5963,7 +5913,7 @@ pub enum EmitterUrgencyEnum {
 }
 
 #[doc = r#"Enable or disable."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EnableDisableEnum {
 	#[doc = r#"Indicates a value of disable."#]
 	#[serde(rename = "DISABLE")]
@@ -5974,7 +5924,7 @@ pub enum EnableDisableEnum {
 }
 
 #[doc = r#"The geographic/orbital domain of operations used for tasking."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EntityBasingEnum {
 	#[doc = r#"Anything between Earth's center and 100 km above Earth surface. For a sensor, identifies a sensor that is hard-locked to a geographic location (or requiring a REALLY big moving effort)."#]
 	#[serde(rename = "FIXED_TERRESTRIAL")]
@@ -6012,7 +5962,7 @@ pub enum EntityBasingEnum {
 }
 
 #[doc = r#"Indicates the policy to be used to drop multiple Entities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EntityDropPolicyEnum {
 	#[doc = r#"Indicates a command to remove all Entities."#]
 	#[serde(rename = "REMOVE_ALL")]
@@ -6026,7 +5976,7 @@ pub enum EntityDropPolicyEnum {
 }
 
 #[doc = r#"Indicates the level of eligibility for automated fusion."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EntityFusionEligibilityEnum {
 	#[doc = r#"Indicates automatic fusion is allowed with any other Entity or Entities."#]
 	#[serde(rename = "FULL")]
@@ -6043,7 +5993,7 @@ pub enum EntityFusionEligibilityEnum {
 }
 
 #[doc = r#"Indicates whether the entity is eligible for automated fusion."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EntityFusionSimpleEligibilityEnum {
 	#[doc = r#"Indicates that the merged Entity is fully eligible for future automated fusion operations including splits from the Entity it was merged with."#]
 	#[serde(rename = "FULL")]
@@ -6054,7 +6004,7 @@ pub enum EntityFusionSimpleEligibilityEnum {
 }
 
 #[doc = r#"Indicates if EntityManagementRequest is a request or an order."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EntityManagementRequestAuthorityEnum {
 	#[doc = r#"REQUEST EntityManagementRequests can be overruled by operators or better source data."#]
 	#[serde(rename = "REQUEST")]
@@ -6065,7 +6015,7 @@ pub enum EntityManagementRequestAuthorityEnum {
 }
 
 #[doc = r#"Provides a list of possible entity sources."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EntitySourceEnum {
 	#[doc = r#"Indicates the Entity is an OB record (Order of Battle) message or other OB-oriented data source that has been promoted to an Entity."#]
 	#[serde(rename = "ORDER_OF_BATTLE")]
@@ -6151,7 +6101,7 @@ pub enum EntitySourceEnum {
 }
 
 #[doc = r#"Indicates the status of an Entity. This includes early status (POTENTIAL, TENTATIVE), active status (CONFIRMED), inactive status (DROP_PENDING), end status (DROPPED, DESTROYED), or unknown status (MISSING, UNKNOWN, GHOST)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EntityStatusEnum {
 	#[doc = r#"Indicates the Entity has been assigned a condition of POTENTIAL."#]
 	#[serde(rename = "POTENTIAL")]
@@ -6183,7 +6133,7 @@ pub enum EntityStatusEnum {
 }
 
 #[doc = r#"Indicates the environment or "domain" of operation. Derived from MIL-STD-6016; see MIL-STD-6016 DFI/DUI 275/004 for additional details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EnvironmentEnum {
 	#[doc = r#"Indicates the Entity is operating in the airborne environment or "domain"."#]
 	#[serde(rename = "AIR")]
@@ -6206,7 +6156,7 @@ pub enum EnvironmentEnum {
 }
 
 #[doc = r#"Indicates from-to pairings of environment or "domain" of operation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EnvironmentPairingEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "AIR_TO_AIR")]
@@ -6355,8 +6305,7 @@ pub enum EnvironmentPairingEnum {
 }
 
 #[doc = r#"Indicates whether the specific Electronic Protection option advertised by the capability has been commanded to be enabled or disabled. See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EP_CommandedStateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EpCommandedStateEnum {
 	#[doc = r#"Indicates the desire for the EP option to be enabled for the associated capability. The actual EP status is reported with the capability status."#]
 	#[serde(rename = "ENABLE")]
@@ -6367,8 +6316,7 @@ pub enum EpCommandedStateEnum {
 }
 
 #[doc = r#"Indicates whether the specific Electronic Protection option is available or unavailable based on current hardware state or software load."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EP_StateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EpStateEnum {
 	#[doc = r#"Indicates that the EP capability is available based on hardware and software configuration."#]
 	#[serde(rename = "AVAILABLE")]
@@ -6379,8 +6327,7 @@ pub enum EpStateEnum {
 }
 
 #[doc = r#"Indicates whether the specific Electronic Protection option is currently enabled or disabled for this capability. See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EP_StatusEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EpStatusEnum {
 	#[doc = r#"Indicates the EP option has been enabled for the associated capability. The EP status is reported with the capability status."#]
 	#[serde(rename = "ENABLED")]
@@ -6391,7 +6338,7 @@ pub enum EpStatusEnum {
 }
 
 #[doc = r#"Indicates whether the ephemeris data is measured or predicted."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EphemerisTypeEnum {
 	#[doc = r#"Indicates the ephemeris data is directly measured, based on observation by a sensor."#]
 	#[serde(rename = "MEASURED")]
@@ -6405,7 +6352,7 @@ pub enum EphemerisTypeEnum {
 }
 
 #[doc = r#"Indicates the logical comparator to use."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EqualityExpressionEnum {
 	#[doc = r#"Indicates the condition is true if the value under test is greater than the reference value."#]
 	#[serde(rename = "GREATER_THAN")]
@@ -6428,7 +6375,7 @@ pub enum EqualityExpressionEnum {
 }
 
 #[doc = r#"Indicates the developmental and operational condition of a piece of equipment."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EquipmentConditionEnum {
 	#[doc = r#"Concept for system was defined, development never started."#]
 	#[serde(rename = "ABANDONED")]
@@ -6457,8 +6404,7 @@ pub enum EquipmentConditionEnum {
 }
 
 #[doc = r#"This type indicates how an ESM MDF Entry is activated.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "ESM_ActivationEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EsmActivationEnum {
 	#[doc = r#"Indicates an ESM Library entry is flagged for use by the applicable SubCapability."#]
 	#[serde(rename = "ACTIVATE")]
@@ -6469,8 +6415,7 @@ pub enum EsmActivationEnum {
 }
 
 #[doc = r#"Indicates the state of this specific ESM dwell.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "ESM_DwellStateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EsmDwellStateEnum {
 	#[doc = r#"Indicates the dwell is enabled.  An enabled dwell may transition between periods of "active" and "inactive" subject to scheduling, resource availability, priority and other constraints.  An enabled dwell won't necessarily detect a signal and/or produce data."#]
 	#[serde(rename = "ENABLED")]
@@ -6499,8 +6444,7 @@ pub enum EsmDwellStateEnum {
 }
 
 #[doc = r#"Indicates the type/purpose of an ESM dwell."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "ESM_DwellTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EsmDwellTypeEnum {
 	#[doc = r#"Original dwell provided in the MDF for acquisition."#]
 	#[serde(rename = "MDF_ACQUISITION")]
@@ -6538,8 +6482,7 @@ pub enum EsmDwellTypeEnum {
 }
 
 #[doc = r#"Allowable mechanisms for ESM message outputs."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "ESM_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EsmMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "ESM_ACTIVITY")]
@@ -6562,8 +6505,7 @@ pub enum EsmMessageOutputsEnum {
 }
 
 #[doc = r#"This type establishes the second tier in the taxonomy of the ESM category of Capabilities.  For ESM, the second tier is a list of general ESM collection types and/or processing.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "ESM_SubCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EsmSubCapabilityEnum {
 	#[doc = r#"Indicates an ESM SubCapability that searches for, acquires and then monitor signals from emitters.  Acquisition can be done based on basic characteristics of a signal such as frequency and PRI or the known signal characteristics of specific emitter types such as an SA-7 whose signal characteristics are described in a MDF."#]
 	#[serde(rename = "ACQUISITION")]
@@ -6604,7 +6546,7 @@ pub enum EsmSubCapabilityEnum {
 }
 
 #[doc = r#"Indicates which message is to be produced as part of an estimation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EstimationMessageEnum {
 	#[doc = r#"Indicates the MissionPlanStatus message is to be produced as part of an estimation."#]
 	#[serde(rename = "MISSION_PLAN_EXECUTION_STATUS")]
@@ -6660,7 +6602,7 @@ pub enum EstimationMessageEnum {
 }
 
 #[doc = r#"An enumeration specifying the significance of the audit event. See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EventSeverityEnum {
 	#[doc = r#"A security event has been detected and significant information or mechanisms have been compromised. The system may no longer be assumed to be operating correctly in support of the security policy. Immediate action is required."#]
 	#[serde(rename = "CRITICAL")]
@@ -6677,8 +6619,7 @@ pub enum EventSeverityEnum {
 }
 
 #[doc = r#"Type of bearing described by the fixed position. Based on MIL-STD-6016 DFI/DUI 382/004."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EW_FixEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EwFixEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "FIX")]
@@ -6689,8 +6630,7 @@ pub enum EwFixEnum {
 }
 
 #[doc = r#"Type of bearing described by the relative position. Based on MIL-STD-6016 DFI/DUI 382/004."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EW_MeasurementEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EwMeasurementEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "ELECTRONIC_ATTACK")]
@@ -6704,8 +6644,7 @@ pub enum EwMeasurementEnum {
 }
 
 #[doc = r#"Type of source for data being reported. Based on MIL-STD-6016 DFI/DUI 1812/001."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EW_ParameterSourceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EwParameterSourceEnum {
 	#[doc = r#"The measured EW source is parametric."#]
 	#[serde(rename = "MEASURED_PARAMETRIC")]
@@ -6728,8 +6667,7 @@ pub enum EwParameterSourceEnum {
 }
 
 #[doc = r#"Indicates if an EW relationship is between different reports of the same emitter or a relationship between different emitters on the same platform."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "EW_RelationshipEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum EwRelationshipEnum {
 	#[doc = r#"Association exists between different emitters that are collocated on the same platform."#]
 	#[serde(rename = "EMITTER_ASSOCIATION")]
@@ -6740,7 +6678,7 @@ pub enum EwRelationshipEnum {
 }
 
 #[doc = r#"A descriptor adding to the standard identity of a track."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ExerciseIdentityEnum {
 	#[doc = r#"A track which has not been subjected to the identification process."#]
 	#[serde(rename = "PENDING")]
@@ -6769,7 +6707,7 @@ pub enum ExerciseIdentityEnum {
 }
 
 #[doc = r#"Indicates the status of an engagement."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ExternalCommandExecutionStateEnum {
 	#[doc = r#"The entity is carrying out its mission or assignment."#]
 	#[serde(rename = "EXECUTING")]
@@ -6834,7 +6772,7 @@ pub enum ExternalCommandExecutionStateEnum {
 }
 
 #[doc = r#"Indicates which external national database has been identified as the source of a data request.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ExternalDataRequestEnum {
 	#[doc = r#"This enumeration is used to specify that the National EOB is requested."#]
 	#[serde(rename = "NATIONAL_EOB")]
@@ -6848,7 +6786,7 @@ pub enum ExternalDataRequestEnum {
 }
 
 #[doc = r#"Indicates guidance for how to proceed when a failure occurs.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FailureGuidanceEnum {
 	#[doc = r#"Indicates guidance to retry if a failure occurs.  For example, for a failed Strike Task, re-strike the target subject to other constraints."#]
 	#[serde(rename = "RETRY")]
@@ -6868,7 +6806,7 @@ pub enum FailureGuidanceEnum {
 }
 
 #[doc = r#"An enumeration specifying the severity of a fault.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FaultSeverityEnum {
 	#[doc = r#"A fault that carries the nominal level indicates that fault does not impact the current mission but may indicate something that should be checked in maintenance.  Faults should be tagged as nominal if they are targeting maintenance.  An example might be air filter hasn't been changed in 5000 hours or queue length reached 60% of max."#]
 	#[serde(rename = "NOMINAL")]
@@ -6885,7 +6823,7 @@ pub enum FaultSeverityEnum {
 }
 
 #[doc = r#"An enumeration specifying the state of a fault.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FaultStateEnum {
 	#[doc = r#"Fault has occurred."#]
 	#[serde(rename = "SET")]
@@ -6899,8 +6837,7 @@ pub enum FaultStateEnum {
 }
 
 #[doc = r#"CVEnumISMCATFGIOpen Values"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "FGI_SourceOpenEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FgiSourceOpenEnum {
 	#[doc = r#"Aruba"#]
 	#[serde(rename = "ABW")]
@@ -7925,8 +7862,7 @@ pub enum FgiSourceOpenEnum {
 }
 
 #[doc = r#"CVEnumISMCATFGIProtected Values"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "FGI_SourceProtectedEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FgiSourceProtectedEnum {
 	#[doc = r#"Foreign Government Information"#]
 	#[serde(rename = "FGI")]
@@ -8951,7 +8887,7 @@ pub enum FgiSourceProtectedEnum {
 }
 
 #[doc = r#"Indicates the type of security declassification or downgrading instructions which apply to the file."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FileDeclassificationEnum {
 	#[doc = r#"Declassify on a specific date."#]
 	#[serde(rename = "DD")]
@@ -8972,7 +8908,7 @@ pub enum FileDeclassificationEnum {
 }
 
 #[doc = r#"Indicates the content of the file."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FileTypeEnum {
 	#[doc = r#"Indicates the product is Airspace Control Order – MIL-STD-6040 – US Message Text Format (MTF)."#]
 	#[serde(rename = "ACO")]
@@ -9084,7 +9020,7 @@ This can include items such as Crew Member Mission Planning Products (CMMPP)."#]
 }
 
 #[doc = r#"Indicates Filtered or Unfiltered."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FilteredUnfilteredEnum {
 	#[doc = r#"Indicates a filtered condition."#]
 	#[serde(rename = "FILTERED")]
@@ -9095,7 +9031,7 @@ pub enum FilteredUnfilteredEnum {
 }
 
 #[doc = r#"Enumeration defining the Gimbal Modes that must be explicitly commanded."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FixedPointingEnum {
 	#[doc = r#"Indicates the gimbal is to stow itself."#]
 	#[serde(rename = "STOW")]
@@ -9109,7 +9045,7 @@ pub enum FixedPointingEnum {
 }
 
 #[doc = r#"Indicates the types of Navigation capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FixedPositionNavigationCapabilityOptionEnum {
 	#[doc = r#"Fixed position navigation destination is to a specific Entity."#]
 	#[serde(rename = "ENTITY_ID")]
@@ -9150,7 +9086,7 @@ pub enum FixedPositionNavigationCapabilityOptionEnum {
 }
 
 #[doc = r#"Indicates the types of Flight capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FlightCapabilityEnum {
 	#[doc = r#"Indicates support for following a specific, "must fly" waypoint sequence."#]
 	#[serde(rename = "MUST_FLY")]
@@ -9161,7 +9097,7 @@ pub enum FlightCapabilityEnum {
 }
 
 #[doc = r#"Enumeration defining the different flight deck status values."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FlightDeckStatusEnum {
 	#[doc = r#"Deck is available for use."#]
 	#[serde(rename = "READY_DECK")]
@@ -9175,7 +9111,7 @@ pub enum FlightDeckStatusEnum {
 }
 
 #[doc = r#"Indicates the category of flight rule."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FlightRuleCategoryEnum {
 	#[doc = r#"Indicates a flight rule associated with the Rx/Tx emission between two or more space objects."#]
 	#[serde(rename = "CAPABILITY_COUPLING")]
@@ -9204,7 +9140,7 @@ pub enum FlightRuleCategoryEnum {
 }
 
 #[doc = r#"Indicates the phase of flight."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FlightStageEnum {
 	#[doc = r#"Indicates that the flight stage is unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -9224,8 +9160,7 @@ pub enum FlightStageEnum {
 }
 
 #[doc = r#"Indicates the frequency modulation on pulse (FMOP) condition for a signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "FMOP_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FmopEnum {
 	#[doc = r#"Indicates an attempt to measure FMOP has been made and linear FMOP was detected."#]
 	#[serde(rename = "LINEAR")]
@@ -9239,7 +9174,7 @@ pub enum FmopEnum {
 }
 
 #[doc = r#"Indicates the offset of a non-uniformity correction of a focal plane array."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FocalPlaneArrayNonUniformityCorrectionOffsetEnum {
 	#[doc = r#"Indicates an offset of one point for non-uniformity correction of a focal plane array."#]
 	#[serde(rename = "ONE_POINT")]
@@ -9256,7 +9191,7 @@ pub enum FocalPlaneArrayNonUniformityCorrectionOffsetEnum {
 }
 
 #[doc = r#"Indicates whether the non-uniformity correction of a focal plane array should use an internal reference or an external reference."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FocalPlaneArrayNonUniformityCorrectionReferenceEnum {
 	#[doc = r#"Indicates the use of an internal reference for non-uniformity correction of a focal plane array."#]
 	#[serde(rename = "INTERNAL")]
@@ -9267,8 +9202,7 @@ pub enum FocalPlaneArrayNonUniformityCorrectionReferenceEnum {
 }
 
 #[doc = r#"Indicates the current status of the FOR."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "FOR_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ForEnum {
 	#[doc = r#"A defined region where the LOS is UNCONSTRAINED for tracking targets and cueing the LOS."#]
 	#[serde(rename = "UNCONSTRAINED")]
@@ -9282,8 +9216,7 @@ pub enum ForEnum {
 }
 
 #[doc = r#"Indicates the type of the Field of Regard."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "FOR_TypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ForTypeEnum {
 	#[doc = r#"The Field of Regard is based on the sensor's maximum extended range and angle capability.  This Field of Regard definition goes beyond the MIN_EXTENT specifications.  The sensor's performance may be degraded at this range and/or angle."#]
 	#[serde(rename = "MAX_EXTENT")]
@@ -9297,7 +9230,7 @@ pub enum ForTypeEnum {
 }
 
 #[doc = r#"Indicates the origin (0, 0) of the frame.  Default is TOP_LEFT."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FrameOriginEnum {
 	#[doc = r#"Bottom-left corner is the origin (0, 0) of the frame. Right and up are positive."#]
 	#[serde(rename = "BOTTOM_LEFT")]
@@ -9314,7 +9247,7 @@ pub enum FrameOriginEnum {
 }
 
 #[doc = r#"This type characterizes the agility pattern driving a Signal with agile frequency modulation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FrequencyAgilityPatternEnum {
 	#[doc = r#"Indicates an agile Signal driven by a sawtooth pattern."#]
 	#[serde(rename = "SAWTOOTH")]
@@ -9337,7 +9270,7 @@ pub enum FrequencyAgilityPatternEnum {
 }
 
 #[doc = r#"This type characterizes the variation in frequency of a Signal, pulse-to-pulse for a pulsed signal or over time for a CW signal. The enumerated literals are not mutually exclusive to allow for the use of NDI systems with varying measurement capabilities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FrequencyModulationVariationEnum {
 	#[doc = r#"Indicates a fixed frequency Signal with no detectable intentional modulation."#]
 	#[serde(rename = "STABLE")]
@@ -9363,7 +9296,7 @@ pub enum FrequencyModulationVariationEnum {
 }
 
 #[doc = r#"This type characterizes the periodicity of a Signal's frequency modulation pattern."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FrequencyPatternPeriodicityEnum {
 	#[doc = r#"Indicates a Signal whose frequency pattern repeats periodically."#]
 	#[serde(rename = "PERIODIC")]
@@ -9374,7 +9307,7 @@ pub enum FrequencyPatternPeriodicityEnum {
 }
 
 #[doc = r#"This type characterizes the nature of the frequency values that make up the switched frequency Signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FrequencySwitchingEnum {
 	#[doc = r#"Indicates the switched frequencies of a Signal are selected from a continuous set."#]
 	#[serde(rename = "CONTINUOUS")]
@@ -9385,7 +9318,7 @@ pub enum FrequencySwitchingEnum {
 }
 
 #[doc = r#"This type characterizes the switching pattern of a Signal with switched frequency modulation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FrequencySwitchingPatternEnum {
 	#[doc = r#"Indicates a switched Signal using a limited set of discrete frequency values where switches are often synchronized with changes in other Signal parameters such as PRI and PW."#]
 	#[serde(rename = "DWELL_SCAN")]
@@ -9399,7 +9332,7 @@ pub enum FrequencySwitchingPatternEnum {
 }
 
 #[doc = r#"Indicates the setting of the fuel flow mode."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FuelFlowModeEnum {
 	#[doc = r#"Specifies that the fuel flow will be automatically set."#]
 	#[serde(rename = "AUTO")]
@@ -9413,7 +9346,7 @@ pub enum FuelFlowModeEnum {
 }
 
 #[doc = r#"Indicates different ways a fusion source is allowed to contribute to fused Entities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum FusionUpdatesEnum {
 	#[doc = r#"Indicates that all Entity characteristics can be fused from a source."#]
 	#[serde(rename = "UPDATE_ALL")]
@@ -9427,7 +9360,7 @@ pub enum FusionUpdatesEnum {
 }
 
 #[doc = r#"Indicates whether the Automatic Gain Control has been enabled or disabled by an external controller.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GainControlMethodEnum {
 	#[doc = r#"Indicates an automatic gain control."#]
 	#[serde(rename = "AGC_ENABLED")]
@@ -9438,8 +9371,7 @@ pub enum GainControlMethodEnum {
 }
 
 #[doc = r#"Indicates the data class of a Link 16 filter."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "GatewayLink16_ConfigurationClassEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GatewayLink16ConfigurationClassEnum {
 	#[doc = r#"Indicates that a filter applies to Link 16 track data."#]
 	#[serde(rename = "TRACK")]
@@ -9453,8 +9385,7 @@ pub enum GatewayLink16ConfigurationClassEnum {
 }
 
 #[doc = r#"Indicates which compass quadrant should apply to a Link 16 filter."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "GatewayLink16_ConfigurationCompassQuadrantEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GatewayLink16ConfigurationCompassQuadrantEnum {
 	#[doc = r#"Indicates that the northeast side of the designated geographic area should be filtered."#]
 	#[serde(rename = "NORTHEAST")]
@@ -9471,8 +9402,7 @@ pub enum GatewayLink16ConfigurationCompassQuadrantEnum {
 }
 
 #[doc = r#"Indicates whether the inside or outside of a geographic area should apply to a Link 16 filter."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "GatewayLink16_ConfigurationSideEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GatewayLink16ConfigurationSideEnum {
 	#[doc = r#"Indicates that the inside of the designated geographic area should be filtered."#]
 	#[serde(rename = "INSIDE")]
@@ -9483,8 +9413,7 @@ pub enum GatewayLink16ConfigurationSideEnum {
 }
 
 #[doc = r#"Upper Bound of GCP along Longitudeinal (Roll) Axis Aft from Forward Extremity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "GCP_OffsetEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GcpOffsetEnum {
 	#[doc = r#"0 = 1 meter."#]
 	#[serde(rename = "1METER")]
@@ -9582,8 +9511,7 @@ pub enum GcpOffsetEnum {
 }
 
 #[doc = r#"Specifies the Geopolitical Entity name to be used per GENC."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "GENC_CountryNameEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GencCountryNameEnum {
 	#[doc = r#"Afghanistan, officially the Islamic Emirate of Afghanistan, is a landlocked country at the crossroads of Central and South Asia. It is bordered by Pakistan to the east and south, Iran to the west, Turkmenistan and Uzbekistan to the north, and Tajikistan and China to the northeast."#]
 	#[serde(rename = "AFGHANISTAN")]
@@ -10428,7 +10356,7 @@ pub enum GencCountryNameEnum {
 }
 
 #[doc = r#"Generic unit type from MIL-STD-6016 DFI 1719 DUI 002."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GenericUnitTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -10472,7 +10400,7 @@ pub enum GenericUnitTypeEnum {
 }
 
 #[doc = r#"An enumeration indicating the Geomagnetic Storm Ap web service from the 557th."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GeomagneticRecordApEnum {
 	#[doc = r#"Represents the 24 Hour Average Ap Index."#]
 	#[serde(rename = "AP_24_HOUR")]
@@ -10486,7 +10414,7 @@ pub enum GeomagneticRecordApEnum {
 }
 
 #[doc = r#"An enumeration indicating the Geomagnetic Storm Kp web service from the 557th."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GeomagneticRecordKpEnum {
 	#[doc = r#"Represents the 3 Hour average Kp Index."#]
 	#[serde(rename = "KP_3_HOUR")]
@@ -10497,7 +10425,7 @@ pub enum GeomagneticRecordKpEnum {
 }
 
 #[doc = r#"Specifies the type of gravity model that a propagator may use to represent the central body's gravitational forces."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GravityModelEnum {
 	#[doc = r#"The Earth Gravitational Model 1996 (EGM-96) is a geopotential model of the Earth consisting of spherical harmonic coefficients derived from many data regions of the globe."#]
 	#[serde(rename = "EGM96")]
@@ -10541,7 +10469,7 @@ pub enum GravityModelEnum {
 }
 
 #[doc = r#"Ground characteristics present at the sample point location."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum GroundTerrainTypeEnum {
 	#[doc = r#"Agricultural areas with terrain slope of greater than 2 degrees."#]
 	#[serde(rename = "AGRICULTURAL_HIGH_RELIEF")]
@@ -10591,8 +10519,7 @@ pub enum GroundTerrainTypeEnum {
 }
 
 #[doc = r#"(U) The highest classification of any portion that has either OwnerProducer contains NATO or FGI_SourceOpen contains NATO.  The HighWaterNATO attribute will be compared against an entity's fineAccessControls NATO value. PERMISSIBLE VALUES The permissible values for this simple type are defined in the Controlled Value Enumeration: CVEnumISMHighWaterNATO.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "HighWaterNATO_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum HighWaterNatoEnum {
 	#[doc = r#"NATO UNCLASSIFIED"#]
 	#[serde(rename = "NATO_U")]
@@ -10612,7 +10539,7 @@ pub enum HighWaterNatoEnum {
 }
 
 #[doc = r#"This is a two-step process to command the hose to be cut."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum HoseCutCommandEnum {
 	#[doc = r#"Commands enabling of the first step in the command sequence to cut the refueling hose."#]
 	#[serde(rename = "ENABLE")]
@@ -10626,7 +10553,7 @@ pub enum HoseCutCommandEnum {
 }
 
 #[doc = r#"This reports status of the two-step process to command the hose to be cut."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum HoseCutStatusEnum {
 	#[doc = r#"Indicates that the first step in the command sequence to cut the refueling hose has been enabled."#]
 	#[serde(rename = "ENABLED")]
@@ -10640,7 +10567,7 @@ pub enum HoseCutStatusEnum {
 }
 
 #[doc = r#"Indicates type of self-identification communications."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IdentificationTypeEnum {
 	#[doc = r#"Indicates self-identification communications using the Automated Dependent Surveillance - Broadcast (ADS-B) system."#]
 	#[serde(rename = "ADS_B")]
@@ -10669,8 +10596,7 @@ pub enum IdentificationTypeEnum {
 }
 
 #[doc = r#"Indicates the frequency band, as defined by the Institute of Electrical and Electronics Engineers (IEEE)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IEEE_FrequencyBandEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IeeeFrequencyBandEnum {
 	#[doc = r#"High Frequency, 3 to 30 MHz."#]
 	#[serde(rename = "HF_BAND")]
@@ -10711,8 +10637,7 @@ pub enum IeeeFrequencyBandEnum {
 }
 
 #[doc = r#"Indicates Passive (no transmit allowed) or Active (transmit allowed but not required) operations for IFF."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_ActivePassiveEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffActivePassiveEnum {
 	#[doc = r#"Indicates ACTIVE ONLY IFF Operation."#]
 	#[serde(rename = "ACTIVE_ONLY")]
@@ -10726,8 +10651,7 @@ pub enum IffActivePassiveEnum {
 }
 
 #[doc = r#"The Address Qualifier is used to indicate the type of Participant Address being reported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_AddressQualifierParticipantEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffAddressQualifierParticipantEnum {
 	#[doc = r#"Participant Address for an unknown emitter category."#]
 	#[serde(rename = "UNKNOWN_EMITTER")]
@@ -10741,8 +10665,7 @@ pub enum IffAddressQualifierParticipantEnum {
 }
 
 #[doc = r#"The Address Source is used to indicate the source of the Participant Address being reported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_AddressSourceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffAddressSourceEnum {
 	#[doc = r#"Originating from a Mode S Transponder."#]
 	#[serde(rename = "MODE_S_TRANSPONDER")]
@@ -10753,8 +10676,7 @@ pub enum IffAddressSourceEnum {
 }
 
 #[doc = r#"ADS-B Version 3 emergency types defined in RTCA DO-260C Table 2-97.  Note that ADS-B version 0, 1, and 2 emergencies map "DOWNED_AIRCRAFT" and "LIFEGUARD/MEDICAL", to "GENERAL_EMERGENCY" for Version 3 compliant reporting."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_ADS_B_EmergencyEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffAdsBEmergencyEnum {
 	#[doc = r#"No reported emergency."#]
 	#[serde(rename = "NO_REPORTED_EMERGENCY")]
@@ -10783,8 +10705,7 @@ pub enum IffAdsBEmergencyEnum {
 }
 
 #[doc = r#"ADS-B Emitter Category Encoding defined in RTCA DO-260C Table 2-156."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_ADS_B_EmitterCategoryEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffAdsBEmitterCategoryEnum {
 	#[doc = r#"No ADS-B Emitter Category Information."#]
 	#[serde(rename = "NO_EMITTER_CATEGORY_INFORMATION_AVAILABLE")]
@@ -10861,8 +10782,7 @@ pub enum IffAdsBEmitterCategoryEnum {
 }
 
 #[doc = r#"Resolution of the IFF altitude."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_AltitudeResolutionEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffAltitudeResolutionEnum {
 	#[doc = r#"25 Ft resolution."#]
 	#[serde(rename = "25_FEET")]
@@ -10876,8 +10796,7 @@ pub enum IffAltitudeResolutionEnum {
 }
 
 #[doc = r#"Indicates civilian and / or military Interrogator modes."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_CivilMilitaryEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffCivilMilitaryEnum {
 	#[doc = r#"Indicates a civilian Interrogator mode."#]
 	#[serde(rename = "CIVIL")]
@@ -10888,8 +10807,7 @@ pub enum IffCivilMilitaryEnum {
 }
 
 #[doc = r#"IFF platform communication capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_CommCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffCommCapabilityEnum {
 	#[doc = r#"No communication capability."#]
 	#[serde(rename = "NO_COMMUNICATIONS_CAPABILITY")]
@@ -10918,8 +10836,7 @@ pub enum IffCommCapabilityEnum {
 }
 
 #[doc = r#"See DoD AIMS 17-1000R1.1 for details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_DuplicateCodeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffDuplicateCodeEnum {
 	#[doc = r#"Duplicated PIN."#]
 	#[serde(rename = "DUPLICATE_PIN")]
@@ -10930,8 +10847,7 @@ pub enum IffDuplicateCodeEnum {
 }
 
 #[doc = r#"A superset of emergency types that can be received from all IFF Modes.  Based on AIMS 17-1000R1.1, DO-260C and ICAO Annex 10 Volume 4."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_EmergencyTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffEmergencyTypeEnum {
 	#[doc = r#"This value indicates that this target did not send an emergency code or waveform."#]
 	#[serde(rename = "NO_EMERGENCY_DATA")]
@@ -10963,8 +10879,7 @@ pub enum IffEmergencyTypeEnum {
 }
 
 #[doc = r#"Figure of Merit Type Code defined in DoD AIMS 17-1000R1.1 Table 21."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_FOM_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffFomEnum {
 	#[doc = r#"Barometric Pressure airborne error less than or equal to 25 meters."#]
 	#[serde(rename = "BARO_AIRBORNE_ERROR_LTE_25_METERS")]
@@ -11023,8 +10938,7 @@ pub enum IffFomEnum {
 }
 
 #[doc = r#"Indicates Lethal or Nonlethal operations for IFF."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_LethalNonLethalEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffLethalNonLethalEnum {
 	#[doc = r#"Indicates Lethal Operation for IFF."#]
 	#[serde(rename = "LETHAL")]
@@ -11035,8 +10949,7 @@ pub enum IffLethalNonLethalEnum {
 }
 
 #[doc = r#"Mode 5 Level 2-B Emitter Codes defined in DoD AIMS 17-1000R1.1 Table 33."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_M5L2B_EmitterCodeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffM5l2bEmitterCodeEnum {
 	#[doc = r#"Unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -11233,8 +11146,7 @@ pub enum IffM5l2bEmitterCodeEnum {
 }
 
 #[doc = r#"IFF Measurement Modes."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_MeasurementModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffMeasurementModeEnum {
 	#[doc = r#"Indicates this IFF_Measurement represents the combined measurements of all synchronous IFF modes (SIF, Mode S, Mode 5 Level 1)."#]
 	#[serde(rename = "COMBINED_SYNCHRONOUS")]
@@ -11263,8 +11175,7 @@ pub enum IffMeasurementModeEnum {
 }
 
 #[doc = r#"Indicates a message that is an output of the Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "IFF_ACTIVITY")]
@@ -11284,8 +11195,7 @@ pub enum IffMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates the Mode 4 beacon reply information."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_Mode4CodeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffMode4CodeEnum {
 	#[doc = r#"Indicates the Mode 4 beacon is on and is using code A."#]
 	#[serde(rename = "ON_CODE_A")]
@@ -11299,8 +11209,7 @@ pub enum IffMode4CodeEnum {
 }
 
 #[doc = r#"IFF Mode 5 Evaluator Indicator of target."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_Mode5_EvaluatorIndicatorEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffMode5EvaluatorIndicatorEnum {
 	#[doc = r#"Target is a Friend."#]
 	#[serde(rename = "FRIEND")]
@@ -11314,8 +11223,7 @@ pub enum IffMode5EvaluatorIndicatorEnum {
 }
 
 #[doc = r#"IFF Mode 5 format."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_Mode5_FormatEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffMode5FormatEnum {
 	#[doc = r#"Format 0 ID Reply."#]
 	#[serde(rename = "FORMAT_0_ID_REPLY")]
@@ -11371,8 +11279,7 @@ pub enum IffMode5FormatEnum {
 }
 
 #[doc = r#"Mode S indication of aircraft state."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_ModeS_AircraftStateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffModeSAircraftStateEnum {
 	#[doc = r#"Aircraft is airborne."#]
 	#[serde(rename = "AIRBORNE")]
@@ -11386,8 +11293,7 @@ pub enum IffModeSAircraftStateEnum {
 }
 
 #[doc = r#"Indicates the Elementary or Enhanced Mode S operations."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_ModeS_SupportEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffModeSSupportEnum {
 	#[doc = r#"Continually elicits long replies for dynamic transponder information in BDS Registers 40, 50 and 60 in addition to periodic Elementary Surveillance information"#]
 	#[serde(rename = "EHS_ENHANCED_SUPPORT")]
@@ -11404,8 +11310,7 @@ pub enum IffModeSSupportEnum {
 }
 
 #[doc = r#"IFF Mode Types including SIF, Mode 5, ADS-B, and Mode S."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_ModeTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffModeTypeEnum {
 	#[doc = r#"Selective Identification Feature (SIF) mode."#]
 	#[serde(rename = "SIF")]
@@ -11431,8 +11336,7 @@ pub enum IffModeTypeEnum {
 }
 
 #[doc = r#"An enumeration listing all the IFF modes"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_ModesEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffModesEnum {
 	#[doc = r#"Mode 1."#]
 	#[serde(rename = "MODE1")]
@@ -11458,8 +11362,7 @@ pub enum IffModesEnum {
 }
 
 #[doc = r#"Navigation Accuracy Category for Position (NACp) value defined in DoD AIMS 17-1000R1.1.  When reported by a GNSS, this value represents the Horizontal Figure of Merit (HFOM)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_NACpEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffNacpEnum {
 	#[doc = r#"Greater than 10 nautical mile or unknown."#]
 	#[serde(rename = "GT_10_NMI_OR_UNKNOWN")]
@@ -11512,8 +11415,7 @@ pub enum IffNacpEnum {
 }
 
 #[doc = r#"Navigation Accuracy Category for Velocity (NACv) value defined in DoD AIMS 17-1000R1.1.  Horizontal Velocity Error."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_NACvEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffNacvEnum {
 	#[doc = r#"Greater than or equal to 10 meters per second or unknown."#]
 	#[serde(rename = "GTE_10_METERS_PER_SEC_OR_UNKNOWN")]
@@ -11542,8 +11444,7 @@ pub enum IffNacvEnum {
 }
 
 #[doc = r#"Source of report position."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_PositionSourceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffPositionSourceEnum {
 	#[doc = r#"ADS-B Even Compact Position Report."#]
 	#[serde(rename = "ADSB_EVEN_CPR")]
@@ -11575,8 +11476,7 @@ pub enum IffPositionSourceEnum {
 }
 
 #[doc = r#"Type of reflection. Typically SMALL_ANGLE is an azimuth reflection within main beam. LARGE_ANGLE is an azimuth reflection outside of main beam."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_ReflectionTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffReflectionTypeEnum {
 	#[doc = r#"SMALL_ANGLE is an azimuth reflection within main beam."#]
 	#[serde(rename = "SMALL_ANGLE_REFLECTION")]
@@ -11587,8 +11487,7 @@ pub enum IffReflectionTypeEnum {
 }
 
 #[doc = r#"Indicates the first tier in the taxonomy of the IFF Capability.Indicates a function to track targets with dedicated beams, not track while scan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_SubCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffSubCapabilityEnum {
 	#[doc = r#"Interrogator subcapability is where the IFF Subsystem sends an interrogation signal and then listen for a response that identifies the responder."#]
 	#[serde(rename = "INTERROGATOR")]
@@ -11599,8 +11498,7 @@ pub enum IffSubCapabilityEnum {
 }
 
 #[doc = r#"Source of Target Altitude."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_TargetAltitudeSourceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffTargetAltitudeSourceEnum {
 	#[doc = r#"Unknown source."#]
 	#[serde(rename = "UNKNOWN")]
@@ -11617,8 +11515,7 @@ pub enum IffTargetAltitudeSourceEnum {
 }
 
 #[doc = r#"Provides Transponder Activity Status information."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IFF_TransponderActivityStatusEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IffTransponderActivityStatusEnum {
 	#[doc = r#"Indicate the current status of the IFF Transponder Activity is Top Antenna Fail."#]
 	#[serde(rename = "TOP_ANTENNA_FAIL")]
@@ -11656,7 +11553,7 @@ pub enum IffTransponderActivityStatusEnum {
 }
 
 #[doc = r#"The number of bits per pixel.  EIGHT represents an 8-bit grayscale image.  TWENTY_FOUR is a full-color 24-bit image."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ImagePixelDepthEnum {
 	#[doc = r#"An 8-bit grayscale image."#]
 	#[serde(rename = "EIGHT")]
@@ -11667,7 +11564,7 @@ pub enum ImagePixelDepthEnum {
 }
 
 #[doc = r#"Defines the available algorithms used to turn complex pixels into image pixels."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ImageRemapEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "GDM")]
@@ -11678,7 +11575,7 @@ pub enum ImageRemapEnum {
 }
 
 #[doc = r#"Defines the available methods for determining pixel values during image formation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ImageWeightEnum {
 	#[doc = r#"Indicates a Taylor weighting is applied to the Inphase and Quadrature data."#]
 	#[serde(rename = "TAYLOR")]
@@ -11689,8 +11586,7 @@ pub enum ImageWeightEnum {
 }
 
 #[doc = r#"Service level, open, separation, or tactical."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IMAT_StatusServiceLevelEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ImatStatusServiceLevelEnum {
 	#[doc = r#"Service at OPEN level."#]
 	#[serde(rename = "OPEN")]
@@ -11704,8 +11600,7 @@ pub enum ImatStatusServiceLevelEnum {
 }
 
 #[doc = r#"Indicates the status of the Inertial Measurement Unit."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IMU_AlignmentEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ImuAlignmentEnum {
 	#[doc = r#"Indicates the Inertial Measurement Unit has not been aligned."#]
 	#[serde(rename = "NOT_ALIGNED")]
@@ -11719,7 +11614,7 @@ pub enum ImuAlignmentEnum {
 }
 
 #[doc = r#"Indicates whether the associated list is inclusive or exclusive."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum InclusionEnum {
 	#[doc = r#"Indicates the associated list is inclusive, i.e. a whitelist."#]
 	#[serde(rename = "INCLUSION")]
@@ -11730,7 +11625,7 @@ pub enum InclusionEnum {
 }
 
 #[doc = r#"Adjust the size of the area in which the target tracker tries to acquire a target. The increase and decrease commands are dependent on the step sizes supported by the capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IncreaseDecreaseEnum {
 	#[doc = r#"Increase the size of the area by one step, whose size is defined by the step sizes supported by the capability."#]
 	#[serde(rename = "INCREASE")]
@@ -11741,7 +11636,7 @@ pub enum IncreaseDecreaseEnum {
 }
 
 #[doc = r#"An enumeration indicating the incremental change direction."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IncrementalChangeEnum {
 	#[doc = r#"This enumeration is used stop or cancel any current incremental change that is occurring but can be omitted if desired."#]
 	#[serde(rename = "STOP")]
@@ -11755,7 +11650,7 @@ pub enum IncrementalChangeEnum {
 }
 
 #[doc = r#"Step Size Selection Control Enumeration Type.  Controls how the initial integration step size is determined."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum InitialStepSizeEnum {
 	#[doc = r#"Initial step size determined automatically by the integrator."#]
 	#[serde(rename = "AUTO")]
@@ -11766,7 +11661,7 @@ pub enum InitialStepSizeEnum {
 }
 
 #[doc = r#"Contains the integration methods that are supported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IntegrationMethodEnum {
 	#[doc = r#"A Runge-Kutta 4th-order integrator. Also known as RK4. No error control for the integration step size is included for this integrator. It is always fixed-step."#]
 	#[serde(rename = "RUNGE_KUTTA_4")]
@@ -11795,7 +11690,7 @@ pub enum IntegrationMethodEnum {
 }
 
 #[doc = r#"Indicates a type of *Plan.  This enumerated type is a duplicate subset of PlanTypeEnum that is necessary until Comms-related *Plans are fully incorporated into the UCI mission planning process, *Plan messages, Control* messages, etc."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum InterfacePlanTypeEnum {
 	#[doc = r#"Indicates a Mission Plan and associated MissionPlan* messages."#]
 	#[serde(rename = "MISSION_PLAN")]
@@ -11833,7 +11728,7 @@ pub enum InterfacePlanTypeEnum {
 }
 
 #[doc = r#"Indicates the state of in interface of a System.  "Interface" in this context is a UCI message or set of UCI messages."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum InterfaceStateEnum {
 	#[doc = r#"Indicates the associated interface is enabled or commanded to be enabled for use."#]
 	#[serde(rename = "ENABLED")]
@@ -11844,7 +11739,7 @@ pub enum InterfaceStateEnum {
 }
 
 #[doc = r#"Indicates the status of a Mode 4 interrogation against the track in question."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum InterrogationStatusEnum {
 	#[doc = r#"Track has been not been interrogated."#]
 	#[serde(rename = "NOT_INTERROGATED")]
@@ -11861,8 +11756,7 @@ pub enum InterrogationStatusEnum {
 }
 
 #[doc = r#"Indicates the Serial I/O port's OPEN or CLOSED state.  This I/O port setting is configured at the same time as other component settings such as the port identifier, parity, and baud rate."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IO_PortOpenCloseStateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IoPortOpenCloseStateEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "OPEN")]
@@ -11873,8 +11767,7 @@ pub enum IoPortOpenCloseStateEnum {
 }
 
 #[doc = r#"Indicates the specific I/O port type, such as whether it is Ethernet (IPv4 or IPv6) or Serial."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IO_PortTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IoPortTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "IPV4")]
@@ -11888,8 +11781,7 @@ pub enum IoPortTypeEnum {
 }
 
 #[doc = r#"Lists the current supported IP transport protocol header values in enumeration form. Services sending this value in IP packets will need to convert the enumeration value into the correct integer value (e.g.TCP=6, UDP=17)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "IP_ProtocolEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum IpProtocolEnum {
 	#[doc = r#"Indicates IP transport protocol number 6, TCP (Transmission Control Protocol)."#]
 	#[serde(rename = "TCP")]
@@ -11900,7 +11792,7 @@ pub enum IpProtocolEnum {
 }
 
 #[doc = r#"Jammer Station enumeration from MIL-STD-6016 DFI 1934 DUI 004."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum JammerStationEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "ALQ_99_BAND_1")]
@@ -11968,8 +11860,7 @@ pub enum JammerStationEnum {
 }
 
 #[doc = r#"Indicates whether the wavelet compression used is reversible."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "JPEG_WaveletTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum JpegWaveletTypeEnum {
 	#[doc = r#"Indicates the wavelet compression is reversible (i.e. lossless)."#]
 	#[serde(rename = "REVERSIBLE")]
@@ -11980,8 +11871,7 @@ pub enum JpegWaveletTypeEnum {
 }
 
 #[doc = r#"The type of reference clock being used to for the JREAP connection."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "JREAP_TimeReferenceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum JreapTimeReferenceEnum {
 	#[doc = r#"JREAP coordinated using Coordinated Universal Time (UTC)."#]
 	#[serde(rename = "UTC")]
@@ -12001,8 +11891,7 @@ pub enum JreapTimeReferenceEnum {
 }
 
 #[doc = r#"Indicates the LAR type of static or dynamic."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "LAR_BasisEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LarBasisEnum {
 	#[doc = r#"A LAR based on a static dataset (mission planned route, DMPIs, winds, etc.) or a snapshot in time (data at the time of a LAR_Request) is calculated once and results in a static LAR."#]
 	#[serde(rename = "STATIC")]
@@ -12013,8 +11902,7 @@ pub enum LarBasisEnum {
 }
 
 #[doc = r#"Indicates the LAR relation of zone or range."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "LAR_RelationEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LarRelationEnum {
 	#[doc = r#"Defines the outer boundary of the two dimensional region in which the weapon can be released and hit the target without regards to impact parameters."#]
 	#[serde(rename = "IN_RANGE")]
@@ -12031,8 +11919,7 @@ pub enum LarRelationEnum {
 }
 
 #[doc = r#"Indicates the LAR wind source platform dynamic/held, overridden."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "LAR_WindSourceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LarWindSourceEnum {
 	#[doc = r#"Indicates the LAR wind source platform dynamic."#]
 	#[serde(rename = "HOST_PLATFORM_DYNAMIC")]
@@ -12046,7 +11933,7 @@ pub enum LarWindSourceEnum {
 }
 
 #[doc = r#"Lateral Axis Offset."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LateralAxisOffsetEnum {
 	#[doc = r#"0 = 0 to 2 meters."#]
 	#[serde(rename = "0_TO_2METERS")]
@@ -12060,7 +11947,7 @@ pub enum LateralAxisOffsetEnum {
 }
 
 #[doc = r#"Indicates the direction the center of gravity is moving along the lateral axis."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LateralCenterOfGravityTrendEnum {
 	#[doc = r#"Indicates the center of gravity is not moving on the lateral axis."#]
 	#[serde(rename = "NONE")]
@@ -12074,7 +11961,7 @@ pub enum LateralCenterOfGravityTrendEnum {
 }
 
 #[doc = r#"Indicates whether a submarine must be surfaced to launch its missiles."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LaunchCapabilityEnum {
 	#[doc = r#"No data was sent regarding if the submarine must be surfaced to launch its missiles."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -12088,7 +11975,7 @@ pub enum LaunchCapabilityEnum {
 }
 
 #[doc = r#"Specifies whether a ballistic missile launch point was calculated using boost phase data."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LaunchPointCalculationEnum {
 	#[doc = r#"Launch point of the space track was calculated using only ballistic flight data."#]
 	#[serde(rename = "POST_BOOST")]
@@ -12099,7 +11986,7 @@ pub enum LaunchPointCalculationEnum {
 }
 
 #[doc = r#"Indicates a high, medium, or low likelihood."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LikelihoodEnum {
 	#[doc = r#"Indicates a low likelihood."#]
 	#[serde(rename = "LOW")]
@@ -12113,7 +12000,7 @@ pub enum LikelihoodEnum {
 }
 
 #[doc = r#"Indicates the method in which a line is created."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LineProjectionEnum {
 	#[doc = r#"Indicates the method in which a line is created. GREAT_CIRCLE is a line that is curved according to the curvature of the earth."#]
 	#[serde(rename = "GREAT_CIRCLE")]
@@ -12124,8 +12011,7 @@ pub enum LineProjectionEnum {
 }
 
 #[doc = r#"Expresses depth by description of horizontal planes at or below Mean Sea Level (MSL)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "Link16_DepthEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum Link16DepthEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -12169,8 +12055,7 @@ pub enum Link16DepthEnum {
 }
 
 #[doc = r#"Expresses the type of burst from a nuclear detonation"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "Link16_HazardBurstEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum Link16HazardBurstEnum {
 	#[doc = r#"The message contained no information as to what type of burst occurred."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -12199,8 +12084,7 @@ pub enum Link16HazardBurstEnum {
 }
 
 #[doc = r#"An estimate of the yield of a nuclear detonation"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "Link16_HazardYieldEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum Link16HazardYieldEnum {
 	#[doc = r#"Unknown estimate."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -12217,8 +12101,7 @@ pub enum Link16HazardYieldEnum {
 }
 
 #[doc = r#"The type of sensor detecting the contact"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "Link16_SensorTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum Link16SensorTypeEnum {
 	#[doc = r#"No data for this field was received in the message."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -12328,7 +12211,7 @@ pub enum Link16SensorTypeEnum {
 }
 
 #[doc = r#"Indicator for whether an emitter is locked onto a target or in surveillance mode."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LockIndicatorEnum {
 	#[doc = r#"Indicates an Emitter is locked onto a target."#]
 	#[serde(rename = "LOCK")]
@@ -12339,7 +12222,7 @@ pub enum LockIndicatorEnum {
 }
 
 #[doc = r#"Indicates log message severity level.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LogSeverityEnum {
 	#[doc = r#"Indicates a log message with severity level of trace."#]
 	#[serde(rename = "TRACE")]
@@ -12362,7 +12245,7 @@ pub enum LogSeverityEnum {
 }
 
 #[doc = r#"Indicates a logical operation of related elements. This type is typically used in conjunction with another element with multiplicity greater than one (1)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LogicalOperatorEnum {
 	#[doc = r#"Indicates that the related elements should be considered to have an "ALL" relationship."#]
 	#[serde(rename = "AND")]
@@ -12376,7 +12259,7 @@ pub enum LogicalOperatorEnum {
 }
 
 #[doc = r#"Indicates the types of Navigation capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LoiterNavigationCapabilityOptionEnum {
 	#[doc = r#"Loiter navigation destination to commence an orbital loiter."#]
 	#[serde(rename = "ORBIT")]
@@ -12387,7 +12270,7 @@ pub enum LoiterNavigationCapabilityOptionEnum {
 }
 
 #[doc = r#"Longitudinal Axis Offset."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LongitudinalAxisOffsetEnum {
 	#[doc = r#"0 = Position Offset Applied by Sensor."#]
 	#[serde(rename = "POSITION_OFFSET_APPLIED_BY_SENSOR")]
@@ -12485,7 +12368,7 @@ pub enum LongitudinalAxisOffsetEnum {
 }
 
 #[doc = r#"Indicates the direction the center of gravity is moving along the longitudinal axis."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LongitudinalCenterOfGravityTrendEnum {
 	#[doc = r#"Indicates the center of gravity is not moving on the longitudinal axis."#]
 	#[serde(rename = "NONE")]
@@ -12499,8 +12382,7 @@ pub enum LongitudinalCenterOfGravityTrendEnum {
 }
 
 #[doc = r#"Indicates the reference for pointing of a Capability. For example, for an AMTI Capability this enum would indicate whether the AMTI scan volume is pointed relative to the System body or along a fixed inertial angle."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "LOS_MeasurementEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LosMeasurementEnum {
 	#[doc = r#"Indicates body frame.  The body coordinate frame axes is an orthogonal triad of axes X, Y, and Z with an origin fixed at the location determined to be optimal for the platform.  The x-axis is positive in the forward direction of the vehicle (e.g. aircraft nose).  The y-axis is positive to the right of the forward direction of the vehicle (e.g. aircraft right wing).  The z-axis is positive down through the vehicle.  The platform body coordinate system with respect to the NED coordinate system is described through the platform pitch, roll, and yaw Euler angles."#]
 	#[serde(rename = "BODY")]
@@ -12520,8 +12402,7 @@ pub enum LosMeasurementEnum {
 }
 
 #[doc = r#"Indicates the reference for pointing of a Capability. For example, for an AMTI Capability this enum would indicate whether the AMTI scan volume is pointed relative to the System body or along a fixed inertial angle."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "LOS_ReferenceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum LosReferenceEnum {
 	#[doc = r#"Indicates body frame.  The body coordinate frame axes is an orthogonal triad of axes X, Y, and Z with an origin fixed at the location determined to be optimal for the platform.  The x-axis is positive in the forward direction of the vehicle (e.g. aircraft nose).  The y-axis is positive to the right of the forward direction of the vehicle (e.g. aircraft right wing).  The z-axis is positive down through the vehicle.  The platform body coordinate system with respect to the NED coordinate system is described through the platform pitch, roll, and yaw Euler angles."#]
 	#[serde(rename = "BODY")]
@@ -12538,8 +12419,7 @@ pub enum LosReferenceEnum {
 }
 
 #[doc = r#"Indicates the max Probability of Reply for Mode S All Call interrogations."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "MaxPOR_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MaxPorEnum {
 	#[doc = r#"1 in 1."#]
 	#[serde(rename = "1_IN_1")]
@@ -12559,8 +12439,7 @@ pub enum MaxPorEnum {
 }
 
 #[doc = r#"Indicates the overall status/state of the MDF.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "MDF_StatusEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MdfStatusEnum {
 	#[doc = r#"Indicates the MDF file/data loaded successfully, passed CRC check, and is currently active."#]
 	#[serde(rename = "ACTIVE")]
@@ -12592,7 +12471,7 @@ pub enum MdfStatusEnum {
 }
 
 #[doc = r#"This type describes levels of quality of a data measurement."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MeasurementQualityEnum {
 	#[doc = r#"Indicates the measurement may have been corrupted."#]
 	#[serde(rename = "SUSPECT")]
@@ -12606,7 +12485,7 @@ pub enum MeasurementQualityEnum {
 }
 
 #[doc = r#"Enumeration indicating the type of measurement within an report."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MeasurementReportSourceTypeEnum {
 	#[doc = r#"Indicates measurement is from a monostatic sensor."#]
 	#[serde(rename = "MONOSTATIC")]
@@ -12623,7 +12502,7 @@ pub enum MeasurementReportSourceTypeEnum {
 }
 
 #[doc = r#"This type describes the state/status of a data measurement."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MeasurementStatusEnum {
 	#[doc = r#"Indicates the measurement is planned/scheduled but hasn't started."#]
 	#[serde(rename = "PENDING")]
@@ -12643,7 +12522,7 @@ pub enum MeasurementStatusEnum {
 }
 
 #[doc = r#"Enumeration indicating the type of measurement within a report."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MeasurementTypeEnum {
 	#[doc = r#"A measurement of the distance from the reference location of the sensor to the object in meters."#]
 	#[serde(rename = "RANGE")]
@@ -12675,7 +12554,7 @@ pub enum MeasurementTypeEnum {
 }
 
 #[doc = r#"Provides a rough indication of how long the media will be available."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MediaLocationStatusEnum {
 	#[doc = r#"Indicates a Product, File or other media will be at the specified location only temporarily, possibly because the host has limited storage and/or network connectivity."#]
 	#[serde(rename = "TEMPORARY")]
@@ -12689,7 +12568,7 @@ pub enum MediaLocationStatusEnum {
 }
 
 #[doc = r#"An enumeration that specifies how to merge entity data."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MergeEnum {
 	#[doc = r#"Indicates all the entity information is to be considered in the merge."#]
 	#[serde(rename = "MERGE_ALL_CHARACTERISTICS")]
@@ -12703,7 +12582,7 @@ pub enum MergeEnum {
 }
 
 #[doc = r#"The message's data state/status of this message, if this message could be sent over a time while the data is still changing until it gets to a steady state."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MessageDataVerificationEnum {
 	#[doc = r#"None of the data has been verified."#]
 	#[serde(rename = "UNVERIFIED")]
@@ -12720,7 +12599,7 @@ pub enum MessageDataVerificationEnum {
 }
 
 #[doc = r#"An enumeration that specifies the data type of an element in a message."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MessageElementDataTypeEnum {
 	#[doc = r#"Specifies that the data type of the message element is a string."#]
 	#[serde(rename = "STRING")]
@@ -12743,7 +12622,7 @@ pub enum MessageElementDataTypeEnum {
 }
 
 #[doc = r#"Specifies the mode the system is currently operating in."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MessageModeEnum {
 	#[doc = r#"This enumerated value indicates that the message concerns actual systems in real operations; nothing in the message concerns an exercise and/or a simulated system."#]
 	#[serde(rename = "LIVE")]
@@ -12760,7 +12639,7 @@ pub enum MessageModeEnum {
 }
 
 #[doc = r#"List of all message types in UCI that can cause a drop restriction."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MessageTypeDropRestrictionEnum {
 	#[doc = r#"Drop restriction due to a CONTROL_STATUS message."#]
 	#[serde(rename = "CONTROL_STATUS")]
@@ -12774,7 +12653,7 @@ pub enum MessageTypeDropRestrictionEnum {
 }
 
 #[doc = r#"List of all message types in UCI."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MessageTypeEnum {
 	#[doc = r#"See global element (message) for annotation."#]
 	#[serde(rename = "ACCESS_ASSESSMENT")]
@@ -14945,8 +14824,7 @@ pub enum MessageTypeEnum {
 }
 
 #[doc = r#"Indicates the mode of operations of the event portrayed in MISP metadata."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "MISP_OperationalModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MispOperationalModeEnum {
 	#[doc = r#"Indicates the mode of operations of the event portrayed in metadata is not covered in another enumeration."#]
 	#[serde(rename = "OTHER")]
@@ -14969,7 +14847,7 @@ pub enum MispOperationalModeEnum {
 }
 
 #[doc = r#"Describes the general purpose of the missile emitter signal. Based on MIL-STD-6016 DFI/DUI 425/003 and 426/003."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MissileEmitterModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "UNKNOWN")]
@@ -14992,7 +14870,7 @@ pub enum MissileEmitterModeEnum {
 }
 
 #[doc = r#"This element specifies the state of communications between a system and its controlling system."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MissionCommunicationsStateEnum {
 	#[doc = r#"Indicates that there is sufficient communications between the vehicle and its controlling system to achieve command and control of the vehicle, regardless of data rate and whether the communication is direct or via relay."#]
 	#[serde(rename = "ACTIVE")]
@@ -15009,7 +14887,7 @@ pub enum MissionCommunicationsStateEnum {
 }
 
 #[doc = r#"Enumeration of the initial "by case" triggers for autonomous mission planning functions."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MissionPlanningByCaseTriggerEnum {
 	#[doc = r#"This trigger refers to a new Capability which becomes available or a previously failed Capability which has been restored."#]
 	#[serde(rename = "CAPABILITY_ADDED")]
@@ -15086,7 +14964,7 @@ pub enum MissionPlanningByCaseTriggerEnum {
 }
 
 #[doc = r#"Indicates the source or motivation for the associated item or action."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MissionTraceabilityEnum {
 	#[doc = r#"Indicates the source or motivation is an Air Task Order."#]
 	#[serde(rename = "ATO")]
@@ -15106,7 +14984,7 @@ pub enum MissionTraceabilityEnum {
 }
 
 #[doc = r#"Indicates whether the subject is capable of movement, regardless of any actual movement.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MobilityEnum {
 	#[doc = r#"Indicates the subject's mobility hasn't been determined."#]
 	#[serde(rename = "UNDETERMINED")]
@@ -15126,7 +15004,7 @@ pub enum MobilityEnum {
 }
 
 #[doc = r#"Indicates the type of signal modulation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ModulationEnum {
 	#[doc = r#"Indicates amplitude modulation. Information is added to a carrier frequency by varying the amplitude of the RF energy."#]
 	#[serde(rename = "AM")]
@@ -15317,8 +15195,7 @@ pub enum ModulationEnum {
 }
 
 #[doc = r#"Indicates the class of target cross section."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "MTI_TargetClassEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MtiTargetClassEnum {
 	#[doc = r#"Small-sized targets.  Specific target size values are defined outside of this schema."#]
 	#[serde(rename = "SMALL")]
@@ -15332,7 +15209,7 @@ pub enum MtiTargetClassEnum {
 }
 
 #[doc = r#"Indicates whether the specific Multistatic Mode option advertised by the capability has been commanded to be enabled or disabled. See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MultistaticModeActivationEnum {
 	#[doc = r#"Indicates the specific Multistatic Mode option advertised by the capability has been commanded to be enabled."#]
 	#[serde(rename = "ENABLE")]
@@ -15343,7 +15220,7 @@ pub enum MultistaticModeActivationEnum {
 }
 
 #[doc = r#"Indicates whether the specific Multistatic Mode option is currently enabled or disabled for this capability. See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum MultistaticModeStatusEnum {
 	#[doc = r#"Indicates the specific Multistatic Mode option is currently enabled for this capability."#]
 	#[serde(rename = "ENABLED")]
@@ -15354,7 +15231,7 @@ pub enum MultistaticModeStatusEnum {
 }
 
 #[doc = r#"Indicates how the Navigation Capability can be initiated."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NavigationCapabilityEnum {
 	#[doc = r#"Navigation by Mission Plan declares the system is able to be commanded to navigate to certain points of a Mission Plan."#]
 	#[serde(rename = "MISSION_PLAN_NAVIGATION")]
@@ -15383,7 +15260,7 @@ pub enum NavigationCapabilityEnum {
 }
 
 #[doc = r#"Indicates the type of Navigation constraint supported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NavigationConstraintSupportEnum {
 	#[doc = r#"Navigational altitude."#]
 	#[serde(rename = "ALTITUDE")]
@@ -15445,7 +15322,7 @@ pub enum NavigationConstraintSupportEnum {
 }
 
 #[doc = r#"The navigation solution state indicates what sensor inputs the navigation unit is using to generate its kinematic solution."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NavigationSolutionStateEnum {
 	#[doc = r#"The navigation unit is in the process of aligning and is therefore not currently outputting a kinematic solution."#]
 	#[serde(rename = "ALIGNING")]
@@ -15462,7 +15339,7 @@ pub enum NavigationSolutionStateEnum {
 }
 
 #[doc = r#"Enumerated type for negotiated and non-negotiated RF Capability performance metrics."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NegotiableOptionsEnum {
 	#[doc = r#"Upper most value of the negotiated range of values."#]
 	#[serde(rename = "UPPER_RANGE")]
@@ -15479,7 +15356,7 @@ pub enum NegotiableOptionsEnum {
 }
 
 #[doc = r#"Indicates whether this is a new link to be created, or an existing one that needs to be modified or deleted."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NetworkLinkActionTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "CREATE_LINK")]
@@ -15493,7 +15370,7 @@ pub enum NetworkLinkActionTypeEnum {
 }
 
 #[doc = r#"Indicates whether the Noise Adaptive Thresholding has been enabled or disabled.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NoiseAdaptiveThresholdStatusEnum {
 	#[doc = r#"This enumeration enables Noise Adaptive Thresholding."#]
 	#[serde(rename = "ENABLE")]
@@ -15509,8 +15386,7 @@ pub enum NoiseAdaptiveThresholdStatusEnum {
 				The permissible values for this simple type are defined in the Controlled Value Enumeration:
 				
 				CVEnumISMNonIC.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "NonIC_MarkingsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NonIcMarkingsEnum {
 	#[doc = r#"LIMITED DISTRIBUTION"#]
 	#[serde(rename = "DS")]
@@ -15547,8 +15423,7 @@ pub enum NonIcMarkingsEnum {
 						 The permissible values for this simple type are defined in the Controlled Value Enumeration:
 
 						 CVEnumISMNonUSControls.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "NonUS_ControlsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NonUsControlsEnum {
 	#[doc = r#"NATO Atomal mark"#]
 	#[serde(rename = "NATO_ATOMAL")]
@@ -15562,7 +15437,7 @@ pub enum NonUsControlsEnum {
 }
 
 #[doc = r#"Mathematical curve type to be used in interpolation calculations."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NormalizationInterpolationEnum {
 	#[doc = r#"Mathematical curve type to be used in interpolation calculations."#]
 	#[serde(rename = "PIECEWISE_CONSTANT")]
@@ -15585,7 +15460,7 @@ pub enum NormalizationInterpolationEnum {
 }
 
 #[doc = r#"Categorizes the associated notification for purposes of organization and filtering."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NotificationCategoryEnum {
 	#[doc = r#"The mission category describes a general notification that applies to the mission as a whole."#]
 	#[serde(rename = "MISSION")]
@@ -15599,7 +15474,7 @@ pub enum NotificationCategoryEnum {
 }
 
 #[doc = r#"Indicates a perspective (characteristic, behavior and/or change) of the Subject that is the basis of the Notification."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NotificationPerspectiveEnum {
 	#[doc = r#"The source of the Notification."#]
 	#[serde(rename = "SOURCE")]
@@ -15718,7 +15593,7 @@ pub enum NotificationPerspectiveEnum {
 }
 
 #[doc = r#"Indicates the overall severity of the associated notification. Derived from MIL-STD-411."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NotificationSeverityEnum {
 	#[doc = r#"Indicates that a notification is informative in nature and provides informational context of events within the system."#]
 	#[serde(rename = "INFORMATIONAL")]
@@ -15735,7 +15610,7 @@ pub enum NotificationSeverityEnum {
 }
 
 #[doc = r#"Indicates the current state within an enumerated state machine that characterizes the life cycle of a notification."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NotificationStateEnum {
 	#[doc = r#"The current notification has been canceled."#]
 	#[serde(rename = "CANCELED")]
@@ -15764,8 +15639,7 @@ pub enum NotificationStateEnum {
 }
 
 #[doc = r#"Network Participation Status Indicator from MIL-STD-6016 DFI 1613 DUI 001."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "NPSI_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum NpsiEnum {
 	#[doc = r#"The system is active on the Link 16 network."#]
 	#[serde(rename = "ACTIVE_NON_SPECIFIC")]
@@ -15791,8 +15665,7 @@ pub enum NpsiEnum {
 }
 
 #[doc = r#"The status/result of a previous attempt to correlate an input (SignalReport or Entity) to the OB."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "OB_CorrelationTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ObCorrelationTypeEnum {
 	#[doc = r#"Location and ELNOT match. confidence ellipse encompasses at least one site credited with an emitter whose ELNOT is the same as the intercept."#]
 	#[serde(rename = "LOCATION_ELNOT")]
@@ -15827,8 +15700,7 @@ pub enum ObCorrelationTypeEnum {
 }
 
 #[doc = r#"An enumeration indicating the types of OB records for Air, Emitter, Facility, Land, Missile, Sea-Surface, Sea-Subsurface, Space, and Unit."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "OB_RecordTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ObRecordTypeEnum {
 	#[doc = r#"Indicates an Air Order of Battle Record."#]
 	#[serde(rename = "AIR")]
@@ -15860,7 +15732,7 @@ pub enum ObRecordTypeEnum {
 }
 
 #[doc = r#"Indicates the state of the internal software object that the data in the message is based upon.  The state of the software object is determined by the publisher.  The publisher could be the original/master publisher or an intermediary re-publisher such as a persistence/data manager.  This element is not a commanded CRUD operation.  It is not an indication of the state of an instance of a message.  It is not a mechanism for partial, incremental, or fragmentary publication of a message.  It is a signal from a publisher to subscribers.  For REMOVED state, in particular, some subscribers will mirror the publisher and treat the message as if the object no longer exists, but others, such as mission recorders, might not (in order to support retaining historical records of activity, for example)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ObjectStateEnum {
 	#[doc = r#"Indicates the internal software object corresponding to this message currently exists and this message is the first publication corresponding to the object."#]
 	#[serde(rename = "NEW")]
@@ -15874,7 +15746,7 @@ pub enum ObjectStateEnum {
 }
 
 #[doc = r#"Indicates the operational status of a reported weapon or facility. For example, see MIL-STD-6016 DFI 753 DUI 001."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ObservedOperationalStatusEnum {
 	#[doc = r#"No explicit operational status is available for the weapon system or facility."#]
 	#[serde(rename = "NONE")]
@@ -15912,8 +15784,7 @@ pub enum ObservedOperationalStatusEnum {
 }
 
 #[doc = r#"Indicates how the X and Y Offsets are to be interpreted. See annotations of individual enumerations for additional details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "OffsetXY_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OffsetXyEnum {
 	#[doc = r#"Indicates that the X and Y offset are relative to a Cartesian plane perpendicular to the surface normal of the WGS84 Ellipsoid of the associated Reference Frame origin. Note: the axes of the associated Reference Frame may be rotated."#]
 	#[serde(rename = "CARTESIAN")]
@@ -15927,7 +15798,7 @@ pub enum OffsetXyEnum {
 }
 
 #[doc = r#"Indicates operational constraints."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpConstraintEnum {
 	#[doc = r#"The process of determining the source of an engagement or set of engagements. Attribution could be as broad as determining the general geographic location of the attackers or the characteristics of the attack."#]
 	#[serde(rename = "ATTRIBUTION")]
@@ -15983,7 +15854,7 @@ pub enum OpConstraintEnum {
 }
 
 #[doc = r#"Indicates if the sibling operational constraints are required to be satisfied or if there is flexibility in constraining to them."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpConstraintTypeEnum {
 	#[doc = r#"A soft constraint is not required to be satisfied, but should be."#]
 	#[serde(rename = "SOFT")]
@@ -15994,7 +15865,7 @@ pub enum OpConstraintTypeEnum {
 }
 
 #[doc = r#"An enumeration indicating the interaction with an op type."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpInteractionEnum {
 	#[doc = r#"A reference is considered captured if the current or closest ever location of the reference is within a buffer or enters the op type."#]
 	#[serde(rename = "CAPTURE")]
@@ -16008,7 +15879,7 @@ pub enum OpInteractionEnum {
 }
 
 #[doc = r#"The type of an operational line.  Based on MIL-STD-6016 Point Type (DFI 363/DUI 003) and Point Amplification (DFI 379/DUI 002)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpLineCategoryEnum {
 	#[doc = r#"A general line where the function must be described by other procedures."#]
 	#[serde(rename = "GENERAL_LINE")]
@@ -16049,7 +15920,7 @@ pub enum OpLineCategoryEnum {
 }
 
 #[doc = r#"The type of an emergency point. Based on MIL-STD-6016 DFI/DUI 1641/001."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpPointEmergencyEnum {
 	#[doc = r#"A general emergency point where the function must be described by other procedures."#]
 	#[serde(rename = "GENERAL_EMERGENCY")]
@@ -16075,7 +15946,7 @@ pub enum OpPointEmergencyEnum {
 }
 
 #[doc = r#"The type of a general or commonly used operational point.  Some values are from MIL-STD-6016 Point Type DFI 363/DUI 003) and Point Amplification (DFI 379/DUI 002)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpPointGeneralEnum {
 	#[doc = r#"The presence of this element indicates that this point is a location to return to in a loss of comm. situation."#]
 	#[serde(rename = "LOSS_OF_COMM")]
@@ -16128,7 +15999,7 @@ pub enum OpPointGeneralEnum {
 }
 
 #[doc = r#"The type of a hazard point.  Based on MIL-STD-6016 Point Type (DFI 363/DUI 003) and Point Amplification (DFI 379/DUI 002)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpPointHazardEnum {
 	#[doc = r#"A general hazard point where the function must be described by other procedures."#]
 	#[serde(rename = "GENERAL_HAZARD")]
@@ -16166,7 +16037,7 @@ pub enum OpPointHazardEnum {
 }
 
 #[doc = r#"The type of a reference point.  Based on MIL-STD-6016 Point Type (DFI 363/DUI 003) and Point Amplification (DFI 379/DUI 002)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpPointReferenceEnum {
 	#[doc = r#"A general reference point where the function must be described by other procedures."#]
 	#[serde(rename = "GENERAL_REFERENCE")]
@@ -16210,7 +16081,7 @@ pub enum OpPointReferenceEnum {
 }
 
 #[doc = r#"The type of a station point.  Based on MIL-STD-6016 Point Type (DFI 363/DUI 003) and Point Amplification (DFI 379/DUI 002)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpPointStationEnum {
 	#[doc = r#"A general station point where the function must be described by other procedures."#]
 	#[serde(rename = "GENERAL_STATION")]
@@ -16272,7 +16143,7 @@ pub enum OpPointStationEnum {
 }
 
 #[doc = r#"The type of an operational zone.  Many, but not all, of the enumerations are from MIL-STD-6016 Point Type (DFI 363/DUI 003) and Point Amplification (DFI 379/DUI 002).  Some of the enumerations in this type can also have unique parameters that are specified in OpZoneCategoryType.  See individual enumerations for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpZoneCategoryEnum {
 	#[doc = r#"A point at which AEW aircraft are or will be orbiting or maneuvering."#]
 	#[serde(rename = "AIRBORNE_EARLY_WARNING")]
@@ -16394,7 +16265,7 @@ pub enum OpZoneCategoryEnum {
 }
 
 #[doc = r#"The determination of whether data is included or excluded."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OpZoneFilterEnum {
 	#[doc = r#"Indicates the filter zone will include data."#]
 	#[serde(rename = "INCLUSION")]
@@ -16408,7 +16279,7 @@ pub enum OpZoneFilterEnum {
 }
 
 #[doc = r#"Air and Land Operational Capability based on MIL-STD-6016 DFI 753 DUIs 002 and 003."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OperationalCapabilityEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -16428,7 +16299,7 @@ pub enum OperationalCapabilityEnum {
 }
 
 #[doc = r#"Indicates the primary system component that has degraded the operational capability of the platform.  Enumeration values list the various primary system components that could have an impairment."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OperationalImpairmentEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_REPORT")]
@@ -16484,7 +16355,7 @@ pub enum OperationalImpairmentEnum {
 }
 
 #[doc = r#"Operational status for any component."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OperationalStatusEnum {
 	#[doc = r#"Current availability of the system is OPERATIONAL, available to perform mission."#]
 	#[serde(rename = "OPERATIONAL")]
@@ -16510,7 +16381,7 @@ pub enum OperationalStatusEnum {
 }
 
 #[doc = r#"Indicates the recommendation to the operator of an action to perform."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OperatorContingencyActionEnum {
 	#[doc = r#"Recommend that the operator perform kinematic replanning for conflicted systems."#]
 	#[serde(rename = "REPLAN_KINEMATICS_CONFLICTED_SYSTEMS")]
@@ -16551,7 +16422,7 @@ pub enum OperatorContingencyActionEnum {
 }
 
 #[doc = r#"Indicates whether the operator is available or not."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OperatorStatusEnum {
 	#[doc = r#"Indicates an operator is available."#]
 	#[serde(rename = "AVAILABLE")]
@@ -16562,7 +16433,7 @@ pub enum OperatorStatusEnum {
 }
 
 #[doc = r#"Indicates an operator unique name for an affiliated asset outside GENC scope.Operator unique names that are not found in GENC_CountryNameEnum."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OperatorUniqueNameEnum {
 	#[doc = r#"Full name is Arab Satellite Communications Organization.  Arabsat was created to deliver satellite-based, public and private telecommunications services to the Arab States, IAW International Standards.  Arabsat is a communications satellite operator in the Arab world, headquartered in the city of Riyadh, Saudi Arabia."#]
 	#[serde(rename = "ARAB_SATCOM_ORG")]
@@ -16627,7 +16498,7 @@ pub enum OperatorUniqueNameEnum {
 }
 
 #[doc = r#"Indicates the name of an orbit altitude range."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitAltitudeEnum {
 	#[doc = r#"Apogee is nominally at least 160 km (100 miles), but less than 2000 km (1240 miles) in altitude above the WGS 84 oblate spheroid."#]
 	#[serde(rename = "LOW")]
@@ -16644,7 +16515,7 @@ pub enum OrbitAltitudeEnum {
 }
 
 #[doc = r#"Indicates the type of orbital maneuver."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitChangeCapabilityEnum {
 	#[doc = r#"Indicates a maneuver that results in a custom orbit defined by its orbital elements."#]
 	#[serde(rename = "SPECIFIC_ORBIT")]
@@ -16676,7 +16547,7 @@ pub enum OrbitChangeCapabilityEnum {
 }
 
 #[doc = r#"Indicates the class of an orbit regime and are secondary descriptions of orbits within a regime."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitClassEnum {
 	#[doc = r#"An orbit whose eccentricity is less than or equal to 0.005."#]
 	#[serde(rename = "CIRCULAR")]
@@ -16747,7 +16618,7 @@ pub enum OrbitClassEnum {
 }
 
 #[doc = r#"Indicates the type of conjunction assessment to perform."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitConjunctionAssessmentEnum {
 	#[doc = r#"Indicates the conjunction assessment is limited to the specified object or objects."#]
 	#[serde(rename = "SPECIFIED_ONLY")]
@@ -16770,7 +16641,7 @@ pub enum OrbitConjunctionAssessmentEnum {
 }
 
 #[doc = r#"An enumeration specifying the type of orbit."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitEnum {
 	#[doc = r#"Specifies the orbit should be circular or elliptical."#]
 	#[serde(rename = "CIRCLE")]
@@ -16784,7 +16655,7 @@ pub enum OrbitEnum {
 }
 
 #[doc = r#"The type of orbital kinematics representation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitKinematicsEnum {
 	#[doc = r#"Orbit kinematics is represented by a Two Line Element set (TLE_BaseType)."#]
 	#[serde(rename = "ORBITAL_ELEMENT_SET")]
@@ -16804,7 +16675,7 @@ pub enum OrbitKinematicsEnum {
 }
 
 #[doc = r#"The type of orbital maneuver."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitPlanManeuverTypeEnum {
 	#[doc = r#"Indicates a maneuver that changes the satellite's orbital altitude."#]
 	#[serde(rename = "ALTITUDE_CHANGE")]
@@ -16842,7 +16713,7 @@ pub enum OrbitPlanManeuverTypeEnum {
 }
 
 #[doc = r#"Indicates the kinds of orbit plan parts that make up a OrbitPlan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitPlanPartsEnum {
 	#[doc = r#"Indicates a nominal orbit sequence."#]
 	#[serde(rename = "NOMINAL")]
@@ -16865,7 +16736,7 @@ pub enum OrbitPlanPartsEnum {
 }
 
 #[doc = r#"This element includes other qualitative types of regions in space such as Space weather related zones."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitQualitativeEnum {
 	#[doc = r#"Indicates portions of the ionosphere at high geomagnetic latitudes where scintillation is strong."#]
 	#[serde(rename = "AURORAL_REGIONS")]
@@ -16879,7 +16750,7 @@ pub enum OrbitQualitativeEnum {
 }
 
 #[doc = r#"Indicates the name of an orbit regime which are mostly altitude-based and are in line with traditional terminology (e.g., LEO, MEO, and GEO)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitRegimeEnum {
 	#[doc = r#"Low Earth Orbit. An Earth-centered orbit whose apogee altitude is greater than or equal to 160 km and less than 2000 km."#]
 	#[serde(rename = "LEO")]
@@ -16917,7 +16788,7 @@ pub enum OrbitRegimeEnum {
 }
 
 #[doc = r#"Indicates why an Orbit Sequence is invalid.  See individual enumerations for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitValidationErrorEnum {
 	#[doc = r#"Indicates the orbit was rejected, failed, or generally can't be completed satisfactorily because it would result in an undesired change in altitude which could result in potentially catastrophic consequences."#]
 	#[serde(rename = "ALTITUDE_ERROR")]
@@ -16955,7 +16826,7 @@ pub enum OrbitValidationErrorEnum {
 }
 
 #[doc = r#"Indicates ways in which orbiting objects break-up and/or in which break-ups are predicted/modeled."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalBreakupEnum {
 	#[doc = r#"Indicates a space based object breaking into pieces as a result of a physical collision with another object, such as another satellite."#]
 	#[serde(rename = "COLLISION")]
@@ -16966,7 +16837,7 @@ pub enum OrbitalBreakupEnum {
 }
 
 #[doc = r#"Indicates the type of Orbital Conjunction."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalConjunctionEnum {
 	#[doc = r#"Indicates a kinematic collision."#]
 	#[serde(rename = "KINEMATIC_COLLISION")]
@@ -16983,7 +16854,7 @@ pub enum OrbitalConjunctionEnum {
 }
 
 #[doc = r#"Indicates whether estimate results are provided as a file or detailed in the OrbitalDebrisEstimate message."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalDebrisEstimateEnum {
 	#[doc = r#"Indicates that the orbital debris estimate results are contained in a file."#]
 	#[serde(rename = "FILE")]
@@ -16994,7 +16865,7 @@ pub enum OrbitalDebrisEstimateEnum {
 }
 
 #[doc = r#"Indicates a list of orbital events."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalEventEnum {
 	#[doc = r#"The point in the orbit that is furthest from the Earth."#]
 	#[serde(rename = "APOGEE")]
@@ -17029,7 +16900,7 @@ pub enum OrbitalEventEnum {
 }
 
 #[doc = r#"Indicates the kinematics source as defined below."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalKinematicsSourceEnum {
 	#[doc = r#"The element set is a carryover from the legacy Two Line Element set (TLE) format, and is provided to support processes that transform to/from that format."#]
 	#[serde(rename = "ELEMENT_SET")]
@@ -17046,7 +16917,7 @@ pub enum OrbitalKinematicsSourceEnum {
 }
 
 #[doc = r#"This enumeration indicates the state of the orbital maneuver."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalManeuverStateEnum {
 	#[doc = r#"Indicates an instance where a once predicted orbital maneuver never occurred."#]
 	#[serde(rename = "NOT_DETECTED")]
@@ -17069,7 +16940,7 @@ pub enum OrbitalManeuverStateEnum {
 }
 
 #[doc = r#"The type of orbital maneuver."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalManeuverTypeEnum {
 	#[doc = r#"Indicates a maneuver that changes the satellite's orbital altitude."#]
 	#[serde(rename = "ALTITUDE_CHANGE")]
@@ -17101,7 +16972,7 @@ pub enum OrbitalManeuverTypeEnum {
 }
 
 #[doc = r#"Indicates orbital model propagators that are used for predicting satellite position and velocity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalModelNameEnum {
 	#[doc = r#"An orbital model propagator used for predicting satellites in LEO or non-LEO. Stands for Simplified General Perturbations."#]
 	#[serde(rename = "SGP4")]
@@ -17136,7 +17007,7 @@ pub enum OrbitalModelNameEnum {
 }
 
 #[doc = r#"The enumeration of Tier 1 capabilities that an Orbital Surveillance system may support."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalSurveillanceCapabilityEnum {
 	#[doc = r#"The ability to perform location based searches."#]
 	#[serde(rename = "LOCATION_BASED")]
@@ -17150,7 +17021,7 @@ pub enum OrbitalSurveillanceCapabilityEnum {
 }
 
 #[doc = r#"The enumeration of all message output types of Orbital Surveillance Capabilities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalSurveillanceMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message. For example, the OrbitalSurveillanceActivity message for an Orbital Surveillance Capability."#]
 	#[serde(rename = "ORBITAL_SURVEILLANCE_ACTIVITY")]
@@ -17188,7 +17059,7 @@ pub enum OrbitalSurveillanceMessageOutputsEnum {
 }
 
 #[doc = r#"The enumeration of target motion collection capabilities that an orbital surveillance system may support."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalSurveillanceSensorCapabilityEnum {
 	#[doc = r#"Collection on a target that is applying force to affect its trajectory."#]
 	#[serde(rename = "POWERED_FLIGHT_COLLECTION")]
@@ -17199,7 +17070,7 @@ pub enum OrbitalSurveillanceSensorCapabilityEnum {
 }
 
 #[doc = r#"The enumeration of all message output types of Orbital Surveillance Sensor Capabilities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalSurveillanceSensorMessageOutputsEnum {
 	#[doc = r#"Indicates results of the Capability will be reported via the ObservationMeasurementReport message."#]
 	#[serde(rename = "OBSERVATION_MEASUREMENT_REPORT")]
@@ -17225,7 +17096,7 @@ pub enum OrbitalSurveillanceSensorMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates the reporting requirements for RCS and Visual Magnitude sensor collections used for size estimation characterization."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalSurveillanceSizeDataEnum {
 	#[doc = r#"Report average apparent size across collection span or spans for phenomenology (e.g., RCS, visual magnitude)."#]
 	#[serde(rename = "AVERAGE")]
@@ -17236,7 +17107,7 @@ pub enum OrbitalSurveillanceSizeDataEnum {
 }
 
 #[doc = r#"Desired size or apparent size type to address information need."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalSurveillanceSizeTypeEnum {
 	#[doc = r#"Any type of size information is acceptable."#]
 	#[serde(rename = "ANY")]
@@ -17256,7 +17127,7 @@ pub enum OrbitalSurveillanceSizeTypeEnum {
 }
 
 #[doc = r#"The enumeration of Tier 2 capabilities that an Orbital Surveillance system may support (the desired outcome of the collection)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrbitalSurveillanceSubCapabilityEnum {
 	#[doc = r#"Indicates that the search is to cover a specified volume referenced to an Earth-centric (or potentially expanded to other celestial reference) rather than an orbit-centric volume. Typically used for surveillance and general detection of new objects."#]
 	#[serde(rename = "AREA_SEARCH")]
@@ -17321,7 +17192,7 @@ pub enum OrbitalSurveillanceSubCapabilityEnum {
 }
 
 #[doc = r#"An enumeration specifying the Order of battle data. From MIDB the associated values are [ABCDEGJMNSX] Position 3, OB_TYPE     A Air Force     B Joint Forces     C Civilian     D Defensive Missile Forces     E Net     G Army     J Space Order of Battle (SOB)     M Ministry, Other Than Ministry of Defense (MOD)     N Navy     S Strategic Missile Forces     X Air Defense Order of Battle (ADOB). not all are represented here."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrderOfBattleEnum {
 	#[doc = r#"Specifies the Air Defense Order of Battle (in MIDB equates to X)."#]
 	#[serde(rename = "AIR_DEFENSE")]
@@ -17362,7 +17233,7 @@ pub enum OrderOfBattleEnum {
 }
 
 #[doc = r#"Degree to which the entity is ready to perform the overall mission."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OrderOfBattleOperationalStatusEnum {
 	#[doc = r#"Capability of Emergency Launch."#]
 	#[serde(rename = "CEL")]
@@ -17433,7 +17304,7 @@ pub enum OrderOfBattleOperationalStatusEnum {
 }
 
 #[doc = r#"CVEnumISMCATOwnerProducer Values"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OwnerProducerEnum {
 	#[doc = r#"Foreign Government Information"#]
 	#[serde(rename = "FGI")]
@@ -18461,7 +18332,7 @@ pub enum OwnerProducerEnum {
 }
 
 #[doc = r#"Indicates the types of Navigation capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum OwnshipNavigationCapabilityOptionEnum {
 	#[doc = r#"Ownship navigation to commence dynamic navigation."#]
 	#[serde(rename = "DYNAMIC")]
@@ -18478,7 +18349,7 @@ pub enum OwnshipNavigationCapabilityOptionEnum {
 }
 
 #[doc = r#"Indicates if/how things including Systems and Capabilities can operate with partners in a Package."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PackageOperationEnum {
 	#[doc = r#"Indicates no support for coordinated operation with a partner in a Package."#]
 	#[serde(rename = "NO_PACKAGE_OPERATION")]
@@ -18492,7 +18363,7 @@ pub enum PackageOperationEnum {
 }
 
 #[doc = r#"An enumeration indicating the order of commands or tasks in a pair collection."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PairIdentifierEnum {
 	#[doc = r#"Indicates the Command or Task is the first collect in a pair collection."#]
 	#[serde(rename = "FIRST_COLLECT")]
@@ -18506,7 +18377,7 @@ pub enum PairIdentifierEnum {
 }
 
 #[doc = r#"Indicates the type of pairing or association between two objects."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PairingRelationshipEnum {
 	#[doc = r#"A generic  relationship (operational, rather than an engagement) between the two objects. For example, a rendezvous or tanker pairing."#]
 	#[serde(rename = "GENERAL_PAIRING")]
@@ -18544,7 +18415,7 @@ pub enum PairingRelationshipEnum {
 }
 
 #[doc = r#"Indicates the Serial I/O port's parity.  Enumeration values list the various parity types.  This I/O port setting is configured at the same time as other component settings such as the port identifier, open/close state, and data rate."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ParityTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NONE")]
@@ -18564,7 +18435,7 @@ pub enum ParityTypeEnum {
 }
 
 #[doc = r#"An enumeration indicating if a sensor is passive or active."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PassiveActiveEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "PASSIVE")]
@@ -18575,7 +18446,7 @@ pub enum PassiveActiveEnum {
 }
 
 #[doc = r#"Enumeration indicating the multipath path of the measurement."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PathIdentificationEnum {
 	#[doc = r#"Indicates measurement from the direct path."#]
 	#[serde(rename = "DIRECT")]
@@ -18592,7 +18463,7 @@ pub enum PathIdentificationEnum {
 }
 
 #[doc = r#"An enumeration specifying if the path segment was routed by the system or the operator."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PathSegmentSourceEnum {
 	#[doc = r#"Indicates the path segment was automatically routed."#]
 	#[serde(rename = "AUTO_ROUTED")]
@@ -18603,7 +18474,7 @@ pub enum PathSegmentSourceEnum {
 }
 
 #[doc = r#"Indicates the action to be performed while on the associated path."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PathTypeEnum {
 	#[doc = r#"Indicates the path is the primary (default) path."#]
 	#[serde(rename = "PRIMARY")]
@@ -18644,7 +18515,7 @@ pub enum PathTypeEnum {
 }
 
 #[doc = r#"Indicates the command to be executed on the associated *Plan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanActivationCommandEnum {
 	#[doc = r#"Prepare the associated *Plan for upload to the vehicle."#]
 	#[serde(rename = "PREPARE_FOR_UPLOAD")]
@@ -18670,7 +18541,7 @@ pub enum PlanActivationCommandEnum {
 }
 
 #[doc = r#"Indicates the current activation state and status of the associated command to be executed on the associated *Plan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanActivationStateEnum {
 	#[doc = r#"Indicates the associated *Plan is inactive, never having begun the activation approval or activation."#]
 	#[serde(rename = "INACTIVE")]
@@ -18768,7 +18639,7 @@ pub enum PlanActivationStateEnum {
 }
 
 #[doc = r#"Indicates the parts/items in a *Plan that are changeable in the context of an associated *PlanCommand, automated replan, etc."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanChangeableConstraintsEnum {
 	#[doc = r#"Indicates a desire for the new plan to match the constraining plan while indicating that unlocked items in the constraining plan which are affected by changes/events in the planning baseline or battlespace can be changed in the new plan.  The exact definition of "affected" and "change" is left to particular Services and/or Systems to establish according to their requirements."#]
 	#[serde(rename = "UNLOCKED_AND_AFFECTED_ONLY")]
@@ -18785,7 +18656,7 @@ pub enum PlanChangeableConstraintsEnum {
 }
 
 #[doc = r#"Indicates the action associated with the *PlanActivationCommand."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanConfigurationActivationCommandEnum {
 	#[doc = r#"Indicates the action to activate the associated *Plan."#]
 	#[serde(rename = "ACTIVATE")]
@@ -18796,7 +18667,7 @@ pub enum PlanConfigurationActivationCommandEnum {
 }
 
 #[doc = r#"Indicates the configuration state of the *PlanActivationCommand."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanConfigurationStateEnum {
 	#[doc = r#"Indicates the associated *Plan has received an activation command and all triggers have been enabled but the *Plan is not yet Active.  This state is a transitional state and can be bypassed if the transition to Active is immediate."#]
 	#[serde(rename = "ACTIVATED")]
@@ -18810,7 +18681,7 @@ pub enum PlanConfigurationStateEnum {
 }
 
 #[doc = r#"Indicates the relationship between the System associated with a constraining *Plan and the System whose *Plan is being or was created."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanConstraintUsageEnum {
 	#[doc = r#"Indicates an existing *Plan of another System supported by the subject *Plan or *PlanCommand.  For example, the existing RoutePlan of another System (the supported System) can constrain Electronic Attack actions in a subject RouteActivityPlan of the supporting System."#]
 	#[serde(rename = "SUPPORTED_SYSTEM")]
@@ -18833,7 +18704,7 @@ pub enum PlanConstraintUsageEnum {
 }
 
 #[doc = r#"Indicates the command-independent states of *Plan execution."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanExecutionStateEnum {
 	#[doc = r#"Indicates the associated *Plan is currently pending."#]
 	#[serde(rename = "PENDING")]
@@ -18856,7 +18727,7 @@ pub enum PlanExecutionStateEnum {
 }
 
 #[doc = r#"Indicates the type of source that initiated and created a *Plan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanInitiationSourceEnum {
 	#[doc = r#"Indicates the *Plan was created by a planning service invoked by an autonomous/automated replanning function/service."#]
 	#[serde(rename = "PLANNER_SERVICE_AUTONOMOUS")]
@@ -18876,7 +18747,7 @@ pub enum PlanInitiationSourceEnum {
 }
 
 #[doc = r#"Indicates the extent of *Plan related approval processing to perform for the on-demand request.  See enumerate annotations for details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanPolicyProcessingEnum {
 	#[doc = r#"Indicates on-demand approval processing should only consider the "applicable planning activity" to determine/find policies applicable to the subject *Plans."#]
 	#[serde(rename = "APPLICABLE_PLANNING_ACTIVITY")]
@@ -18893,7 +18764,7 @@ pub enum PlanPolicyProcessingEnum {
 }
 
 #[doc = r#"Indicates a System's support for *Plan simultaneity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanSimultaneityEnum {
 	#[doc = r#"Indicates support for a single *Plan that last for the duration of the associated Mission."#]
 	#[serde(rename = "SINGLE")]
@@ -18907,7 +18778,7 @@ pub enum PlanSimultaneityEnum {
 }
 
 #[doc = r#"Indicates a specific type of *Plan and associated message or messages."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanTypeEnum {
 	#[doc = r#"Indicates a Mission Plan and associated MissionPlan* messages."#]
 	#[serde(rename = "MISSION_PLAN")]
@@ -18948,7 +18819,7 @@ pub enum PlanTypeEnum {
 }
 
 #[doc = r#"Indicates the validation state of the associated *Plan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanValidationStateEnum {
 	#[doc = r#"Indicates the associated *Plan is not validated."#]
 	#[serde(rename = "NOT_VALIDATED")]
@@ -18965,7 +18836,7 @@ pub enum PlanValidationStateEnum {
 }
 
 #[doc = r#"Indicates the types of Navigation capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlannedNavigationCapabilityOptionEnum {
 	#[doc = r#"Planned navigation to adopt a MissionID as its prescribed navigational course."#]
 	#[serde(rename = "MISSION_ID")]
@@ -18982,7 +18853,7 @@ pub enum PlannedNavigationCapabilityOptionEnum {
 }
 
 #[doc = r#"Indicates category/type of source for data to use for planning."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanningDataSourceEnum {
 	#[doc = r#"Indicates live position and status data should be used as the basis of planning for a given System.  Live position and status data is given in the "station-keeping" set of UCI messages including PositionReport/SystemOrbitalPositionReport, SystemStatus, NavigationReport, [Capability]Status and [Capability]Activity."#]
 	#[serde(rename = "LIVE")]
@@ -18996,7 +18867,7 @@ pub enum PlanningDataSourceEnum {
 }
 
 #[doc = r#"Indicates categories of messages sets used for planning."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanningInterfaceEnum {
 	#[doc = r#"Indicates *PlanCommand messages as an interface.  A System that supports *PlanCommand messages as an interface can be invoked to create *Plans.  Note: SupportPlans series of messages do not fall under the PLAN_COMMAND interface, they use the SupportPlanRequest* messages instead."#]
 	#[serde(rename = "PLAN_COMMAND")]
@@ -19022,7 +18893,7 @@ pub enum PlanningInterfaceEnum {
 }
 
 #[doc = r#"Indicates the results of allocation planning for a Requirement."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanningResultEnum {
 	#[doc = r#"Indicates the Requirement was in the list of Requirements in a *PlanCommand and was successfully allocated to a System.  For example, a Task in TaskPlanCommand (listed by TaskID and/or through a reference to a superior TaskPlan) that was successfully allocated to a candidate System."#]
 	#[serde(rename = "ALLOCATED")]
@@ -19045,7 +18916,7 @@ pub enum PlanningResultEnum {
 }
 
 #[doc = r#"Indicates the state of the associated *Plan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanningStateEnum {
 	#[doc = r#"Indicates the associated *Plan is pending."#]
 	#[serde(rename = "PENDING")]
@@ -19065,7 +18936,7 @@ pub enum PlanningStateEnum {
 }
 
 #[doc = r#"Indicates the category/type of trigger for planning or replanning."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlanningTriggerSourceEnum {
 	#[doc = r#"Indicates planning that was autonomously trigger by a service monitoring the battlespace, mission progress, etc."#]
 	#[serde(rename = "AUTONOMOUS_TRIGGER")]
@@ -19076,7 +18947,7 @@ pub enum PlanningTriggerSourceEnum {
 }
 
 #[doc = r#"Indicates the system whose status is currently being reported on for aircraft.  Enumeration values list the various air vehicle systems which may report status."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlatformFunctionAirEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "RADAR")]
@@ -19135,8 +19006,7 @@ pub enum PlatformFunctionAirEnum {
 }
 
 #[doc = r#"Indicates the system whose status is currently being reported on for electronic warfare systems.  Enumeration values list the various electronic warfare systems which may report status."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PlatformFunctionEW_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlatformFunctionEwEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "ES_BAND_A")]
@@ -19228,7 +19098,7 @@ pub enum PlatformFunctionEwEnum {
 }
 
 #[doc = r#"Indicates the system whose status is currently being reported on for ground vehicles.  Enumeration values list the various ground vehicle systems which may report status."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlatformFunctionGroundEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NATO_LINK_1")]
@@ -19275,7 +19145,7 @@ pub enum PlatformFunctionGroundEnum {
 }
 
 #[doc = r#"Indicates the system whose status is currently being reported on for sea surface vehicles.  Enumeration values list the various sea surface vehicle systems which may report status."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PlatformFunctionSeaSurfaceEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "C2_SYSTEM")]
@@ -19379,8 +19249,7 @@ pub enum PlatformFunctionSeaSurfaceEnum {
 }
 
 #[doc = r#"Indicates the phase modulation on pulse (PMOP) condition for a signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PMOP_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PmopEnum {
 	#[doc = r#"Indicates binary phase shift keyed (BPSK) modulation was detected."#]
 	#[serde(rename = "BPSK")]
@@ -19397,8 +19266,7 @@ pub enum PmopEnum {
 }
 
 #[doc = r#"Indicates the phase states for a signal with phase modulation on pulse (PMOP)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PMOP_SequenceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PmopSequenceEnum {
 	#[doc = r#"Zero degree phase state for a quadrature PMOP_Enum."#]
 	#[serde(rename = "DEGREES_0")]
@@ -19415,8 +19283,7 @@ pub enum PmopSequenceEnum {
 }
 
 #[doc = r#"The enumeration of all capabilities that a Passive Optical sensor may support."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_CapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoCapabilityEnum {
 	#[doc = r#"Specifies that images are to be or have been collected."#]
 	#[serde(rename = "SPOT_IMAGE")]
@@ -19478,8 +19345,7 @@ pub enum PoCapabilityEnum {
 }
 
 #[doc = r#"The enumeration of all collection constraints that may apply to a Passive Optical sensor."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_CollectionConstraintsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoCollectionConstraintsEnum {
 	#[doc = r#"True Map Angle. The true map angle is defined in the Northeast Down (NED) coordinate system with the origin at the aircraft (aircraft local NED) as the angle between the scene entry line of sight and the instantaneous aircraft track heading vector. The aircraft track heading vector is obtained by rotating the north unit vector of the aircraft local NED coordinate system in the aircraft local NE plane through the aircraft track heading angle.  This angle is always positive."#]
 	#[serde(rename = "MAP_ANGLE")]
@@ -19514,8 +19380,7 @@ pub enum PoCollectionConstraintsEnum {
 }
 
 #[doc = r#"This enumeration provides additional environment information about the area of interest that the sensor is currently processing."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_EnvironmentEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoEnvironmentEnum {
 	#[doc = r#"This specific enumeration value provides additional information to the sensor indicating that the area of interest is predominantly over air."#]
 	#[serde(rename = "AIR")]
@@ -19547,8 +19412,7 @@ pub enum PoEnvironmentEnum {
 }
 
 #[doc = r#"The enumeration of all filter types supported by a Passive Optical sensor."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_FilterEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoFilterEnum {
 	#[doc = r#"A filter which blocks light of any frequency."#]
 	#[serde(rename = "SHUTTER")]
@@ -19571,8 +19435,7 @@ pub enum PoFilterEnum {
 }
 
 #[doc = r#"The enumeration of all capabilities that a Passive Optical sensor's FPA channel may support."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_FPA_ChannelOperationEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoFpaChannelOperationEnum {
 	#[doc = r#"FPA channel's having this capability support the ability of modifying the range of frequencies of photons that they will collect and measure. This capability is rare since the channel's band is usually a result of the process used to manufacture the FPA and is therefore fixed."#]
 	#[serde(rename = "BAND_RANGE")]
@@ -19601,8 +19464,7 @@ pub enum PoFpaChannelOperationEnum {
 }
 
 #[doc = r#"The enumeration of all reference frames that the gimbal's orientation may be in referenced to."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_GimbalOrientationReferenceFrameEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoGimbalOrientationReferenceFrameEnum {
 	#[doc = r#"This reference frame is defined with respect to the coordinate frame of the gimbal. The orientation of this reference frame with respect to other reference frames can be described by the InstallationDetails in the SubsystemConfiguration and/or ComponentConfiguration messages associated with the sibling Component_ID."#]
 	#[serde(rename = "REFERENCE_FRAME_GIMBAL")]
@@ -19613,8 +19475,7 @@ pub enum PoGimbalOrientationReferenceFrameEnum {
 }
 
 #[doc = r#"Indicates what the tracker does when the target is lost."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_LockPersistenceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoLockPersistenceEnum {
 	#[doc = r#"Command to the target tracker to continuously try to reacquire on a target if the target is lost."#]
 	#[serde(rename = "REACQUIRE")]
@@ -19625,8 +19486,7 @@ pub enum PoLockPersistenceEnum {
 }
 
 #[doc = r#"The enumeration of all message output types of Passive Optical Capabilities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message. For example, the PO_Activity message for a PO Capability."#]
 	#[serde(rename = "PO_ACTIVITY")]
@@ -19643,8 +19503,7 @@ pub enum PoMessageOutputsEnum {
 }
 
 #[doc = r#"The enumeration of all processing stages that can be included in a passive optical sensor."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_ProcessingStageTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoProcessingStageTypeEnum {
 	#[doc = r#"The pixels that make up the final images which are generated from the raw optical data can be further processed to enhance images brightness and contrast. This is accomplished by computing a new pixel value from the original pixel value using the following formula "newPixelvalue = offset + (gain * origPixelValue)" where the gain and offset are either set automatically or manually."#]
 	#[serde(rename = "PIXEL_SCALING")]
@@ -19691,8 +19550,7 @@ pub enum PoProcessingStageTypeEnum {
 }
 
 #[doc = r#"Indicates the passive optical search and track techniques."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_TechniqueEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoTechniqueEnum {
 	#[doc = r#"Detects targets and classifies them based on their features."#]
 	#[serde(rename = "TARGET_CLASSIFICATION")]
@@ -19748,8 +19606,7 @@ pub enum PoTechniqueEnum {
 }
 
 #[doc = r#"Commanded values supported for track parameters that are available for a capability and can be used to customize target detections."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_TrackCapabilityTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoTrackCapabilityTypeEnum {
 	#[doc = r#"Command option in the target tracker to attempt to acquire a target, lock onto the target, or release the target and stop tracking."#]
 	#[serde(rename = "COMMAND_TRACK_MODE")]
@@ -19763,8 +19620,7 @@ pub enum PoTrackCapabilityTypeEnum {
 }
 
 #[doc = r#"Commands the tracker to an acquisition state."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_TrackCommandEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoTrackCommandEnum {
 	#[doc = r#"Command the tracker to attempt to acquire a target."#]
 	#[serde(rename = "ACQUIRE")]
@@ -19778,8 +19634,7 @@ pub enum PoTrackCommandEnum {
 }
 
 #[doc = r#"Indicates the current status of target tracker on the primary target at the center line of sight."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PO_TrackModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PoTrackModeEnum {
 	#[doc = r#"Indicates that the target tracker is ready to track and is standing by."#]
 	#[serde(rename = "STANDBY")]
@@ -19799,7 +19654,7 @@ pub enum PoTrackModeEnum {
 }
 
 #[doc = r#"The enumeration defining if a ground entity is a point or a track."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PointTrackEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "POINT")]
@@ -19810,7 +19665,7 @@ pub enum PointTrackEnum {
 }
 
 #[doc = r#"Indicates a control interface for the pointing the Antenna.  See enumerated types annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PointingControlModeEnum {
 	#[doc = r#"The antenna pointing is automatically controlled by the System."#]
 	#[serde(rename = "AUTO")]
@@ -19821,7 +19676,7 @@ pub enum PointingControlModeEnum {
 }
 
 #[doc = r#"Indicates a control interface for the pointing the Antenna.  See enumerated types annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PointingControlModeStatusEnum {
 	#[doc = r#"The antenna pointing is automatically controlled by the System."#]
 	#[serde(rename = "AUTO")]
@@ -19835,7 +19690,7 @@ pub enum PointingControlModeStatusEnum {
 }
 
 #[doc = r#"Indicates the pointing type options available to point the XX Subsystem to do a XX collection, track, or search as part of an XX Activity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PointingTypeEnum {
 	#[doc = r#"Indicates whether pointing can be performed using the source of or explicit values for geospatial characteristics of the target of the Command."#]
 	#[serde(rename = "GEOSPATIAL")]
@@ -19858,7 +19713,7 @@ pub enum PointingTypeEnum {
 }
 
 #[doc = r#"Indicates the state of the pointing vector."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PointingVectorStateEnum {
 	#[doc = r#"A planned pointing vector."#]
 	#[serde(rename = "PLANNED")]
@@ -19878,7 +19733,7 @@ pub enum PointingVectorStateEnum {
 }
 
 #[doc = r#"Indicates the polarization of electromagnetic waves."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PolarizationEnum {
 	#[doc = r#"Indicates no polarization detected."#]
 	#[serde(rename = "NONE")]
@@ -19919,7 +19774,7 @@ pub enum PolarizationEnum {
 }
 
 #[doc = r#"Indicates polarization type available on an RF Port."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PolarizationPortEnum {
 	#[doc = r#"RF Port supports Pol_1 resources on the array."#]
 	#[serde(rename = "POL_1")]
@@ -19936,7 +19791,7 @@ pub enum PolarizationPortEnum {
 }
 
 #[doc = r#"Indicates left or right handed polarization."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PolarizationSenseEnum {
 	#[doc = r#"Right circular polarization in which the electric field vector rotates in a right-hand sense with respect to the direction of propagation."#]
 	#[serde(rename = "RIGHT_HANDED")]
@@ -19947,7 +19802,7 @@ pub enum PolarizationSenseEnum {
 }
 
 #[doc = r#"Indicates a control interface for the antenna positioning mode.  See enumerated types annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PositionModeEnum {
 	#[doc = r#"The location and speed of a System or Resource as specified by the System or Resource (not externally commanded)."#]
 	#[serde(rename = "AUTO")]
@@ -19958,7 +19813,7 @@ pub enum PositionModeEnum {
 }
 
 #[doc = r#"Position Time Quality from MIL-STD-6016 DFI 283 DUI 007."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PositionTimeQualityEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -20011,7 +19866,7 @@ pub enum PositionTimeQualityEnum {
 }
 
 #[doc = r#"Indicates the pressure status for a subsystem or subsystem component."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PressureStateEnum {
 	#[doc = r#"Pressure is above the normal operating range but has not yet affected component operation."#]
 	#[serde(rename = "CAUTION_HIGH")]
@@ -20034,8 +19889,7 @@ pub enum PressureStateEnum {
 }
 
 #[doc = r#"Indicates the observed pattern in an agile PRI signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PRI_AgilePatternEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PriAgilePatternEnum {
 	#[doc = r#"PRI agility pattern where the periodic PRI generation function is a sawtooth waveform (may also have a secondary clock)."#]
 	#[serde(rename = "SAWTOOTH")]
@@ -20061,8 +19915,7 @@ pub enum PriAgilePatternEnum {
 }
 
 #[doc = r#"Indicates the source and quality of a PRI measurement."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PRI_MeasurementEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PriMeasurementEnum {
 	#[doc = r#"Indicates the PRI value is a measured quantity, based on collected signal data."#]
 	#[serde(rename = "MEASURED")]
@@ -20076,8 +19929,7 @@ pub enum PriMeasurementEnum {
 }
 
 #[doc = r#"Indicates the cause of the switching in a switching PRI signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PRI_SwitchingPatternEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PriSwitchingPatternEnum {
 	#[doc = r#"Switching between fixed PRI settings by an operator, characterized by infrequent, unpredictable switches."#]
 	#[serde(rename = "MANUAL")]
@@ -20091,8 +19943,7 @@ pub enum PriSwitchingPatternEnum {
 }
 
 #[doc = r#"Indicates the different top level types of Pulse Repetition Interval (PRI)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "PRI_TypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PriTypeEnum {
 	#[doc = r#"Indicates a continuous wave (CW) signal with no PRI characterization.  This enumeration is included in PRI_TypeEnum to avoid the potential conflict of a separate CW boolean indication independent of this type."#]
 	#[serde(rename = "CW")]
@@ -20118,7 +19969,7 @@ pub enum PriTypeEnum {
 }
 
 #[doc = r#"Indicates the different top-level lists this message supports."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PrioritizationListEnum {
 	#[doc = r#"A prioritized list of battlespace objects or areas that are prioritized by an operational or tactical planner.  For planning purposes, the ListItem associated with this enumeration could include, for example, an entity, a signal, a point or region."#]
 	#[serde(rename = "THREAT_TARGET_PRIORITIZATION_LIST")]
@@ -20150,7 +20001,7 @@ pub enum PrioritizationListEnum {
 }
 
 #[doc = r#"Indicates the processing status of a request or command."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ProcessingStatusEnum {
 	#[doc = r#"Indicates processing has been scheduled/queued."#]
 	#[serde(rename = "QUEUED")]
@@ -20167,7 +20018,7 @@ pub enum ProcessingStatusEnum {
 }
 
 #[doc = r#"The actual type of processing that will occur on products to produce another product."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ProcessingTypeEnum {
 	#[doc = r#"Wideband Complex MASINT Data."#]
 	#[serde(rename = "WCMD")]
@@ -20268,7 +20119,7 @@ pub enum ProcessingTypeEnum {
 }
 
 #[doc = r#"Identifies the state of a product management task."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ProductManagementTaskStateEnum {
 	#[doc = r#"Indicates the task has been proposed but not yet approved."#]
 	#[serde(rename = "PROPOSED")]
@@ -20291,7 +20142,7 @@ pub enum ProductManagementTaskStateEnum {
 }
 
 #[doc = r#"Indicates the desired behavior in response to the associated Product or File Classification Request."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ProductOrFileClassificationRequestEnum {
 	#[doc = r#"This is a request for a product or file to be updated with a specific classification label.  In this case, the product or file will be labeled with the classification provided in the request or can be classified per the Product or File Classification Plan (if omitted from the request)."#]
 	#[serde(rename = "APPLY_CLASS_LABEL")]
@@ -20302,7 +20153,7 @@ pub enum ProductOrFileClassificationRequestEnum {
 }
 
 #[doc = r#"The enumeration of all message output types of Product Processing and Product Processing Function."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ProductProcessingFunctionMessageOutputsEnum {
 	#[doc = r#"Indicates results of the Product Processing Function will be reported via the Entity message."#]
 	#[serde(rename = "ENTITY")]
@@ -20313,7 +20164,7 @@ pub enum ProductProcessingFunctionMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates the product type."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ProductTypeEnum {
 	#[doc = r#"Indicates the product is Auxiliary data file for an AMTI activity for use in data analysis and reprocessing."#]
 	#[serde(rename = "AMTI_AUXILIARY_DATA")]
@@ -20567,7 +20418,7 @@ pub enum ProductTypeEnum {
 }
 
 #[doc = r#"Indicates what type of data will be pushed as a result of the dissemination plan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum PushContentsEnum {
 	#[doc = r#"Indicates that the file itself will be pushed to the planned recipients."#]
 	#[serde(rename = "FILE")]
@@ -20587,8 +20438,7 @@ pub enum PushContentsEnum {
 }
 
 #[doc = r#"Geometric Vertical Accuracy.  DO-260C table 2-69.  2 bit enum."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "QualityGVA_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum QualityGvaEnum {
 	#[doc = r#"0 = unknown or more than 150 meters."#]
 	#[serde(rename = "UNKNOWN_OR_MORE_THAN_150METERS")]
@@ -20605,7 +20455,7 @@ pub enum QualityGvaEnum {
 }
 
 #[doc = r#"Indicates the quality of observations."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum QualityOfObsEnum {
 	#[doc = r#"Used to designated position/velocity data suitable for inclusion in processes (along with other comparable data) to estimate orbits with low uncertainty."#]
 	#[serde(rename = "HI_QUAL")]
@@ -20619,8 +20469,7 @@ pub enum QualityOfObsEnum {
 }
 
 #[doc = r#"Probability (per flight hour or per sample) of Exceeding the Containment Radius."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "QualitySIL_Enum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum QualitySilEnum {
 	#[doc = r#"0 = unknown or more than 1x10^-3."#]
 	#[serde(rename = "UNKNOWN_OR_GREATER_THAN_1E_NEG3")]
@@ -20637,8 +20486,7 @@ pub enum QualitySilEnum {
 }
 
 #[doc = r#"The R-bar approach consists of the chaser approaching the target vehicle from the positive or negative radial direction of the target spacecraft. This occurs along the radial vector of the target vehicle."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "R_BarApproachEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RBarApproachEnum {
 	#[doc = r#"Indicates the chaser is approaching from the negative radial direction of the target spacecraft."#]
 	#[serde(rename = "NEGATIVE_RADIAL")]
@@ -20649,7 +20497,7 @@ pub enum RBarApproachEnum {
 }
 
 #[doc = r#"Indicates the first tier in the taxonomy of the Radar Altimeter Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarAltimeterCapabilityEnum {
 	#[doc = r#"Altitude measurement.  May be Filtered or Unfiltered per the Collection Options."#]
 	#[serde(rename = "MEASUREMENT")]
@@ -20660,7 +20508,7 @@ pub enum RadarAltimeterCapabilityEnum {
 }
 
 #[doc = r#"Indicates messages that are an output by the Capability as the result of capability commands. See enumerated type annotations for details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarAltimeterMessageOutputsEnum {
 	#[doc = r#"This message indicates the combined in-work and to-do list of the RadarAltimeter capability of a system; it is generally a complete, coherent snapshot of all activities of the system for the entire RadarAltimeter capability category (i.e. multiple activities can reside within this message, possibly even originating from a single command or triggering event)."#]
 	#[serde(rename = "RADAR_ALTIMETER_ACTIVITY")]
@@ -20671,7 +20519,7 @@ pub enum RadarAltimeterMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates a SubCapability of the Radar Altimeter Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarAltimeterSubCapabilityEnum {
 	#[doc = r#"Indicates the SubCapability of the Radar Altimeter subsystem will be optimized for operation over land."#]
 	#[serde(rename = "LAND")]
@@ -20685,7 +20533,7 @@ pub enum RadarAltimeterSubCapabilityEnum {
 }
 
 #[doc = r#"Indicates the radar beam persistence."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarBeamPersistenceEnum {
 	#[doc = r#"Indicates the radar beam persistence is unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -20699,7 +20547,7 @@ pub enum RadarBeamPersistenceEnum {
 }
 
 #[doc = r#"Indicates the type of region (beam) of radiation from an emitting radar."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarBeamTypeEnum {
 	#[doc = r#"Indicates in beam type is unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -20713,7 +20561,7 @@ pub enum RadarBeamTypeEnum {
 }
 
 #[doc = r#"Radar Channel Indicator from MIL-STD-6016 DFI 828 DUI 001."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarChannelIndicatorEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "SINGLE_RF_CHANNEL")]
@@ -20724,7 +20572,7 @@ pub enum RadarChannelIndicatorEnum {
 }
 
 #[doc = r#"Indicates the operational mode of the Radar. Based on MIL-STD-6016 DFI/DUI 425/003 and 426/003."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "UNKNOWN")]
@@ -20756,7 +20604,7 @@ pub enum RadarModeEnum {
 }
 
 #[doc = r#"Indicates the beam spoil type to be used during collection. Beam spoiling is typically used to produce a narrow beam in one dimension, and a relatively wide beam in the other. This increases the scan rate but decreases the ability to resolve a target location."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarSpoilTypeEnum {
 	#[doc = r#"Indicates the beam is to be spoiled along the azimuth axis."#]
 	#[serde(rename = "AZIMUTH")]
@@ -20770,7 +20618,7 @@ pub enum RadarSpoilTypeEnum {
 }
 
 #[doc = r#"Indicates the type of weighting function used. Weighting functions, also known as windows, are applied to radar data to reduce spectral leakage associated with finite observation intervals."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadarWeightingFunctionsEnum {
 	#[doc = r#"Indicates that a uniform weighting function is used. The uniform weighting function is typically used when power is prioritized over all else."#]
 	#[serde(rename = "UNIFORM")]
@@ -20784,7 +20632,7 @@ pub enum RadarWeightingFunctionsEnum {
 }
 
 #[doc = r#"Indicates the measured RCS Value of the object being observed in decibels per meter squared."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadiationModeEnum {
 	#[doc = r#"SAM Sensor mode is unknown"#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -20801,7 +20649,7 @@ pub enum RadiationModeEnum {
 }
 
 #[doc = r#"The radius that there is a 95% probability the aircraft is within that radius of its stated position, both horizontally and vertically."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RadiusOfContainmentEnum {
 	#[doc = r#"Unknown radius or greater than 20 NM."#]
 	#[serde(rename = "UNKNOWN_OR_GREATER_THAN20NM")]
@@ -20851,8 +20699,7 @@ pub enum RadiusOfContainmentEnum {
 }
 
 #[doc = r#"Indicates what type of data transfers will occur."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "RDMA_DataTransferServiceEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RdmaDataTransferServiceEnum {
 	#[doc = r#"Fabric Interface (FI) Regular messages."#]
 	#[serde(rename = "FI_MSG")]
@@ -20869,8 +20716,7 @@ pub enum RdmaDataTransferServiceEnum {
 }
 
 #[doc = r#"Indicates the type of endpoint for RDMA transfers, including connection based and unreliable vs. reliable."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "RDMA_EndpointTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RdmaEndpointTypeEnum {
 	#[doc = r#"Indicates an Fabric Interface (FI) Endpoint (EP) capable of reliable diagram (connection-less and unreliable)."#]
 	#[serde(rename = "FI_EP_RDM")]
@@ -20884,8 +20730,7 @@ pub enum RdmaEndpointTypeEnum {
 }
 
 #[doc = r#"Indicates which provider will be used for RDMA transfers."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "RDMA_ProviderEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RdmaProviderEnum {
 	#[doc = r#"Uses the Verbs API for network transport.  The Verbs API is normally provided as part of the RDMA hardware drivers."#]
 	#[serde(rename = "VERBS")]
@@ -20902,8 +20747,7 @@ pub enum RdmaProviderEnum {
 }
 
 #[doc = r#"Indicates the type of reconnaissance system installed such as electro optical, Infrared, ISAR, etc."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "RECCE_SystemEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RecceSystemEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NONE")]
@@ -20926,7 +20770,7 @@ pub enum RecceSystemEnum {
 }
 
 #[doc = r#"Indicates the intended use of the Order of Battle."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RecordUsageEnum {
 	#[doc = r#"Indicates the Order of Battle is for reference (e.g., satellite catalog)."#]
 	#[serde(rename = "REFERENCE")]
@@ -20937,7 +20781,7 @@ pub enum RecordUsageEnum {
 }
 
 #[doc = r#"Reduced Capability Equipment."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ReducedCapabilityEquipmentEnum {
 	#[doc = r#"Not RCE."#]
 	#[serde(rename = "NOT_RCE")]
@@ -20954,7 +20798,7 @@ pub enum ReducedCapabilityEquipmentEnum {
 }
 
 #[doc = r#"Indicates a message that is an output of the Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ReferenceCapabilityOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "REFERENCE_ACTIVITY")]
@@ -20980,7 +20824,7 @@ pub enum ReferenceCapabilityOutputsEnum {
 }
 
 #[doc = r#"Indicates whether the refueling is provided via a boom or a drogue.Refueling interface."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RefuelCapabilityEnum {
 	#[doc = r#"Refueling boom makes a connection to a receptacle on the receiving aircraft.  It can be retracted when not in use."#]
 	#[serde(rename = "BOOM")]
@@ -20994,7 +20838,7 @@ pub enum RefuelCapabilityEnum {
 }
 
 #[doc = r#"Indicates location of vehicle where refueling occurs."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RefuelLocationEnum {
 	#[doc = r#"Specifies refueling location is in the center of the tanker aircraft."#]
 	#[serde(rename = "CENTER")]
@@ -21011,7 +20855,7 @@ pub enum RefuelLocationEnum {
 }
 
 #[doc = r#"Indicates a direction relative to the front of the vehicle."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RelativeDirectionEnum {
 	#[doc = r#"Indicates left."#]
 	#[serde(rename = "LEFT")]
@@ -21022,7 +20866,7 @@ pub enum RelativeDirectionEnum {
 }
 
 #[doc = r#"CVEnumISMCATRelTo Values"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ReleasableToEnum {
 	#[doc = r#"United States of America"#]
 	#[serde(rename = "USA")]
@@ -22047,7 +21891,7 @@ pub enum ReleasableToEnum {
 }
 
 #[doc = r#"Indicates the reason for removing an item from the system."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RemoveReasonEnum {
 	#[doc = r#"Indicates the item was removed because a fusion algorithm/service or operator merged it into another Entity or Signal.  For example, say Entity 1 is a fusion input from System A, Entity 2 is a fusion input from System B and initially fusion outputs Entity 3 (corresponding to Entity 1) and Entity 4 (corresponding to Entity 2).  Later, fusion determines that Entity 1 and Entity 2 refer to the same physical system and merges them into an updated Entity 3.  Entity 4 is then REMOVED with RemoveReason of MERGED and MergedTo indicating Entity 3."#]
 	#[serde(rename = "MERGED")]
@@ -22064,7 +21908,7 @@ pub enum RemoveReasonEnum {
 }
 
 #[doc = r#"Indicates whether the associated action should be performed once, periodically, or indicates that a periodic action should be stopped."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RepeatEnum {
 	#[doc = r#"Indicates the associated action should be performed only once."#]
 	#[serde(rename = "SINGLE")]
@@ -22078,7 +21922,7 @@ pub enum RepeatEnum {
 }
 
 #[doc = r#"Indicates the processing status of a request."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequestProcessingStateEnum {
 	#[doc = r#"Request has been received and accepted but is not yet processing."#]
 	#[serde(rename = "QUEUED")]
@@ -22101,7 +21945,7 @@ pub enum RequestProcessingStateEnum {
 }
 
 #[doc = r#"Enumeration listing the type of source sending an Entity Management Request."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequestSourceEnum {
 	#[doc = r#"Request came from an operator on a system different from the handling service."#]
 	#[serde(rename = "MANUAL_EXTERNAL")]
@@ -22118,7 +21962,7 @@ pub enum RequestSourceEnum {
 }
 
 #[doc = r#"Indicates whether an instance of a request message is new, an update to an existing message or a request to cancel the message."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequestStateEnum {
 	#[doc = r#"Indicates that the request message is new to the network."#]
 	#[serde(rename = "NEW")]
@@ -22132,7 +21976,7 @@ pub enum RequestStateEnum {
 }
 
 #[doc = r#"Indicates a kind of temporal dependency between Requirements."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementDependencyEnum {
 	#[doc = r#"Indicates a temporal dependency where a Requirement starts relative to the finish of a reference Requirement."#]
 	#[serde(rename = "FINISH_TO_START")]
@@ -22149,7 +21993,7 @@ pub enum RequirementDependencyEnum {
 }
 
 #[doc = r#"Indicates types of guidance regarding Requirement execution."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementExecutionGuidanceHowEnum {
 	#[doc = r#"Indicates execution guidance regarding the intensity of the electromagnetic radiation either being emitted or reflecting off of an object as measured by a sensor."#]
 	#[serde(rename = "VISIBILITY")]
@@ -22187,7 +22031,7 @@ pub enum RequirementExecutionGuidanceHowEnum {
 }
 
 #[doc = r#"Indicates the execution state of a Requirement (Effect, Action, Task, etc.)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementExecutionStateEnum {
 	#[doc = r#"The Requirement is awaiting activation of the associated Plan."#]
 	#[serde(rename = "AWAITING_PLAN_ACTIVATION")]
@@ -22216,7 +22060,7 @@ pub enum RequirementExecutionStateEnum {
 }
 
 #[doc = r#"Indicates resource allocation, timeliness and approval guidance on planning and execution of tactical Requirements.  This guidance is generally given by operational C2 nodes to tactical C2 nodes per Requirement (per "tasking").  The enumerates reflect well-established, short-hand terminology.  The guidance and enumerates functionally overlap with some UCI concepts such as Approval Policy but should be thought of as informing the creation of or tactical use of those other UCI concepts; the enumerates give up front guidance, prior to creation of Approval Policies, resource scheduling, timing constraints, etc."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementGuidanceWhenEnum {
 	#[doc = r#"Also known as "PP".  Indicates the associated Requirement should be fully planned with resources fully committed.  Execution is pre-approved in the context of temporal, triggering and other constraints and the general planning and execution workflow.  For example, a Strike Task with PRE_PLAN guidance should be fully planned to meet all constraints with necessary weapons and other resources assigned/reserved for use when needed for the Task.  When the resulting plan is approved and activated, the Strike Task is pre-approved for execution from an operational C2 perspective but might require approvals as necessary for intra-tactical coordination, safety, deconfliction, etc."#]
 	#[serde(rename = "PRE_PLAN")]
@@ -22230,7 +22074,7 @@ pub enum RequirementGuidanceWhenEnum {
 }
 
 #[doc = r#"Indicates guidance on the high level purpose of a Requirement."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementGuidanceWhyEnum {
 	#[doc = r#"Indicates the purpose of the associated Requirement is to collect information."#]
 	#[serde(rename = "INFORMATION")]
@@ -22244,7 +22088,7 @@ pub enum RequirementGuidanceWhyEnum {
 }
 
 #[doc = r#"Indicates a Requirement-related object/actor."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementObjectEnum {
 	#[doc = r#"Indicates the object/System which the Requirement is allocated to."#]
 	#[serde(rename = "ALLOCATED_SYSTEM")]
@@ -22261,7 +22105,7 @@ pub enum RequirementObjectEnum {
 }
 
 #[doc = r#"Indicates the planning state of a Requirement (Effect, Action, Task, etc.)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementPlanningStateEnum {
 	#[doc = r#"A Requirement that is not allocated to any System.  The Requirement is either newly created, was not able to be allocated, or was previously allocated then DROPPED or FAILED during execution."#]
 	#[serde(rename = "UNALLOCATED")]
@@ -22281,7 +22125,7 @@ pub enum RequirementPlanningStateEnum {
 }
 
 #[doc = r#"Indicates types of temporal/timing constraints for Requirements (Effect, Action, Task, etc.)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementTimingEnum {
 	#[doc = r#"Indicates a temporal constraint on initiation of planning for the Requirement. For Requirements whose systems have a periodic planning cycle, long multi-day missions, or communications restrictions that result in a deadline to initiate planning for a Requirement, this enumerate indicates a constraint for making an explicit deadline for completing the Requirement at the operational C2 level, in order to then submit it to a subordinate tactical C2 System for detailed planning for the targeted Mission."#]
 	#[serde(rename = "PLANNING_INITIATE")]
@@ -22313,7 +22157,7 @@ pub enum RequirementTimingEnum {
 }
 
 #[doc = r#"Indicates intended/allowed usage of a Requirement."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RequirementUsageEnum {
 	#[doc = r#"Indicates the Requirement can be used as input for creating *Plans for Planned C2."#]
 	#[serde(rename = "PLANNED_C2")]
@@ -22330,7 +22174,7 @@ pub enum RequirementUsageEnum {
 }
 
 #[doc = r#"Indicates the state of the resource allocation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ResourceAllocationStateEnum {
 	#[doc = r#"This enumeration is used when this is a new allocation."#]
 	#[serde(rename = "NEW")]
@@ -22347,7 +22191,7 @@ pub enum ResourceAllocationStateEnum {
 }
 
 #[doc = r#"Indicates the state of the resource allocation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ResourceAllocationStatusEnum {
 	#[doc = r#"When the RF_ResourceAllocationRequestStatus is initially sent with RequestStatus of ACCEPTED, the ResourceAllocationState may be set to "PENDING_ALLOCATION," as the allocation processing will not have completed, yet."#]
 	#[serde(rename = "PENDING_ALLOCATION")]
@@ -22367,7 +22211,7 @@ pub enum ResourceAllocationStatusEnum {
 }
 
 #[doc = r#"Indicates the combination of Mission Processing and Resource Allocator responsibility for resource selection."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ResourceAllocatorCommandControlEnum {
 	#[doc = r#"Mission Processing includes optional values, such as resource selections and jam technique."#]
 	#[serde(rename = "DIRECTED_MP_CONTROL")]
@@ -22384,7 +22228,7 @@ pub enum ResourceAllocatorCommandControlEnum {
 }
 
 #[doc = r#"Indicates a type of Response for Response C2."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ResponseTypeEnum {
 	#[doc = r#"Indicates a Response that results in update or creation of Requirements based on a prescribed template."#]
 	#[serde(rename = "REQUIREMENTS_TEMPLATE")]
@@ -22401,8 +22245,7 @@ pub enum ResponseTypeEnum {
 }
 
 #[doc = r#"Indicates whether an RF_Report is new, an update to an existing report or the report has been removed."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "RF_ReportStateEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RfReportStateEnum {
 	#[doc = r#"Indicates that the report is new."#]
 	#[serde(rename = "NEW")]
@@ -22416,8 +22259,7 @@ pub enum RfReportStateEnum {
 }
 
 #[doc = r#"Fundamental content of RF communications signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "RF_SignalContentEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RfSignalContentEnum {
 	#[doc = r#"VOICE - RF signal contains voice communications."#]
 	#[serde(rename = "VOICE")]
@@ -22428,8 +22270,7 @@ pub enum RfSignalContentEnum {
 }
 
 #[doc = r#"Indicates Transmit (TX), Receive (RX), or Both (TX_RX)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "RF_TypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RfTypeEnum {
 	#[doc = r#"Indicates Receive (RX) RF Type."#]
 	#[serde(rename = "RX")]
@@ -22443,7 +22284,7 @@ pub enum RfTypeEnum {
 }
 
 #[doc = r#"An enumerated list of task prioritization ranking types."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RiskPrioritizationEnum {
 	#[doc = r#"Indicates a task for which high amounts of risk are acceptable.  Typically associated with tasks that are marked with 'Precedence' in the ATO."#]
 	#[serde(rename = "HIGH")]
@@ -22460,7 +22301,7 @@ pub enum RiskPrioritizationEnum {
 }
 
 #[doc = r#"Indicates how the X and Y Offsets are to be interpreted. See annotations of individual enumerations for additional details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RotationEnum {
 	#[doc = r#"X (North) and Y (East) offsets wrt to a Mercator projection from the reference frame origin defined in the ReferenceFrame message."#]
 	#[serde(rename = "UNROTATED")]
@@ -22477,7 +22318,7 @@ pub enum RotationEnum {
 }
 
 #[doc = r#"Indicates the events of a Mission."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RouteEventEnum {
 	#[doc = r#"Indicates a takeoff event."#]
 	#[serde(rename = "TAKEOFF")]
@@ -22494,7 +22335,7 @@ pub enum RouteEventEnum {
 }
 
 #[doc = r#"Indicates why a route path or route segment is invalid.  See individual enumerations for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RouteValidationErrorEnum {
 	#[doc = r#"Indicates an invalid turn in the route."#]
 	#[serde(rename = "TURN_ERROR")]
@@ -22535,7 +22376,7 @@ pub enum RouteValidationErrorEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the RunwayStatus."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum RunwayStatusEnum {
 	#[doc = r#"Indicates runway status is black due to unspecified major damage."#]
 	#[serde(rename = "BLACK_MAJOR_DAMAGE")]
@@ -22555,8 +22396,7 @@ pub enum RunwayStatusEnum {
 }
 
 #[doc = r#"Indicates the operational state of a SAM launch site such as transitions to various states, standby, etc."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAM_ModeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SamModeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_REPORT")]
@@ -22585,8 +22425,7 @@ pub enum SamModeEnum {
 }
 
 #[doc = r#"Indicates the Capability's first tier type in the SAR taxonomy.  For SAR, the first tier is an indication of the geospatial extent of the resulting products.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAR_CapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SarCapabilityEnum {
 	#[doc = r#"Indicates the SAR imaging pattern covers a single spot to maximize resolution."#]
 	#[serde(rename = "SPOT")]
@@ -22600,8 +22439,7 @@ pub enum SarCapabilityEnum {
 }
 
 #[doc = r#"Indicates a collection option of a COARPs SAR Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAR_COARPS_CollectionOptionsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SarCoarpsCollectionOptionsEnum {
 	#[doc = r#"Correlates to COARPs SAR Mode A."#]
 	#[serde(rename = "SAR_A")]
@@ -22624,8 +22462,7 @@ pub enum SarCoarpsCollectionOptionsEnum {
 }
 
 #[doc = r#"Indicates the task planning type of the collection."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAR_CollectionReasonEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SarCollectionReasonEnum {
 	#[doc = r#"Indicates the collection was planned during pre-mission."#]
 	#[serde(rename = "PRE_PLANNED")]
@@ -22639,8 +22476,7 @@ pub enum SarCollectionReasonEnum {
 }
 
 #[doc = r#"Indicates the policy to use for ellipticity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAR_EllipticityPolicyEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SarEllipticityPolicyEnum {
 	#[doc = r#"Prioritize scan area over dwell time."#]
 	#[serde(rename = "MINIMUM_DWELL")]
@@ -22654,8 +22490,7 @@ pub enum SarEllipticityPolicyEnum {
 }
 
 #[doc = r#"Enumeration for the desired projection plane for the image."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAR_ImagingPlaneEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SarImagingPlaneEnum {
 	#[doc = r#"Leaves viewing plane of SAR image as it was taken."#]
 	#[serde(rename = "SLANT_PLANE")]
@@ -22666,8 +22501,7 @@ pub enum SarImagingPlaneEnum {
 }
 
 #[doc = r#"Indicates messages that are an output by the Capability as the result of capability commands.  See enumerated type annotations for details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAR_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SarMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "SAR_ACTIVITY")]
@@ -22684,8 +22518,7 @@ pub enum SarMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates a SubCapability of the SAR Capability; the second tier in the taxonomy of SAR.  For SAR, the second tier is an indication of the specific waveform and/or collection technique.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAR_SubCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SarSubCapabilityEnum {
 	#[doc = r#"Indicates the SubCapability of the SAR subsystem is conventional Synthetic Aperture Radar (SAR), which uses the movement of the emitter over a target region to provide finer spatial resolution than conventional beam-scanning radars."#]
 	#[serde(rename = "SAR")]
@@ -22696,8 +22529,7 @@ pub enum SarSubCapabilityEnum {
 }
 
 #[doc = r#"This element defines the desired waveform to use for the collection."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SAR_WaveformSelectionEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SarWaveformSelectionEnum {
 	#[doc = r#"Specifies that the sensor will select the appropriate waveform automatically for SAR collection."#]
 	#[serde(rename = "AUTO")]
@@ -22720,7 +22552,7 @@ pub enum SarWaveformSelectionEnum {
 }
 
 #[doc = r#"Indicates the types of operations changes that can be detected using characterization data collected by sensors."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SatelliteOperationsChangesCharacterizationEnum {
 	#[doc = r#"Characterization data that can be compared with data for the expected operations mode to indicate change in mode.  Could be series of images, narrowband SOI/Photometry, or even just apparent size, depending on target."#]
 	#[serde(rename = "ATTITUDE_PROFILE_CHANGE")]
@@ -22737,7 +22569,7 @@ pub enum SatelliteOperationsChangesCharacterizationEnum {
 }
 
 #[doc = r#"Indicates the directionality of a scan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ScanDirectionalityEnum {
 	#[doc = r#"Indicates the emitter antenna scan is active in a single direction within the scan; there are no active reversals."#]
 	#[serde(rename = "UNI_DIRECTIONAL")]
@@ -22748,7 +22580,7 @@ pub enum ScanDirectionalityEnum {
 }
 
 #[doc = r#"Indicates the physical means by which the emitter is scanning."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ScanMechanicsEnum {
 	#[doc = r#"Indicates the emitter antenna scan is accomplished via waveform modulation to move the antenna phase center."#]
 	#[serde(rename = "ELECTRONIC")]
@@ -22759,7 +22591,7 @@ pub enum ScanMechanicsEnum {
 }
 
 #[doc = r#"Define a Scan Options for scanning a grid.  This defines options on what could happen to adjust the execution of a scan.  Not all options may be supported in all implementations"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ScanOptionsEnum {
 	#[doc = r#"Unknown value used to indicate error in field."#]
 	#[serde(rename = "UNKNOWN")]
@@ -22773,7 +22605,7 @@ pub enum ScanOptionsEnum {
 }
 
 #[doc = r#"Indicates the scan plane of a scanning emitter."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ScanPlaneEnum {
 	#[doc = r#"Indicates the primary emitter antenna scan plane of the Signal is horizontal, scanning in azimuth."#]
 	#[serde(rename = "AZIMUTH")]
@@ -22784,7 +22616,7 @@ pub enum ScanPlaneEnum {
 }
 
 #[doc = r#"Define a Scan Strategy for scanning a grid. This defines the order in which multiple collections would happen. Not all options may be supported in all implementations"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ScanStrategyEnum {
 	#[doc = r#"Unknown value used to indicate error in field."#]
 	#[serde(rename = "UNKNOWN")]
@@ -22852,7 +22684,7 @@ pub enum ScanStrategyEnum {
 }
 
 #[doc = r#"Indicates the type of scan which the Signal is associated with."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ScanTypeEnum {
 	#[doc = r#"Indicates determination of scan type has been attempted but the type is unknown or determination hasn't been completed."#]
 	#[serde(rename = "UNKNOWN")]
@@ -22941,7 +22773,7 @@ pub enum ScanTypeEnum {
 }
 
 #[doc = r#"This type describes scheduling criticality from a temporal perspective."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SchedulingCriticalityEnum {
 	#[doc = r#"Indicates the start time of the command must be met in order for the results to be useful or acceptable."#]
 	#[serde(rename = "START_TIME_CRITICAL")]
@@ -22955,8 +22787,7 @@ pub enum SchedulingCriticalityEnum {
 }
 
 #[doc = r#"CVEnumISMSCIControls Values"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SCI_ControlsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SciControlsEnum {
 	#[doc = r#"BUR"#]
 	#[serde(rename = "BUR")]
@@ -23021,8 +22852,7 @@ pub enum SciControlsEnum {
 }
 
 #[doc = r#"Enumeration of available space domain awareness (SDA) reporting requirements."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SDA_SpecialInstructionsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SdaSpecialInstructionsEnum {
 	#[doc = r#"All clear assessment - only expected found."#]
 	#[serde(rename = "ALL_CLEAR")]
@@ -23135,7 +22965,7 @@ pub enum SdaSpecialInstructionsEnum {
 }
 
 #[doc = r#"(U) All currently valid markings that can appear in the second banner line. This enum is used by SecondBannerLine. PERMISSIBLE VALUES The permissible values for this simple type are defined in the Controlled Value Enumeration: CVEnumISMSecondBannerLine.xml"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SecondBannerLineEnum {
 	#[doc = r#"ATTORNEY-CLIENT PRIVILEGED INFO"#]
 	#[serde(rename = "ACPI")]
@@ -23158,7 +22988,7 @@ pub enum SecondBannerLineEnum {
 }
 
 #[doc = r#"Mode Control Panel (MCP) Flight Control Unit (FCU) or Flight Management System (FMS)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SelectedAltitudeTypeEnum {
 	#[doc = r#"Mode Control Panel (MCP) Flight Control Unit (FCU)."#]
 	#[serde(rename = "MCP_FCU")]
@@ -23169,7 +22999,7 @@ pub enum SelectedAltitudeTypeEnum {
 }
 
 #[doc = r#"Sense vertical and horizontal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SenseVerticalAndHorizontalEnum {
 	#[doc = r#"0 = Vertical Only."#]
 	#[serde(rename = "VERTICAL_ONLY")]
@@ -23186,7 +23016,7 @@ pub enum SenseVerticalAndHorizontalEnum {
 }
 
 #[doc = r#"An enumeration specifying types of sensing used to characterize the environment via observation, measurement, collection or similar means."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SensingTypeEnum {
 	#[doc = r#"Measurement, collection or other sensing of sound levels."#]
 	#[serde(rename = "ACOUSTIC")]
@@ -23296,7 +23126,7 @@ pub enum SensingTypeEnum {
 }
 
 #[doc = r#"An enumeration specifying the category of sensor (ex: SSN, Commercial, MDA)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SensorCategoryEnum {
 	#[doc = r#"Identifies a sensor that is controlled by a foreign government."#]
 	#[serde(rename = "FOREIGN_GOV")]
@@ -23331,7 +23161,7 @@ pub enum SensorCategoryEnum {
 }
 
 #[doc = r#"Indicates the high level functional collection capabilities of a sensor and associated unit."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SensorFunctionalCollectionsEnum {
 	#[doc = r#"Collection of position and/or velocity data."#]
 	#[serde(rename = "METRIC_DATA_COLLECTION")]
@@ -23354,7 +23184,7 @@ pub enum SensorFunctionalCollectionsEnum {
 }
 
 #[doc = r#"Indicates the high level processing capabilities of a sensor and associated unit."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SensorFunctionalProcessingEnum {
 	#[doc = r#"Ability to provide an orbital state estimate based on metric data."#]
 	#[serde(rename = "ORBITAL_STATE_ESTIMATION")]
@@ -23374,7 +23204,7 @@ pub enum SensorFunctionalProcessingEnum {
 }
 
 #[doc = r#"Indicates the reference for pointing for a SensorReferencedCoverageArea Target.  The enumeration values are PLATFORM or SENSOR."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SensorReferencedCoverageAreaReferenceEnum {
 	#[doc = r#"Indicates pointing relative to the body of the aircraft in an east north up coordinate system.  Zero azimuth and elevation will point out the nose of the platform. Azimuth increases counterclockwise as a rotation about the up vector.  Elevation is positive up as a rotation about the rotated east vector."#]
 	#[serde(rename = "PLATFORM")]
@@ -23385,7 +23215,7 @@ pub enum SensorReferencedCoverageAreaReferenceEnum {
 }
 
 #[doc = r#"Indicates the frequency band or spectrum that the sensor used."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SensorSpectrumEnum {
 	#[doc = r#"This enumerated item is used to specify the region of the electromagnetic spectrum that includes both the visible and the infrared spectrum (see the VISIBLE_SPECTRUM and INFRARED_SPECTRUM enumerated items)."#]
 	#[serde(rename = "FULL_SPECTRUM")]
@@ -23432,7 +23262,7 @@ pub enum SensorSpectrumEnum {
 }
 
 #[doc = r#"Indicates the maximum altitude that a sensor can track in a given operational mode. This enables distinction between average orbital altitudes, such as for a highly eccentric object, and the altitude at tracking time. Other descriptions speak to orbital regime based on average orbital altitude (See OrbitAltitudeEnum)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SensorTrackingAltitudesEnum {
 	#[doc = r#"Spacecraft altitudes between 100km and 5,500km."#]
 	#[serde(rename = "NEAR_EARTH_ALTITUDES")]
@@ -23455,7 +23285,7 @@ pub enum SensorTrackingAltitudesEnum {
 }
 
 #[doc = r#"An enumeration specifying the type of sensor (ex: active optical, passive RF, infrared, etc.)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SensorTypeEnum {
 	#[doc = r#"Identifies a sensor that includes one or more active radio frequency transmitters under the control of the sensor operator and which measures range along with other positional, velocity, and structural characteristics of targets through collection of back-scatter or forward-scatter radio frequency energy."#]
 	#[serde(rename = "ACTIVE_RF")]
@@ -23484,7 +23314,7 @@ pub enum SensorTypeEnum {
 }
 
 #[doc = r#"An enumeration specifying the state of a command sent to a service or service manager."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ServiceLifecycleCommandStatusEnum {
 	#[doc = r#"A status specifying the command sent to the service or service manager executed properly."#]
 	#[serde(rename = "SUCCESS")]
@@ -23495,7 +23325,7 @@ pub enum ServiceLifecycleCommandStatusEnum {
 }
 
 #[doc = r#"An enumeration of commands that can be sent to a service or service manager."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ServiceLifecycleStateEnum {
 	#[doc = r#"A command to start a service lifecycle in its INITIALIZING state. This command will likely be handled by a resource manager to startup a service.  Services will not normally start itself."#]
 	#[serde(rename = "START")]
@@ -23518,7 +23348,7 @@ pub enum ServiceLifecycleStateEnum {
 }
 
 #[doc = r#"An enumeration of the purposes a service provides and can dynamically register for.  The enums registered for must be supported by the service and documented in the program related documentation.  Use of these enumerations in messages do not replace system engineering artifacts and processes."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ServiceRegistrationPurposeEnum {
 	#[doc = r#"Used to specify a request to participate in Comm Planning service orchestration."#]
 	#[serde(rename = "COMM_PLANNING")]
@@ -23577,7 +23407,7 @@ pub enum ServiceRegistrationPurposeEnum {
 }
 
 #[doc = r#"Indicates the state of a request for service registration."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ServiceRegistrationStatusEnum {
 	#[doc = r#"The service has been registered."#]
 	#[serde(rename = "REGISTERED")]
@@ -23594,7 +23424,7 @@ pub enum ServiceRegistrationStatusEnum {
 }
 
 #[doc = r#"Indicates Service independent settings for any Service."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ServiceSettingEnum {
 	#[doc = r#"Indicates a setting in which the Service will distribute audit records per the defined behaviors.  This setting is independent of other service settings."#]
 	#[serde(rename = "AUDIT_LOGGING")]
@@ -23605,7 +23435,7 @@ pub enum ServiceSettingEnum {
 }
 
 #[doc = r#"Indicates the Status state machine for a Service."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ServiceStateEnum {
 	#[doc = r#"Indicates the Service is starting up. Communication has begun but Service startup is not complete (e.g. still loading configuration files)."#]
 	#[serde(rename = "INITIALIZING")]
@@ -23625,7 +23455,7 @@ pub enum ServiceStateEnum {
 }
 
 #[doc = r#"Indicates whether shutter is open or closed to prevent accidental emission. Shutter can be physical or other reliable method."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ShutterStatusEnum {
 	#[doc = r#"Indicates the shutter is closed."#]
 	#[serde(rename = "CLOSED")]
@@ -23636,7 +23466,7 @@ pub enum ShutterStatusEnum {
 }
 
 #[doc = r#"Indicates the geolocation control state."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SignalGeolocationControlEnum {
 	#[doc = r#"Initiate geolocation and stop at the discretion of the Capability."#]
 	#[serde(rename = "INITIATE")]
@@ -23656,7 +23486,7 @@ pub enum SignalGeolocationControlEnum {
 }
 
 #[doc = r#"Indicates the method to be used for geolocation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SignalGeolocationMethodEnum {
 	#[doc = r#"Indicates the geospatial location of the emitter was determined via time difference of arrival (TDOA).  TDOA is precise temporal measurement of a signal from two or more known locations, resulting in data which can be used to solve for the emitter location."#]
 	#[serde(rename = "TDOA")]
@@ -23685,7 +23515,7 @@ pub enum SignalGeolocationMethodEnum {
 }
 
 #[doc = r#"Indicates if this signal is located by bearing, area of probability, or a fixed position."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SignalLocationEnum {
 	#[doc = r#"Signal fixed to a specific location."#]
 	#[serde(rename = "FIXED")]
@@ -23711,7 +23541,7 @@ pub enum SignalLocationEnum {
 }
 
 #[doc = r#"Indicates characteristics of the LOS measurement that give insight into its quality and/or the conditions under which it was measured."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SignalMeasurementFlagEnum {
 	#[doc = r#"Indicates azimuth and elevation angles of arrival intersected to resolve into the LOS measurement."#]
 	#[serde(rename = "AZ_EL_RESOLVED")]
@@ -23734,7 +23564,7 @@ pub enum SignalMeasurementFlagEnum {
 }
 
 #[doc = r#"Indicates different techniques/methods to measure the Line of Sight (LOS) of an RF signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SignalMeasurementMethodEnum {
 	#[doc = r#"A method where the LOS Measurement is estimated based on amplitude comparison between two intersecting antenna patterns."#]
 	#[serde(rename = "AMPLITUDE")]
@@ -23769,7 +23599,7 @@ pub enum SignalMeasurementMethodEnum {
 }
 
 #[doc = r#"Indicates the reporting state of a signal."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SignalReportStateEnum {
 	#[doc = r#"Indicates that the signal  is new."#]
 	#[serde(rename = "NEW")]
@@ -23783,7 +23613,7 @@ pub enum SignalReportStateEnum {
 }
 
 #[doc = r#"Indicates the type of geolocation to be processed.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SignalTypeEnum {
 	#[doc = r#"Indicates a coarse measurement is desired."#]
 	#[serde(rename = "COARSE")]
@@ -23803,7 +23633,7 @@ pub enum SignalTypeEnum {
 }
 
 #[doc = r#"J2.0 Site from MIL-STD-6016 DFI 1719 DUI 001."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SiteEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -23832,7 +23662,7 @@ pub enum SiteEnum {
 }
 
 #[doc = r#"Indicates the site type of a ground object.  For example see MIL-STD-6016 DFI/DUI 1555/001."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SiteTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NONE")]
@@ -24020,7 +23850,7 @@ pub enum SiteTypeEnum {
 }
 
 #[doc = r#"Indicates a control interface for accessing a remote waveform transceiver/relay.  See enumerated types annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SkySearchModeEnum {
 	#[doc = r#"Scanning the sky to search for waveform transceiver/relay."#]
 	#[serde(rename = "SKYSEARCH")]
@@ -24031,7 +23861,7 @@ pub enum SkySearchModeEnum {
 }
 
 #[doc = r#"Indicates the types of Navigation capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SlavedNavigationCapabilityOptionEnum {
 	#[doc = r#"Slaved navigation destination is to a specific Entity."#]
 	#[serde(rename = "ENTITY_ID")]
@@ -24078,8 +23908,7 @@ pub enum SlavedNavigationCapabilityOptionEnum {
 }
 
 #[doc = r#"Indicates the first tier in the taxonomy of the radar Surface Moving Target Indicator (SMTI) Capability.  SMTI includes Ground Moving Target Indicator (GMTI) and Maritime Moving Target Indicator (MMTI) Capabilities.For area, there is no requirement on the size of the area or the number of beams that can be used to cover it; spot indicates a small area that will be illuminated by a single beam and cued implies there will be an existing valid entity that is associated with the collection."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SMTI_CapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SmtiCapabilityEnum {
 	#[doc = r#"Indicates a generally persistent SMTI Capability to search for moving targets within a large geospatial surface area, generally using many beams."#]
 	#[serde(rename = "AREA")]
@@ -24093,8 +23922,7 @@ pub enum SmtiCapabilityEnum {
 }
 
 #[doc = r#"Indicates a collection option of a COARPs SMTI Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SMTI_COARPS_CollectionOptionsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SmtiCoarpsCollectionOptionsEnum {
 	#[doc = r#"Correlates to COARPS GMTI Mode A."#]
 	#[serde(rename = "GMTI_A")]
@@ -24114,8 +23942,7 @@ pub enum SmtiCoarpsCollectionOptionsEnum {
 }
 
 #[doc = r#"Indicates messages that are an output by the Capability as the result of capability commands."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SMTI_MessageOutputsEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SmtiMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "SMTI_ACTIVITY")]
@@ -24132,8 +23959,7 @@ pub enum SmtiMessageOutputsEnum {
 }
 
 #[doc = r#"Indicates second tier in the taxonomy of the radar Surface Moving Target Indicator (SMTI) Capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SMTI_SubCapabilityEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SmtiSubCapabilityEnum {
 	#[doc = r#"Indication that the radar should perform maritime MTI for the target or area of interest."#]
 	#[serde(rename = "MMTI")]
@@ -24153,7 +23979,7 @@ pub enum SmtiSubCapabilityEnum {
 }
 
 #[doc = r#"An enumeration indicating the solar flux web service from the 557th."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SolarFluxRecordEnum {
 	#[doc = r#"Indicates the observed F10.7 Solar Flux Index."#]
 	#[serde(rename = "F10_OBSERVED_RADIO_FLUX")]
@@ -24170,7 +23996,7 @@ pub enum SolarFluxRecordEnum {
 }
 
 #[doc = r#"The type of Solar Radiation Pressure force model to use."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SolarRadiationPressureModelEnum {
 	#[doc = r#"Solar radiation pressure model that assumes a spherical satellite."#]
 	#[serde(rename = "SPHERICAL")]
@@ -24187,7 +24013,7 @@ pub enum SolarRadiationPressureModelEnum {
 }
 
 #[doc = r#"An enumeration indicating the type of mission this object is supporting."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SpaceMissionTypeEnum {
 	#[doc = r#"Indicates the mission type is amateur radio."#]
 	#[serde(rename = "AMATEUR_RADIO")]
@@ -24264,7 +24090,7 @@ pub enum SpaceMissionTypeEnum {
 }
 
 #[doc = r#"Indicates identification information about a reported space object."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SpaceObjectEnum {
 	#[doc = r#"Single charge high explosive warhead."#]
 	#[serde(rename = "UNITARY_HIGH_EXPLOSIVE")]
@@ -24341,7 +24167,7 @@ pub enum SpaceObjectEnum {
 }
 
 #[doc = r#"An enumeration indicating an item's location with relation to a volume or zone."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SpatialRelationEnum {
 	#[doc = r#"This enumeration is used to specify that the items being returned will be either partially or fully inside the volume or zone described."#]
 	#[serde(rename = "INSIDE")]
@@ -24355,7 +24181,7 @@ pub enum SpatialRelationEnum {
 }
 
 #[doc = r#"Indicates a type of special interest track like KILO, ZOMBIE, TRAVELER."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SpecialIdentityEnum {
 	#[doc = r#"A special interest friendly track."#]
 	#[serde(rename = "KILO")]
@@ -24369,7 +24195,7 @@ pub enum SpecialIdentityEnum {
 }
 
 #[doc = r#"An enumeration indicating the most common types of speed limits defined by Federal Aviation Regulations. (Code of Federal Regulations: Title 14 Aeronautics and Space)"#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SpeedLimitTypeEnum {
 	#[doc = r#"The speed beyond which takeoff should no longer be aborted. The maximum speed in the takeoff at which the pilot must take the first action (e.g., apply brakes, reduce thrust, deploy speed brakes) to stop the airplane within the accelerate-stop distance. V1 also means the minimum speed in the takeoff, following a failure of the critical engine at VEF, at which the pilot can continue the takeoff and achieve the required height above the takeoff surface within the takeoff distance."#]
 	#[serde(rename = "V1_MAXIMUM_TAKEOFF_DECISION_SPEED")]
@@ -24503,7 +24329,7 @@ pub enum SpeedLimitTypeEnum {
 }
 
 #[doc = r#"Indicates which attribute is prioritized when the system automatically varies its speed."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SpeedOptimizationEnum {
 	#[doc = r#"Fly at a rate that is most fuel efficient for the vehicle."#]
 	#[serde(rename = "LONG_RANGE_CRUISE")]
@@ -24514,7 +24340,7 @@ pub enum SpeedOptimizationEnum {
 }
 
 #[doc = r#"Indicates the speed reference for the associated speed value."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SpeedReferenceEnum {
 	#[doc = r#"Indicates the speed is referenced to the ground."#]
 	#[serde(rename = "GROUNDSPEED")]
@@ -24528,8 +24354,7 @@ pub enum SpeedReferenceEnum {
 }
 
 #[doc = r#"Surface Moving Target Indicator platform type from STANAG 4607 Edition 3 Field M3."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "STANAG_4607_PlatformTypeEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum Stanag4607PlatformTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "UNIDENTIFIED")]
@@ -24657,8 +24482,7 @@ pub enum Stanag4607PlatformTypeEnum {
 }
 
 #[doc = r#"Surface Moving Target Indicator Target Classification from STANAG 4607 Edition 3 Field D32.10."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "STANAG_4607_TargetClassificationEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum Stanag4607TargetClassificationEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_INFORMATION_LIVE_TARGET")]
@@ -24759,7 +24583,7 @@ pub enum Stanag4607TargetClassificationEnum {
 }
 
 #[doc = r#"Indicates the standard identity of a track."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum StandardIdentityEnum {
 	#[doc = r#"A track which has not been subjected to the identification process."#]
 	#[serde(rename = "PENDING")]
@@ -24788,7 +24612,7 @@ pub enum StandardIdentityEnum {
 }
 
 #[doc = r#"Indicates whether or not the Subsystem is transitioning between states, or transitioning to its SHUTDOWN state."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum StateTransitionStatusEnum {
 	#[doc = r#"Indicates Subsystem is not actively in the process of transitioning between states."#]
 	#[serde(rename = "NOT_TRANSITIONING")]
@@ -24802,7 +24626,7 @@ pub enum StateTransitionStatusEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the StoreType field."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum StoreCategoryEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "AIR")]
@@ -24825,7 +24649,7 @@ pub enum StoreCategoryEnum {
 }
 
 #[doc = r#"Indicates the flight mode an allocated store must use to achieve desired endgame effects."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum StoreFlightModeEnum {
 	#[doc = r#"Store uses default flight mode for attacking the Target Location."#]
 	#[serde(rename = "DEFAULT")]
@@ -24842,7 +24666,7 @@ pub enum StoreFlightModeEnum {
 }
 
 #[doc = r#"Weapon Jettison options supported."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum StoreJettisonOptionsEnum {
 	#[doc = r#"The store status is unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -24859,7 +24683,7 @@ pub enum StoreJettisonOptionsEnum {
 }
 
 #[doc = r#"Weapon high-level status or SupportCapability for the Store."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum StoreStateEnum {
 	#[doc = r#"The store status is unknown."#]
 	#[serde(rename = "UNKNOWN")]
@@ -24897,7 +24721,7 @@ pub enum StoreStateEnum {
 }
 
 #[doc = r#"Indicates a message that is an output of the strike capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum StrikeMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "STRIKE_ACTIVITY")]
@@ -24905,7 +24729,7 @@ pub enum StrikeMessageOutputsEnum {
 }
 
 #[doc = r#"Strike options supported to facilitate dynamic resource allocation changes."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum StrikeStateEnum {
 	#[doc = r#"Associated resource is marked for strike."#]
 	#[serde(rename = "STRIKE")]
@@ -24916,7 +24740,7 @@ pub enum StrikeStateEnum {
 }
 
 #[doc = r#"Indicates a type of Plan which is a component of a MissionPlan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubPlanTypeEnum {
 	#[doc = r#"Indicates a TaskPlan as a component of a MissionPlan."#]
 	#[serde(rename = "TASK_PLAN")]
@@ -24954,7 +24778,7 @@ pub enum SubPlanTypeEnum {
 }
 
 #[doc = r#"Expresses an assessment as to whether contacts are of submarine origin with added assessment of the confidence level."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubmarineConfidenceLevelEnum {
 	#[doc = r#"No attempt made to assess the contact."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -24989,8 +24813,7 @@ pub enum SubmarineConfidenceLevelEnum {
 }
 
 #[doc = r#"This enumerated type indicates the C2 messages and control flow patterns for Subsystem BIT."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SubsystemBIT_ControlInterfacesEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemBitControlInterfacesEnum {
 	#[doc = r#"Indicates the Subsystem supports initiated/manual BIT via the SubsystemBIT_Command message.  Support of initiated BIT via this message implies the Subsystem can perform the BIT without changing the Subsystem state.  For example, if the Subsystem was in an OPERATE state, it can perform initiated/manual BIT interleaved with operational functions and capability."#]
 	#[serde(rename = "SUBSYSTEM_BIT_COMMAND")]
@@ -25004,8 +24827,7 @@ pub enum SubsystemBitControlInterfacesEnum {
 }
 
 #[doc = r#"Indicates the overall status of the Built In Test results for the subsystem.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "SubsystemBIT_ResultEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemBitResultEnum {
 	#[doc = r#"Indicates the specific BIT test completed successfully."#]
 	#[serde(rename = "PASS")]
@@ -25022,7 +24844,7 @@ pub enum SubsystemBitResultEnum {
 }
 
 #[doc = r#"This enumerated type indicates the C2 messages and control flow patterns for Subsystem Calibration."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemCalibrationControlInterfacesEnum {
 	#[doc = r#"Indicates the Subsystem supports initiated/manual Calibration via the SubsystemCalibrationCommand message.  Support of initiated Calibration via this message implies the Subsystem can perform the Calibration without changing the Subsystem state.  For example, if the Subsystem was in an OPERATE state, it can perform initiated/manual Calibration interleaved with operational functions and Capability."#]
 	#[serde(rename = "SUBSYSTEM_CALIBRATION_COMMAND")]
@@ -25033,7 +24855,7 @@ pub enum SubsystemCalibrationControlInterfacesEnum {
 }
 
 #[doc = r#"Indicates the overall status of the calibration results for the subsystem.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemCalibrationResultEnum {
 	#[doc = r#"Indicates the specific calibration failed."#]
 	#[serde(rename = "COMPLETED")]
@@ -25050,7 +24872,7 @@ pub enum SubsystemCalibrationResultEnum {
 }
 
 #[doc = r#"Indicates a type of Subsystem Command. See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemCommandTypeEnum {
 	#[doc = r#"Indicates the SubsystemBIT_Command."#]
 	#[serde(rename = "BIT")]
@@ -25073,7 +24895,7 @@ pub enum SubsystemCommandTypeEnum {
 }
 
 #[doc = r#"Indicates the overall erase command status. See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemEraseCommandEnum {
 	#[doc = r#"Indicates a command to zeroize cryptographic keys and associated classified data. Requires organizational maintenance to reload keys. Depending on the chosen interpretation of the term "and associated classified data," ZEROIZE by itself (i.e., without a CDE) may either be interpreted to remove all classified data and return the Subsystem to its default classification level or remove only the portion of the classified data "associated" with the crypto data (and may not, in that case, return the Subsystem to its base classification level).  In this second interpretation, CDE should be combined with ZEROIZE. In either case, an organizational maintenance action will be required to enable the subsystem to return to normal operation."#]
 	#[serde(rename = "ZEROIZE")]
@@ -25090,7 +24912,7 @@ pub enum SubsystemEraseCommandEnum {
 }
 
 #[doc = r#"Indicates a subsystem maintenance command."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemMaintenanceCommandEnum {
 	#[doc = r#"This is used when the maintainer selects a test unit. This tells which unit a test is going to be tested."#]
 	#[serde(rename = "SELECT")]
@@ -25113,7 +24935,7 @@ pub enum SubsystemMaintenanceCommandEnum {
 }
 
 #[doc = r#"This enumerated type indicates the C2 messages and control flow patterns for Subsystem Maintenance Test."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemMaintenanceControlInterfacesEnum {
 	#[doc = r#"Indicates the Subsystem supports initiated/manual maintenance test via the SubsystemMaintenaceCommand message.  Support of initiated maintenance test via this message implies the Subsystem can perform the maintenance test without changing the Subsystem state.  For example, if the Subsystem was in an OPERATE state, it can perform initiated/manual maintenance test interleaved with operational functions and capability."#]
 	#[serde(rename = "SUBSYSTEM_MAINTENANCE_COMMAND")]
@@ -25127,7 +24949,7 @@ pub enum SubsystemMaintenanceControlInterfacesEnum {
 }
 
 #[doc = r#"Indicates the status of the subsystem maintenance tests."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemMaintenanceResultStatusEnum {
 	#[doc = r#"Test passed, if every test event passed (i.e. no Abort or Failure occurred)."#]
 	#[serde(rename = "PASSED")]
@@ -25147,7 +24969,7 @@ pub enum SubsystemMaintenanceResultStatusEnum {
 }
 
 #[doc = r#"Indicates Capability and Service independent settings for Subsystems."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemSettingEnum {
 	#[doc = r#"Indicates a setting in which the Subsystem operates using live inputs and outputs and with functional behaviors as expected in real missions.  This setting is generally expected to be mutually exclusive with the EXERCISE and SIMULATION settings."#]
 	#[serde(rename = "LIVE")]
@@ -25176,7 +24998,7 @@ pub enum SubsystemSettingEnum {
 }
 
 #[doc = r#"Indicates the overall status/state of the Subsystem.  See enumeration annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SubsystemStateEnum {
 	#[doc = r#"Indicates the subsystem is in an unknown state."#]
 	#[serde(rename = "UNKNOWN")]
@@ -25227,7 +25049,7 @@ pub enum SubsystemStateEnum {
 }
 
 #[doc = r#"Indicates aspects of a SupportPlan that require formal approval between supported and supporting Systems."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SupportApprovalPolicyEnum {
 	#[doc = r#"Indicates a support planning policy that requires the supporting System to ask the supported System for approval of SupportPlans."#]
 	#[serde(rename = "SUPPORT_PLAN")]
@@ -25244,7 +25066,7 @@ pub enum SupportApprovalPolicyEnum {
 }
 
 #[doc = r#"Indicates the type of support capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SupportCapabilityTypeEnum {
 	#[doc = r#"Indicates the support capability is a door that must be manipulated in support of another capability."#]
 	#[serde(rename = "DOOR")]
@@ -25264,7 +25086,7 @@ pub enum SupportCapabilityTypeEnum {
 }
 
 #[doc = r#"Indicates the requested activation operation for the associated SupportPlan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SupportPlanActivationRequestEnum {
 	#[doc = r#"Activate the associated *Plan onboard the vehicle."#]
 	#[serde(rename = "ACTIVATE")]
@@ -25275,7 +25097,7 @@ pub enum SupportPlanActivationRequestEnum {
 }
 
 #[doc = r#"Indicates the current activation state and status for the associated SupportPlan."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SupportPlanActivationStateEnum {
 	#[doc = r#"Indicates the associated *Plan is inactive, never having begun the activation approval or activation."#]
 	#[serde(rename = "INACTIVE")]
@@ -25319,7 +25141,7 @@ pub enum SupportPlanActivationStateEnum {
 }
 
 #[doc = r#"Indicates whether a process can perform planning and/or validation functions."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SupportedFunctionEnum {
 	#[doc = r#"Indicates that this process is able to perform planning. This could be exclusive of OR in addition to validation."#]
 	#[serde(rename = "PLANNING")]
@@ -25330,7 +25152,7 @@ pub enum SupportedFunctionEnum {
 }
 
 #[doc = r#"An enumeration indicating the different types of surfaces or terrain."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SurfaceTypeEnum {
 	#[doc = r#"Indicates a built-up area with a moderate population density and infrastructure of built environment."#]
 	#[serde(rename = "URBAN")]
@@ -25353,7 +25175,7 @@ pub enum SurfaceTypeEnum {
 }
 
 #[doc = r#"Indicates the type of characteristic swap to be performed between two entities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SwapEnum {
 	#[doc = r#"Indicates all the entity information is to be swapped between two entities."#]
 	#[serde(rename = "SWAP_ALL_CHARACTERISTICS")]
@@ -25367,7 +25189,7 @@ pub enum SwapEnum {
 }
 
 #[doc = r#"Designates the contingency state of the System.  Contingencies can be an indication that the System will/has automatically modified its means of navigation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SystemContingencyLevelEnum {
 	#[doc = r#"Indicates that the vehicle is operating normally."#]
 	#[serde(rename = "NORMAL")]
@@ -25384,7 +25206,7 @@ pub enum SystemContingencyLevelEnum {
 }
 
 #[doc = r#"Indicates the specific deployment capability of the System that can deploy another System."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SystemDeploymentEnum {
 	#[doc = r#"Indicates a capability to carry another system.  This differs from cargo in that the system once deployed has its own capabilities."#]
 	#[serde(rename = "CARRY")]
@@ -25407,7 +25229,7 @@ pub enum SystemDeploymentEnum {
 }
 
 #[doc = r#"System Design Assurance."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SystemDesignAssuranceEnum {
 	#[doc = r#"0 = Unkonwn/No safety effect."#]
 	#[serde(rename = "UNKNOWN_NO_SAFETY_EFFECT")]
@@ -25424,7 +25246,7 @@ pub enum SystemDesignAssuranceEnum {
 }
 
 #[doc = r#"Defines whether the associated data was generated from actual system data or an estimation service."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SystemSourceEnum {
 	#[doc = r#"Indicates the data is being reported by a system or its surrogate."#]
 	#[serde(rename = "ACTUAL")]
@@ -25438,7 +25260,7 @@ pub enum SystemSourceEnum {
 }
 
 #[doc = r#"Represents the operational state of the system with respect to active mission activities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum SystemStateEnum {
 	#[doc = r#"OPERATIONAL indicates the system is currently active, communicating, and functioning properly."#]
 	#[serde(rename = "OPERATIONAL")]
@@ -25458,7 +25280,7 @@ pub enum SystemStateEnum {
 }
 
 #[doc = r#"Indicates the types of tactical orders."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TacticalOrderCapabilityEnum {
 	#[doc = r#"Order to switch to an air-to-air role."#]
 	#[serde(rename = "AIR_TO_AIR_ROLE")]
@@ -25499,7 +25321,7 @@ pub enum TacticalOrderCapabilityEnum {
 }
 
 #[doc = r#"This commands or reports on the tail cone lighting intensity. OFF is used for status only."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TailConeLightEnum {
 	#[doc = r#"Indicates the start time of the command must be met in order for the results to be useful or acceptable."#]
 	#[serde(rename = "DIM")]
@@ -25513,7 +25335,7 @@ pub enum TailConeLightEnum {
 }
 
 #[doc = r#"Indicates the MIL-STD-6016 target defenses type."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TargetDefensesEnum {
 	#[doc = r#"Indicates a target with aircraft."#]
 	#[serde(rename = "AIRCRAFT")]
@@ -25536,7 +25358,7 @@ pub enum TargetDefensesEnum {
 }
 
 #[doc = r#"Indicates the vulnerability of the target."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TargetHardnessEnum {
 	#[doc = r#"A heavily armored target, such as a tank or bunker."#]
 	#[serde(rename = "HARD_TARGET")]
@@ -25550,7 +25372,7 @@ pub enum TargetHardnessEnum {
 }
 
 #[doc = r#"Indicates the MIL-STD-6016 target type."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TargetTypeEnum {
 	#[doc = r#"Indicates a bridge."#]
 	#[serde(rename = "BRIDGE")]
@@ -25645,7 +25467,7 @@ pub enum TargetTypeEnum {
 }
 
 #[doc = r#"Indicates the type of task."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TaskTypeEnum {
 	#[doc = r#"Indicates the task is to sample and analyze the air around the vehicle."#]
 	#[serde(rename = "AIR_SAMPLE")]
@@ -25719,8 +25541,7 @@ pub enum TaskTypeEnum {
 }
 
 #[doc = r#"Indicates the high-level status of a TCP connection."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "TCP_SessionStatusEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TcpSessionStatusEnum {
 	#[doc = r#"Listening for an incoming connection."#]
 	#[serde(rename = "LISTENING")]
@@ -25734,7 +25555,7 @@ pub enum TcpSessionStatusEnum {
 }
 
 #[doc = r#"Indicate the temperature status for a subsystem or subsystem component."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TemperatureStateEnum {
 	#[doc = r#"Component temperature is below the normal operating range."#]
 	#[serde(rename = "UNDER_TEMP")]
@@ -25754,7 +25575,7 @@ pub enum TemperatureStateEnum {
 }
 
 #[doc = r#"Can enable or disable volatility, or remove the current selected option."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TextReportActionEnum {
 	#[doc = r#"Volatility is enabled and data stores are targeted to threat."#]
 	#[serde(rename = "ENABLE_VOLATILITY")]
@@ -25768,7 +25589,7 @@ pub enum TextReportActionEnum {
 }
 
 #[doc = r#"Indicates the status of an RF Thread in the RF Distribution and Control subsystem."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ThreadAvailabilityEnum {
 	#[doc = r#"RF Thread is unavailable for allocation."#]
 	#[serde(rename = "UNAVAILABLE")]
@@ -25782,7 +25603,7 @@ pub enum ThreadAvailabilityEnum {
 }
 
 #[doc = r#"Indicates the threat capability/technology."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ThreatCapabilityEnum {
 	#[doc = r#"Indicates a threat capability employing radar detection methods."#]
 	#[serde(rename = "RADAR")]
@@ -25832,7 +25653,7 @@ pub enum ThreatCapabilityEnum {
 }
 
 #[doc = r#"Indicates the type of threat. Enum members have been sourced largely from MIL-STD-6016 Threat Type. Some members have been added specifically for UCI."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ThreatEnum {
 	#[doc = r#"Missile designed to be launched from military aircraft at targets on land or sea."#]
 	#[serde(rename = "AIR_TO_SURFACE_MISSILE")]
@@ -25903,7 +25724,7 @@ pub enum ThreatEnum {
 }
 
 #[doc = r#"Indicates the current posture of a known threat."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ThreatPostureEnum {
 	#[doc = r#"The threat is attempting to locate/identify the other object in the relationship."#]
 	#[serde(rename = "SEARCH")]
@@ -25923,7 +25744,7 @@ pub enum ThreatPostureEnum {
 }
 
 #[doc = r#"Indicates the type of weapon the threat intends to used against the targeted entity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum ThreatWeaponEnum {
 	#[doc = r#"TODO; take out?."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -25943,7 +25764,7 @@ pub enum ThreatWeaponEnum {
 }
 
 #[doc = r#"Describes the function of the associated time. For example, see MIL-STD-6016 DFI 1681 DUI 001."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TimeFunctionEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NONE")]
@@ -25996,7 +25817,7 @@ pub enum TimeFunctionEnum {
 }
 
 #[doc = r#"Heading based on True or Magnetic North."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TrackHeadingEnum {
 	#[doc = r#"0 = True North."#]
 	#[serde(rename = "TRUE_NORTH")]
@@ -26007,7 +25828,7 @@ pub enum TrackHeadingEnum {
 }
 
 #[doc = r#"Weapon system mode of operation in nominal order of progression. Newer weapon systems may exhibit multiple modes of operation simultaneously.This enumerated type indicates the basic tracking modes of radar systems."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TrackModeEnum {
 	#[doc = r#"Indicates the radar's tracking mode hasn't been determined."#]
 	#[serde(rename = "UNKNOWN")]
@@ -26030,7 +25851,7 @@ pub enum TrackModeEnum {
 }
 
 #[doc = r#"Report the longitudinal offset of the transponder antenna for ADS-B Surface Message transmission."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TransponderAntennaOffsetLongitudinalEnum {
 	#[doc = r#"0 = 0 to 1 meter."#]
 	#[serde(rename = "0_TO_1METERS")]
@@ -26128,7 +25949,7 @@ pub enum TransponderAntennaOffsetLongitudinalEnum {
 }
 
 #[doc = r#"Transponder Side Indication."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TransponderSideIndicationEnum {
 	#[doc = r#"Transponder #1 (left/pilot side or single)."#]
 	#[serde(rename = "LEFT_OR_PILOT_OR_SINGLE")]
@@ -26142,7 +25963,7 @@ pub enum TransponderSideIndicationEnum {
 }
 
 #[doc = r#"Indicates the desired behavior at the associated turn point."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TurnPointTypeEnum {
 	#[doc = r#"Indicates the vehicle is to begin the turn prior to reaching the turn point and continue turning until its projected course intercepts the next turn point."#]
 	#[serde(rename = "TURN_SHORT")]
@@ -26162,7 +25983,7 @@ pub enum TurnPointTypeEnum {
 }
 
 #[doc = r#"Indicates the type of dependency between Activities."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum TypeOfDependencyEnum {
 	#[doc = r#"In the case where if the dependent Activity's Resource Allocation is removed or never allocated, this Activity Resource Request will not be fulfilled."#]
 	#[serde(rename = "EXISTENTIAL")]
@@ -26173,7 +25994,7 @@ pub enum TypeOfDependencyEnum {
 }
 
 #[doc = r#"Indicates the basis of the reported uncertainty.  See enumerated type annotations for further details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum UncertaintyEnum {
 	#[doc = r#"Indicates the reported uncertainty is based on 1-sigma."#]
 	#[serde(rename = "1_SIGMA")]
@@ -26193,7 +26014,7 @@ pub enum UncertaintyEnum {
 }
 
 #[doc = r#"Defines the basic unit type of an entity."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum UnitTypeEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NO_STATEMENT")]
@@ -26291,8 +26112,7 @@ pub enum UnitTypeEnum {
 }
 
 #[doc = r#"A qualifier which caveats a message status. Derived from MIL-STD-6040."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "USMTF_QualifierEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum UsmtfQualifierEnum {
 	#[doc = r#"Amplification.  Amplifies a previously sent message."#]
 	#[serde(rename = "AMP")]
@@ -26327,8 +26147,7 @@ pub enum UsmtfQualifierEnum {
 }
 
 #[doc = r#"The V-bar approach consists of the chaser vehicle approaching the target vehicle from the positive or negative in track velocity direction of the target spacecraft. This occurs along the velocity vector of the target spacecraft."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename = "V_BarApproachEnum")]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VBarApproachEnum {
 	#[doc = r#"Indicates the chaser is approaching from the negative in track direction of the target spacecraft."#]
 	#[serde(rename = "NEGATIVE_INTRACK")]
@@ -26339,7 +26158,7 @@ pub enum VBarApproachEnum {
 }
 
 #[doc = r#"Indicates which frame of reference (e.g., True, Magnetic) the associated vector is referenced to."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VectorFrameOfReferenceEnum {
 	#[doc = r#"The angle is with respect to magnetic variation."#]
 	#[serde(rename = "MAGNETIC")]
@@ -26353,7 +26172,7 @@ pub enum VectorFrameOfReferenceEnum {
 }
 
 #[doc = r#"Defines vehicle actions that can be done along a path segment of a route."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VehicleActionEnum {
 	#[doc = r#"Specifies that the vehicle should turn the navigation lights on along this segment. The state will stay the same from this point forward unless it is changed on a future segment."#]
 	#[serde(rename = "NAV_LIGHTS_ON")]
@@ -26415,7 +26234,7 @@ pub enum VehicleActionEnum {
 }
 
 #[doc = r#"Indicates the vehicle control strategy desired/required for the specified action."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VehicleControlStrategyEnum {
 	#[doc = r#"Indicates the vehicle control is to be handed off to a local operator to perform the specified action and all supporting actions."#]
 	#[serde(rename = "HANDOFF_TO_LOCAL_CONTROL")]
@@ -26429,7 +26248,7 @@ pub enum VehicleControlStrategyEnum {
 }
 
 #[doc = r#"Specifies whether the vehicle should invoke special Loss of Link processing. This could be turned off if the vehicle is going to be in a known and accepted lost communication situation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VehicleLossOfLinkProcessingEnum {
 	#[doc = r#"Indicates the vehicle will not invoke special Loss of Link processing upon losing link with its controlling system."#]
 	#[serde(rename = "DISABLED")]
@@ -26440,7 +26259,7 @@ pub enum VehicleLossOfLinkProcessingEnum {
 }
 
 #[doc = r#"Specifies whether the vehicle should put itself into a more survivable mode. Different vehicles will have specific behaviors that reduce the signature of the vehicle (doors closed, minimal use of flaps, etc."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VehicleSurvivabilityModeEnum {
 	#[doc = r#"Indicates the vehicle should engage the survivability mode."#]
 	#[serde(rename = "ON")]
@@ -26451,7 +26270,7 @@ pub enum VehicleSurvivabilityModeEnum {
 }
 
 #[doc = r#"Indicates the direction the center of gravity is moving along the vertical axis."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VerticalCenterOfGravityTrendEnum {
 	#[doc = r#"Indicates the center of gravity is not moving on the vertical axis."#]
 	#[serde(rename = "NONE")]
@@ -26465,7 +26284,7 @@ pub enum VerticalCenterOfGravityTrendEnum {
 }
 
 #[doc = r#"Source of the vertical rate."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VerticalRateSourceEnum {
 	#[doc = r#"Source came from Barometric Pressure."#]
 	#[serde(rename = "BAROMETRIC")]
@@ -26476,7 +26295,7 @@ pub enum VerticalRateSourceEnum {
 }
 
 #[doc = r#"Indicates the video encoding blocking to use."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VideoBlockSizeEnum {
 	#[doc = r#"Indicates to use default blocking for encoding."#]
 	#[serde(rename = "DEFAULT")]
@@ -26499,7 +26318,7 @@ pub enum VideoBlockSizeEnum {
 }
 
 #[doc = r#"Indicates the video Chroma Subsample."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VideoChromaSubsampleEnum {
 	#[doc = r#"Indicates a chroma 4:0:0 subsampling."#]
 	#[serde(rename = "CHROMA_4_0_0")]
@@ -26516,7 +26335,7 @@ pub enum VideoChromaSubsampleEnum {
 }
 
 #[doc = r#"Indicates the priority of the video encoder compression."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VideoEncoderCompressionModeEnum {
 	#[doc = r#"Video encoder compression mode for constant quality."#]
 	#[serde(rename = "CONSTANT_QUALITY")]
@@ -26527,7 +26346,7 @@ pub enum VideoEncoderCompressionModeEnum {
 }
 
 #[doc = r#"Indicates the allowable level of exposure risk that is acceptable while planning a task.  See enumerated values for more details."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum VulnerabilityTypeEnum {
 	#[doc = r#"Indicates that no risk is acceptable for planning this task."#]
 	#[serde(rename = "NONE")]
@@ -26553,7 +26372,7 @@ pub enum VulnerabilityTypeEnum {
 }
 
 #[doc = r#"Indicates the action associated with the specified waypoint."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WaypointTypeEnum {
 	#[doc = r#"Indicates the waypoint does not have an additional action associated with it beyond navigation."#]
 	#[serde(rename = "NAV_ONLY")]
@@ -26603,7 +26422,7 @@ pub enum WaypointTypeEnum {
 }
 
 #[doc = r#"Indicates a weapon's fuze type."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeaponFuzeModeEnum {
 	#[doc = r#"Fuze type that functions upon impact or a given time after impact."#]
 	#[serde(rename = "IMPACT")]
@@ -26620,7 +26439,7 @@ pub enum WeaponFuzeModeEnum {
 }
 
 #[doc = r#"Indicates which of the weapon's fuzes the associated data applies to.  This is used while specifying the weapon fuze modes and settings."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeaponFuzePositionEnum {
 	#[doc = r#"No annotation will be provided."#]
 	#[serde(rename = "NOSE")]
@@ -26634,7 +26453,7 @@ pub enum WeaponFuzePositionEnum {
 }
 
 #[doc = r#"Indicates types/categories of weapons."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeaponTypeEnum {
 	#[doc = r#"Indicates a bacterium, virus, protozoan, parasite, or fungus that can be used purposefully as a weapon."#]
 	#[serde(rename = "BIOLOGICAL")]
@@ -26723,7 +26542,7 @@ pub enum WeaponTypeEnum {
 }
 
 #[doc = r#"An enumeration specifying the amount of cloud cover."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherCloudCoverEnum {
 	#[doc = r#"No cloud cover."#]
 	#[serde(rename = "CLEAR")]
@@ -26743,7 +26562,7 @@ pub enum WeatherCloudCoverEnum {
 }
 
 #[doc = r#"Used in conjunction with WeatherKindEnum, indicates which MIL-STD-6016 enumeration should be used to interpret the WeatherDescription DFI 287 DUI 002)."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherDescriptionEnum {
 	#[doc = r#"Indicates that shallow conditions exists."#]
 	#[serde(rename = "SHALLOW")]
@@ -26769,7 +26588,7 @@ pub enum WeatherDescriptionEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the WeatherKind."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherKindEnum {
 	#[doc = r#"Indicates that no significant weather exists."#]
 	#[serde(rename = "NO_SIGNIFICANT_WEATHER")]
@@ -26837,7 +26656,7 @@ pub enum WeatherKindEnum {
 }
 
 #[doc = r#"An enumeration indicating additional info about the precipitation beyond the type."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherPrecipitationAmplificationEnum {
 	#[doc = r#"Specifies the precipitation is light."#]
 	#[serde(rename = "LIGHT")]
@@ -26860,7 +26679,7 @@ pub enum WeatherPrecipitationAmplificationEnum {
 }
 
 #[doc = r#"An enumeration indicating the type of precipitation."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherPrecipitationEnum {
 	#[doc = r#"Specifies there is haze."#]
 	#[serde(rename = "HAZE")]
@@ -26886,7 +26705,7 @@ pub enum WeatherPrecipitationEnum {
 }
 
 #[doc = r#"An enumeration specifying weather radar capability."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherRadarCapabilityEnum {
 	#[doc = r#"Specifies the weather radar capability is to sector scan; the radar rotates and scans a piece at a time to build up the overall radar image."#]
 	#[serde(rename = "SECTOR")]
@@ -26894,7 +26713,7 @@ pub enum WeatherRadarCapabilityEnum {
 }
 
 #[doc = r#"An enumeration indicating how the weather radar capability will output messages."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherRadarMessageOutputsEnum {
 	#[doc = r#"Indicates dynamic status for the Capability will be reported via its associated Activity message.  For example, the ESM_Activity message for an ESM Capability."#]
 	#[serde(rename = "WEATHER_RADAR_ACTIVITY")]
@@ -26908,7 +26727,7 @@ pub enum WeatherRadarMessageOutputsEnum {
 }
 
 #[doc = r#"An enumeration indicating if the weather report is current, forecast, historical, or manually input."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherReportTypeEnum {
 	#[doc = r#"Indicates the weather report is the current conditions."#]
 	#[serde(rename = "CURRENT_CONDITIONS")]
@@ -26925,7 +26744,7 @@ pub enum WeatherReportTypeEnum {
 }
 
 #[doc = r#"An enumeration to indicate road conditions."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherRoadStateEnum {
 	#[doc = r#"Indicates the roads are dry."#]
 	#[serde(rename = "DRY")]
@@ -26951,7 +26770,7 @@ pub enum WeatherRoadStateEnum {
 }
 
 #[doc = r#"An enumeration indicating additional info about water conditions beyond waves."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherSeaStateAmplificationEnum {
 	#[doc = r#"Indicates that there is ice."#]
 	#[serde(rename = "ICE")]
@@ -26962,7 +26781,7 @@ pub enum WeatherSeaStateAmplificationEnum {
 }
 
 #[doc = r#"An enumeration indicating water conditions."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherSeaStateEnum {
 	#[doc = r#"Indicates sea state code 0, wave height 0.0 m, calm/glassy characteristic, no sea swell."#]
 	#[serde(rename = "CALM_GLASSY")]
@@ -26997,7 +26816,7 @@ pub enum WeatherSeaStateEnum {
 }
 
 #[doc = r#"An enumeration indicating the severity of the weather."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherSeverityEnum {
 	#[doc = r#"Indicates there are no adverse weather conditions."#]
 	#[serde(rename = "NONE")]
@@ -27017,7 +26836,7 @@ pub enum WeatherSeverityEnum {
 }
 
 #[doc = r#"Indicates the source of the weather information."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherSourceEnum {
 	#[doc = r#"Specifies the weather information comes from METeorological Aerodome Reports (METAR). METAR is a report typically coming from airports or permanent weather observation stations."#]
 	#[serde(rename = "METAR")]
@@ -27040,7 +26859,7 @@ pub enum WeatherSourceEnum {
 }
 
 #[doc = r#"Enumeration indicating weather related terrain conditions."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherTerrainStateEnum {
 	#[doc = r#"Indicates the terrain is dry."#]
 	#[serde(rename = "DRY")]
@@ -27063,7 +26882,7 @@ pub enum WeatherTerrainStateEnum {
 }
 
 #[doc = r#"Indicates which MIL-STD-6016 enumeration should be used to interpret the BaseWeatherState."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherVisibilityEnum {
 	#[doc = r#"Indicates base cloud height in feet is less than 200 feet and visibility is less than 800 meters."#]
 	#[serde(rename = "RED")]
@@ -27086,7 +26905,7 @@ pub enum WeatherVisibilityEnum {
 }
 
 #[doc = r#"An enumeration indicating the type of weather warning."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeatherWarningEnum {
 	#[doc = r#"Indicates the weather warning is for thunderstorms."#]
 	#[serde(rename = "THUNDERSTORM")]
@@ -27139,7 +26958,7 @@ pub enum WeatherWarningEnum {
 }
 
 #[doc = r#"An enumeration indicating the day of the week."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum WeekdayEnum {
 	#[doc = r#"Indicates the day is Sunday."#]
 	#[serde(rename = "SUNDAY")]
@@ -27165,7 +26984,7 @@ pub enum WeekdayEnum {
 }
 
 #[doc = r#"Indicates the date which applies to the corresponding equinox.  Equinox is defined as the intersection between the celestial equator and the ecliptic, associated with the sun's ascending node."#]
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, PartialEq, Serialize)]
 pub enum YearOfEquinoxEnum {
 	#[doc = r#"Earth's Mean Equator and Equinox at 12:00 Terrestrial Time on 1 January 2000."#]
 	#[serde(rename = "MEME_J2000")]
