@@ -601,7 +601,9 @@ struct_like_serde! {
 	FloatValue -> "FloatValue",
 	DoubleValue -> "DoubleValue",
 	DateTimeValue -> "DateTimeValue",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	DurationValue -> "DurationValue",
+	#[chrono::NaiveTime => crate::v2_5::serde_utils::naive_time]
 	TimeValue -> "TimeValue",
 	StringValueCaseSensitive -> "StringValueCaseSensitive",
 	StringValueCaseInsensitive -> "StringValueCaseInsensitive",
@@ -1138,6 +1140,7 @@ pub enum CommRangeDelayChoiceType {
 struct_like_serde! {
 	CommRangeDelayChoiceType
 	Active -> "Active",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	Passive -> "Passive",
 }
 
@@ -1313,7 +1316,9 @@ struct_like_serde! {
 	FloatValue -> "FloatValue",
 	DoubleValue -> "DoubleValue",
 	DateTimeValue -> "DateTimeValue",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	DurationValue -> "DurationValue",
+	#[chrono::NaiveTime => crate::v2_5::serde_utils::naive_time]
 	TimeValue -> "TimeValue",
 	StringValue -> "StringValue",
 }
@@ -1386,6 +1391,7 @@ pub enum ContingencyPathSpacingType {
 }
 struct_like_serde! {
 	ContingencyPathSpacingType
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	Duration -> "Duration",
 	Distance -> "Distance",
 	Endpoints -> "Endpoints",
@@ -2233,8 +2239,10 @@ pub enum EntityCharacteristicType {
 struct_like_serde! {
 	EntityCharacteristicType
 	Identity -> "Identity",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	IdentityStaleness -> "IdentityStaleness",
 	PositionUncertainty -> "PositionUncertainty",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	PositionStaleness -> "PositionStaleness",
 	PrioritizationList -> "PrioritizationList",
 	Behavior -> "Behavior",
@@ -2612,6 +2620,7 @@ pub enum EventOffsetChoiceType {
 }
 struct_like_serde! {
 	EventOffsetChoiceType
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	OffsetTime -> "OffsetTime",
 	OffsetAngle -> "OffsetAngle",
 	AzEl -> "AzEl",
@@ -2630,6 +2639,7 @@ pub enum EventWindowChoiceType {
 struct_like_serde! {
 	EventWindowChoiceType
 	WindowAngle -> "WindowAngle",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	WindowDuration -> "WindowDuration",
 	WindowRadius -> "WindowRadius",
 }
@@ -2812,6 +2822,7 @@ pub enum FuzeTriggerType {
 struct_like_serde! {
 	FuzeTriggerType
 	FuzeDistance -> "FuzeDistance",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	FuzeDelayTime -> "FuzeDelayTime",
 }
 
@@ -3147,6 +3158,7 @@ pub enum IntervalChoiceType {
 struct_like_serde! {
 	IntervalChoiceType
 	Distance -> "Distance",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	Duration -> "Duration",
 }
 
@@ -4119,6 +4131,7 @@ pub enum OrbitDurationType {
 }
 struct_like_serde! {
 	OrbitDurationType
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	Time -> "Time",
 	NumberOfOrbits -> "NumberOfOrbits",
 }
@@ -4389,6 +4402,7 @@ pub enum OrbitalSurveillanceSensorMinimumCollectionRequirementsType {
 struct_like_serde! {
 	OrbitalSurveillanceSensorMinimumCollectionRequirementsType
 	TargetRotationalPeriods -> "TargetRotationalPeriods",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	Time -> "Time",
 }
 
@@ -4673,6 +4687,7 @@ pub enum PlanWindowModificationTypeChoiceType {
 struct_like_serde! {
 	PlanWindowModificationTypeChoiceType
 	Window -> "Window",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	TimeOffset -> "TimeOffset",
 }
 
@@ -4960,6 +4975,7 @@ pub enum PoComponentSettingsFocalPlaneArrayCollectionType {
 }
 struct_like_serde! {
 	PoComponentSettingsFocalPlaneArrayCollectionType
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	CollectionTimeSetting -> "CollectionTimeSetting",
 	CollectionTimeControls -> "CollectionTimeControls",
 }
@@ -5478,6 +5494,7 @@ struct_like_serde! {
 	ProductNeededByType
 	AsSoonAsPossible -> "AsSoonAsPossible",
 	AbsoluteTime -> "AbsoluteTime",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	RelativeToEventTime -> "RelativeToEventTime",
 }
 
@@ -7164,6 +7181,7 @@ struct_like_serde! {
 	SystemCharacteristicType
 	Identity -> "Identity",
 	PositionUncertainty -> "PositionUncertainty",
+	#[chrono::TimeDelta => crate::v2_5::serde_utils::time_delta]
 	PositionStaleness -> "PositionStaleness",
 	PrioritizationList -> "PrioritizationList",
 	Behavior -> "Behavior",
