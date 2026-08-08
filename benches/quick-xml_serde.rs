@@ -6,10 +6,14 @@ mod msg_utils;
 use criterion::{BatchSize, BenchmarkId, Criterion, Throughput, criterion_group, criterion_main};
 use msg_utils::service_status::{ServiceStatus, service_status};
 use quick_xml::{de, se};
+use std::time::Duration;
 
 fn quick_xml_bench(c: &mut Criterion) {
 	let mut group = c.benchmark_group("quick_xml_bench");
 	group.throughput(Throughput::Elements(1));
+	group.warm_up_time(Duration::from_secs(5));
+	group.sample_size(500);
+	group.measurement_time(Duration::from_secs(30));
 
 	// Benchmark serialize
 	group.bench_function(
