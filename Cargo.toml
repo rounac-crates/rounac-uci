@@ -16,8 +16,9 @@ paste = "1.0"
 iso8601 = "0.6.3"
 
 [features]
-default = ["v2_5"]
+default = ["v2_6"]
 v2_5 = []
+v2_6 = []
 
 [dev-dependencies]
 criterion = "0.8.2"
