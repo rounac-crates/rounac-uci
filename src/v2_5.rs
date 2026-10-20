@@ -1,4 +1,4 @@
-//! Uci
+//! UCI 2.5
 //!
 #![doc = r#"DISTRIBUTION STATEMENTS
 
